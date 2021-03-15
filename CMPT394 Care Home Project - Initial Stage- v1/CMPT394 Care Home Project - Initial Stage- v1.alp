@@ -178,7 +178,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1614977446056</Id>
 					<Name><![CDATA[diningRoomInfectiousCount]]></Name>
-					<X>-360</X><Y>510</Y>
+					<X>-180</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -208,7 +208,7 @@
 				<Variable Class="AuxVariable">
 					<Id>1613770819022</Id>
 					<Name><![CDATA[probablilityOfInfection]]></Name>
-					<X>-480</X><Y>480</Y>
+					<X>-240</X><Y>580</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -856,10 +856,10 @@
 				<Link SourceId="1614977446056" TargetId="1613770819022" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-120</X><Y>-30</Y></Direction>
+					<Direction><X>-60</X><Y>-30</Y></Direction>
 					<Id>1614979239683</Id>
 					<Name><![CDATA[diningRoomInfectiousCount - probablilityOfInfection]]></Name>
-					<X>-360</X><Y>510</Y>
+					<X>-180</X><Y>610</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5792,8 +5792,7 @@ if (resident != null){
 	INode residentNode = main.careHomeFloorPlan.getNearestNode(resident, residentPoint);
 	
 	Point pointForParticles = main.infectiousEventsInRoom.get(residentNode);
-	
-	if (pointForParticles != null){
+	if (pointForParticles != null){ 
 		Double distanceFromParticles = Math.abs(residentPoint.distance2D(pointForParticles));
 		Double weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;			
 	}
@@ -6183,7 +6182,9 @@ main.exposures += 1;]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[weightOfExposure <= main.particlesNeededToBeInfected]]></Condition>
+						<Condition><![CDATA[weightOfExposure <= main.particlesNeededToBeInfected
+traceln(weightOfExposure);
+]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>

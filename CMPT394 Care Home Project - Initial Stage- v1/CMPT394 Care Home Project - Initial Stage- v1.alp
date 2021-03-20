@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.2.202012250315" AlpVersion="8.7.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.2.202012241846" AlpVersion="8.7.0">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -39,6 +39,9 @@
 	bedCoordinates.add(new Bed(attractor.getX(), attractor.getY()));
 }
 
+for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
+	roomRepresentations.put(careHomeFloorPlan.nodes().get(i), rooms.get(i));
+}
 ]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
@@ -176,21 +179,6 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1614977446056</Id>
-					<Name><![CDATA[diningRoomInfectiousCount]]></Name>
-					<X>-180</X><Y>610</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1614985305432</Id>
 					<Name><![CDATA[exposures]]></Name>
 					<X>560</X><Y>230</Y>
@@ -203,75 +191,6 @@
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="AuxVariable">
-					<Id>1613770819022</Id>
-					<Name><![CDATA[probablilityOfInfection]]></Name>
-					<X>-240</X><Y>580</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[50 * diningRoomInfectiousCount]]></Formula>
-						<Value><![CDATA[0]]></Value>
-						<Color/>
-					</Properties>
-
-				</Variable>
-				<Variable Class="StockVariable">
-					<Id>1613770683442</Id>
-					<Name><![CDATA[diningRoomParticleCount]]></Name>
-					<X>-470</X><Y>340</Y>
-					<Label><X>-65</X><Y>-30</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties Array="false">
-					<EquationStyle>classic</EquationStyle>
-					<Width>20</Width>
-					<Height>20</Height>
-						<InitialValue><![CDATA[0]]></InitialValue>
-						<Color/>
-					</Properties>
-				</Variable>
-				<Variable Class="Flow">
-					<Id>1613770698621</Id>
-					<Name><![CDATA[spread]]></Name>
-					<X>-620</X><Y>340</Y>
-					<Label><X>-10</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TargetId="1613770683442" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[infectionArisolSpread * this.diningRoomInfectiousCount]]></Formula>
-						<Color/>
-						<ValveIndex>1</ValveIndex>
-						<Points>
-							<Point><X>0</X><Y>0</Y></Point>
-							<Point><X>50</X><Y>0</Y></Point>
-							<Point><X>150</X><Y>0</Y></Point>
-						</Points>
-					</Properties>
-				</Variable>
-				<Variable Class="Flow">
-					<Id>1613770766802</Id>
-					<Name><![CDATA[dissapation]]></Name>
-					<X>-470</X><Y>340</Y>
-					<Label><X>10</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SourceId="1613770683442" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[diningRoomParticleCount / infectionArisolLifetime]]></Formula>
-						<Color/>
-						<ValveIndex>1</ValveIndex>
-						<Points>
-							<Point><X>0</X><Y>0</Y></Point>
-							<Point><X>100</X><Y>0</Y></Point>
-							<Point><X>200</X><Y>0</Y></Point>
-						</Points>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -447,7 +366,7 @@
 					<Id>1613770082727</Id>
 					<Name><![CDATA[infectionArisolSpread]]></Name>
 					<Description><![CDATA[How many particles one infected person breaths out. ]]></Description>
-					<X>-550</X><Y>390</Y>
+					<X>40</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -497,7 +416,7 @@
 				<Variable Class="Parameter">
 					<Id>1613770315380</Id>
 					<Name><![CDATA[infectionArisolLifetime]]></Name>
-					<X>-250</X><Y>280</Y>
+					<X>40</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -781,21 +700,6 @@
 
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1615750845114</Id>
-					<Name><![CDATA[infectiousEventsInRoom]]></Name>
-					<X>360</X><Y>290</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
-						<ElementClass><![CDATA[INode]]></ElementClass>
-						<ValueElementClass><![CDATA[Point]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
 					<Id>1615751484874</Id>
 					<Name><![CDATA[nursesAndResidents]]></Name>
 					<X>750</X><Y>80</Y>
@@ -810,69 +714,22 @@
 					</Properties>
 
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1616274901078</Id>
+					<Name><![CDATA[roomRepresentations]]></Name>
+					<X>380</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
+						<ElementClass><![CDATA[Node]]></ElementClass>
+						<ValueElementClass><![CDATA[Room]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
 			</Variables>
-			<Dependences>
-				<Link SourceId="1613770082727" TargetId="1613770698621" Polarity="null">
-					<Height>132.593</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-20</X><Y>-50</Y></Direction>
-					<Id>1613770781077</Id>
-					<Name><![CDATA[infectionArisolSpread - spread]]></Name>
-					<X>-550</X><Y>390</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1613770315380" TargetId="1613770766802" Polarity="null">
-					<Height>-57.347</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-120</X><Y>60</Y></Direction>
-					<Id>1613770789506</Id>
-					<Name><![CDATA[infectionArisolLifetime - dissapation]]></Name>
-					<X>-250</X><Y>280</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1613770683442" TargetId="1613770766802" Polarity="null">
-					<Height>-31.738</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>100</X><Y>0</Y></Direction>
-					<Id>1614977787380</Id>
-					<Name><![CDATA[diningRoomParticleCount - dissapation]]></Name>
-					<X>-470</X><Y>340</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1614977446056" TargetId="1613770819022" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-60</X><Y>-30</Y></Direction>
-					<Id>1614979239683</Id>
-					<Name><![CDATA[diningRoomInfectiousCount - probablilityOfInfection]]></Name>
-					<X>-180</X><Y>610</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-			</Dependences>
 			<Connectors>
 				<Connector>
 					<Id>1614897191061</Id>
@@ -2389,7 +2246,7 @@ currentResidentPopulation += 1;]]></Code>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
-	diningRoomInfectiousCount += 1;
+	roomRepresentations.get(diningRoom).roomInfectiousCount += 1;
 }]]></Code>
 							</Value>
 						</Parameter>
@@ -2400,7 +2257,7 @@ currentResidentPopulation += 1;]]></Code>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
-	diningRoomInfectiousCount -= 1;
+	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
 }
 ]]></Code>
 							</Value>
@@ -3328,6 +3185,81 @@ currentResidentPopulation += 1;]]></Code>
 						<Code><![CDATA[100]]></Code>
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1616274314176</Id>
+					<Name><![CDATA[rooms]]></Name>
+					<X>560</X><Y>130</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Room]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+							<ClassName><![CDATA[Room]]></ClassName>
+							<ItemName><![CDATA[1616274012020]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[infectionArisolSpread]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[infectionArisolSpread]]></Code>
+								<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[infectionArisolLifetime]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[infectionArisolLifetime]]></Code>
+								<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							</Value>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[careHomeFloorPlan.nodes().size()]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
 					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
 					<XCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -5799,25 +5731,11 @@ if(resident != null){
 						<Action><![CDATA[
 // TODO make a common function. 
 if (resident != null){
-	Point residentPoint = new Point(resident.getX(), resident.getY());
-	INode residentNode = main.careHomeFloorPlan.getNearestNode(resident, residentPoint);
-	
-	Point pointForParticles = main.infectiousEventsInRoom.get(residentNode);
-	if (pointForParticles != null){ 
-		Double distanceFromParticles = Math.abs(residentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
-		weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;
-	}
+	calculateWieghtOfExposure(resident.getX(), resident.getY(), resident);
 } 
 
 if (nurse != null){
-	Point nursePoint = new Point(nurse.getX(), nurse.getY());
-	INode nurseNode = main.careHomeFloorPlan.getNearestNode(nurse, nursePoint);
-	
-	Point pointForParticles = main.infectiousEventsInRoom.get(nurseNode);
-	if (pointForParticles != null){
-		Double distanceFromParticles = Math.abs(nursePoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
-		weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;
-	}
+	calculateWieghtOfExposure(nurse.getX(), nurse.getY(), nurse);
 }
 
 ]]></Action>
@@ -5915,35 +5833,10 @@ main.exposures += 1;]]></Action>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1613773415006" Target="1613773415006" Trigger="rate">
 						<Action><![CDATA[if(resident != null){
-	Point residentPoint = new Point(resident.getX(), resident.getY());
-	INode residentNode = main.careHomeFloorPlan.getNearestNode(resident, residentPoint);
-	
-	for(Agent agent : resident.agentsInRange(main.allPeopleAgents, main.infectionTransmissionRadius)){
-		INode agentNode = main.careHomeFloorPlan.getNearestNode(agent, new Point(agent.getX(), agent.getY() ));
-		if(agentNode.equals(residentNode)){
-			agent.receive(SEIRMessages.Exposed);
-		}
-	}
-	
-	// Infectious agent exhaling COVID particles into the air. 
-	main.infectiousEventsInRoom.put(residentNode, residentPoint);
-
+	spreadInfection(resident.getX(), resident.getY(), resident);
 } else {
-	Point nursePoint = new Point(nurse.getX(), nurse.getY());
-	INode nurseNode = main.careHomeFloorPlan.getNearestNode(nurse, nursePoint);
-
-	for(Agent agent : nurse.agentsInRange(main.allPeopleAgents, main.infectionTransmissionRadius)){
-		INode agentNode = main.careHomeFloorPlan.getNearestNode(agent, new Point(agent.getX(), agent.getY() ));
-		if(agentNode.equals(nurseNode)){
-			agent.receive(SEIRMessages.Exposed);
-		}
-	}
-	
-	// Infectious agent exhaling COVID particles into the air. 
-	main.infectiousEventsInRoom.put(nurseNode, nursePoint);	
-}
-
-]]></Action>
+	spreadInfection(nurse.getX(), nurse.getY(), nurse);
+}]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -6248,6 +6141,76 @@ main.exposures += 1;]]></Action>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[return statechart.isStateActive(infectious);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1616275281994</Id>
+					<Name><![CDATA[calculateWieghtOfExposure]]></Name>
+					<X>450</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agentX]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[agentY]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[theAgent]]></Name>
+						<Type><![CDATA[Agent]]></Type>
+					</Parameter>
+					<Body><![CDATA[Point infectiousAgentPoint = new Point(agentX, agentY);
+INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(theAgent, infectiousAgentPoint);
+Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
+
+	
+	
+Point pointForParticles = infectiousAgentRoom.infectiousEventsInRoom.element();
+traceln(pointForParticles);
+if (pointForParticles != null){ 
+	Double distanceFromParticles = Math.abs(infectiousAgentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
+	weightOfExposure = infectiousAgentRoom.roomParticleCount * 1/distanceFromParticles;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1616275808853</Id>
+					<Name><![CDATA[spreadInfection]]></Name>
+					<X>450</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agentX]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[agentY]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[theAgent]]></Name>
+						<Type><![CDATA[Agent]]></Type>
+					</Parameter>
+					<Body><![CDATA[Point infectiousAgentPoint = new Point(agentX, agentY);
+INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(theAgent, infectiousAgentPoint);
+Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
+
+for(Agent susceptibleAgent : theAgent.agentsInRange(main.allPeopleAgents, main.infectionTransmissionRadius)){
+	INode susceptibleAgentNode = main.careHomeFloorPlan.getNearestNode(susceptibleAgent, new Point(susceptibleAgent.getX(), susceptibleAgent.getY()));
+	if(susceptibleAgentNode.equals(infectiousAgentNode)){
+		susceptibleAgent.receive(SEIRMessages.Exposed);
+	}
+}
+// Infectious agent exhaling COVID particles into the air. 
+infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -6892,6 +6855,394 @@ main.exposures += 1;]]></Action>
 					<VisibleCode><![CDATA[isInfectious()]]></VisibleCode>
 				</Figure3D>
 			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1616274012022</Id>
+			<Name><![CDATA[Room]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1616274012020</Id>
+				<Name><![CDATA[1616274012020]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1616313600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1616274012018</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1616274012021</CurrentLevel>
+			<ConnectionsId>1616274012017</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1616274063128</Id>
+					<Name><![CDATA[roomInfectiousCount]]></Name>
+					<X>360</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1616274063154</Id>
+					<Name><![CDATA[probablilityOfInfection]]></Name>
+					<X>190</X><Y>270</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[50 * roomInfectiousCount]]></Formula>
+						<Value><![CDATA[0]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1616274063156</Id>
+					<Name><![CDATA[roomParticleCount]]></Name>
+					<X>190</X><Y>90</Y>
+					<Label><X>-25</X><Y>-25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<InitialValue><![CDATA[0]]></InitialValue>
+						<Color/>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1616274063130</Id>
+					<Name><![CDATA[spread]]></Name>
+					<X>40</X><Y>90</Y>
+					<Label><X>-10</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TargetId="1616274063156" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[infectionArisolSpread * roomInfectiousCount]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>50</X><Y>0</Y></Point>
+							<Point><X>150</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1616274063148</Id>
+					<Name><![CDATA[dissapation]]></Name>
+					<X>190</X><Y>90</Y>
+					<Label><X>10</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1616274063156" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[roomParticleCount / infectionArisolLifetime]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>100</X><Y>0</Y></Point>
+							<Point><X>114</X><Y>0</Y></Point>
+							<Point><X>200</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1616274211218</Id>
+					<Name><![CDATA[infectionArisolSpread]]></Name>
+					<Description><![CDATA[How many particles one infected person breaths out. ]]></Description>
+					<X>60</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[RATE]]></UnitType>
+						<UnitOfValue Class="RateUnits"><![CDATA[PER_HOUR]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[300]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1616274211216</Id>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1616274211229</Id>
+					<Name><![CDATA[infectionArisolLifetime]]></Name>
+					<X>260</X><Y>-10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[RATE]]></UnitType>
+						<UnitOfValue Class="RateUnits"><![CDATA[PER_HOUR]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[1.25]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1616274211227</Id>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1616274063118</Id>
+					<Name><![CDATA[infectiousEventsInRoom]]></Name>
+					<X>380</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedList]]></CollectionClass>
+						<ElementClass><![CDATA[Point]]></ElementClass>
+						<ValueElementClass><![CDATA[Point]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{null}]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Dependences>
+				<Link SourceId="1616274063156" TargetId="1616274063148" Polarity="null">
+					<Height>-31.738</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>0</Y></Direction>
+					<Id>1616274063150</Id>
+					<Name><![CDATA[roomParticleCount - dissapation]]></Name>
+					<X>190</X><Y>90</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1616274063128" TargetId="1616274063154" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-170</X><Y>30</Y></Direction>
+					<Id>1616274063152</Id>
+					<Name><![CDATA[roomInfectiousCount - probablilityOfInfection]]></Name>
+					<X>360</X><Y>240</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1616274211218" TargetId="1616274063130" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>30</X><Y>80</Y></Direction>
+					<Id>1616274218907</Id>
+					<Name><![CDATA[infectionArisolSpread - spread]]></Name>
+					<X>60</X><Y>10</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1616274211229" TargetId="1616274063148" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>30</X><Y>100</Y></Direction>
+					<Id>1616274221826</Id>
+					<Name><![CDATA[infectionArisolLifetime - dissapation]]></Name>
+					<X>260</X><Y>-10</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1616274063128" TargetId="1616274063130" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-270</X><Y>-150</Y></Direction>
+					<Id>1616274702005</Id>
+					<Name><![CDATA[roomInfectiousCount - spread]]></Name>
+					<X>360</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+			</Dependences>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1616274012017</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1616274315776</Id>
+					<Name><![CDATA[main]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
+
+			<Presentation>
+				<Level>
+					<Id>1616274012021</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
 
 				</Level>
 			</Presentation>

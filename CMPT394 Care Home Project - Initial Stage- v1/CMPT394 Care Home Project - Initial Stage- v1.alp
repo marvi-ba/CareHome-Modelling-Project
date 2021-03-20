@@ -453,15 +453,17 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[RATE]]></UnitType>
+						<UnitOfValue Class="RateUnits"><![CDATA[PER_HOUR]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[50]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[300]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1613770082725</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -501,15 +503,17 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[RATE]]></UnitType>
+						<UnitOfValue Class="RateUnits"><![CDATA[PER_HOUR]]></UnitOfValue>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[.25]]></Code>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[1.25]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1613770315378</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2353,8 +2357,8 @@ currentResidentPopulation += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[10 //20 minutes]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+								<Code><![CDATA[60 //20 minutes]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4980,6 +4984,7 @@ currentResidentPopulation += 1;]]></Code>
 				<Attractor>
 					<Id>1614977206322</Id>
 					<Name><![CDATA[attractor6]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>70</X><Y>15</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -4992,6 +4997,7 @@ currentResidentPopulation += 1;]]></Code>
 				<Attractor>
 					<Id>1614977206323</Id>
 					<Name><![CDATA[attractor7]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>80</X><Y>15</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5028,6 +5034,7 @@ currentResidentPopulation += 1;]]></Code>
 				<Attractor>
 					<Id>1614977206327</Id>
 					<Name><![CDATA[attractor11]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>70</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -5040,6 +5047,7 @@ currentResidentPopulation += 1;]]></Code>
 				<Attractor>
 					<Id>1614977206328</Id>
 					<Name><![CDATA[attractor12]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>80</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -5693,6 +5701,9 @@ currentResidentPopulation += 1;]]></Code>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 			</Variables>
@@ -5793,8 +5804,8 @@ if (resident != null){
 	
 	Point pointForParticles = main.infectiousEventsInRoom.get(residentNode);
 	if (pointForParticles != null){ 
-		Double distanceFromParticles = Math.abs(residentPoint.distance2D(pointForParticles));
-		Double weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;			
+		Double distanceFromParticles = Math.abs(residentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
+		weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;
 	}
 } 
 
@@ -5804,8 +5815,8 @@ if (nurse != null){
 	
 	Point pointForParticles = main.infectiousEventsInRoom.get(nurseNode);
 	if (pointForParticles != null){
-		Double distanceFromParticles = Math.abs(nursePoint.distance2D(pointForParticles));
-		Double weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;
+		Double distanceFromParticles = Math.abs(nursePoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
+		weightOfExposure = main.diningRoomParticleCount * 1/distanceFromParticles;
 	}
 }
 
@@ -6153,8 +6164,8 @@ main.exposures += 1;]]></Action>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[main.susceptibleCheckSurroundingsTime]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Code><![CDATA[main.susceptibleCheckSurroundingsTime // mintues]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
 						</Rate>
 						<MessageType><![CDATA[Object]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
@@ -6182,9 +6193,7 @@ main.exposures += 1;]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[weightOfExposure <= main.particlesNeededToBeInfected
-traceln(weightOfExposure);
-]]></Condition>
+						<Condition><![CDATA[weightOfExposure >= main.particlesNeededToBeInfected]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>

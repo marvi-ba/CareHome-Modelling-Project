@@ -5742,9 +5742,15 @@ currentResidentPopulation += 1;]]></Code>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[if(resident != null){
+						<EntryAction><![CDATA[// TODO use the colorAgentAsExposed method? 
+if (resident != null){
 	resident.shapeBody.setFillColor(yellow);
-}]]></EntryAction>
+}
+
+if (visitor != null){
+	visitor.shapeBody.setFillColor(yellow);
+}
+]]></EntryAction>
 						<FillColor>-256</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -5757,10 +5763,14 @@ currentResidentPopulation += 1;]]></Code>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[
-if(resident != null){
+						<EntryAction><![CDATA[// TODO use the colorAgentAsInfectious method?
+if (resident != null){
 	resident.shapeBody.setFillColor(red);
 	resident.sphere.setVisible(true);
+}
+if (visitor != null){
+	visitor.shapeBody.setFillColor(red);
+	visitor.sphere.setVisible(true);
 }]]></EntryAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
@@ -5810,13 +5820,16 @@ if(resident != null){
 					<ShowLabel>false</ShowLabel>
 					<Properties>	
 						<Action><![CDATA[
-// TODO make a common function. 
 if (resident != null){
 	calculateWieghtOfExposure(resident.getX(), resident.getY(), resident);
 } 
 
 if (nurse != null){
 	calculateWieghtOfExposure(nurse.getX(), nurse.getY(), nurse);
+}
+
+if (visitor != null){
+	calculateWieghtOfExposure(visitor.getX(), visitor.getY(), visitor);
 }
 
 ]]></Action>
@@ -5913,10 +5926,16 @@ main.exposures += 1;]]></Action>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1613773415006" Target="1613773415006" Trigger="rate">
-						<Action><![CDATA[if(resident != null){
+						<Action><![CDATA[if (resident != null){
 	spreadInfection(resident.getX(), resident.getY(), resident);
-} else {
+} 
+
+if (nurse != null){
 	spreadInfection(nurse.getX(), nurse.getY(), nurse);
+}
+
+if (visitor != null){
+	spreadInfection(visitor.getX(), visitor.getY(), nurse);
 }]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -6228,6 +6247,7 @@ main.exposures += 1;]]></Action>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1616275281994</Id>
 					<Name><![CDATA[calculateWieghtOfExposure]]></Name>
+					<Description><![CDATA[Calculates the weight of exposure of a susceptible agent coming into contact with COVID-19 aerosols.]]></Description>
 					<X>450</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -6252,7 +6272,6 @@ Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
 	
 	
 Point pointForParticles = infectiousAgentRoom.infectiousEventsInRoom.element();
-traceln(pointForParticles);
 if (pointForParticles != null){ 
 	Double distanceFromParticles = Math.abs(infectiousAgentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
 	weightOfExposure = infectiousAgentRoom.roomParticleCount * 1/distanceFromParticles;
@@ -6292,6 +6311,45 @@ for(Agent susceptibleAgent : theAgent.agentsInRange(main.allPeopleAgents, main.i
 }
 // Infectious agent exhaling COVID particles into the air. 
 infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1616430116099</Id>
+					<Name><![CDATA[colorAgentAsExposed]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>450</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[theAgent]]></Name>
+						<Type><![CDATA[Agent]]></Type>
+					</Parameter>
+					<Body><![CDATA[theAgent.shapeBody.setFillColor(yellow);	
+// This is throwing an error. Ignored for now. Might be nice to have a common function. ]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1616430748422</Id>
+					<Name><![CDATA[colorAgentAsInfectious]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>450</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[theAgent]]></Name>
+						<Type><![CDATA[Agent]]></Type>
+					</Parameter>
+					<Body><![CDATA[theAgent.shapeBody.setFillColor(red);
+theAgent.sphere.setVisible(true);
+
+// Getting an error, I think it's because we're specifying agent rather than a specific type. 
+//Ignored for now]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -7494,8 +7552,8 @@ infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);]]></B
 				<EmbeddedObject>
 					<Id>1616426972011</Id>
 					<Name><![CDATA[infectionBehaviour]]></Name>
-					<X>70</X><Y>100</Y>
-					<Label><X>-60</X><Y>-15</Y></Label>
+					<X>30</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>

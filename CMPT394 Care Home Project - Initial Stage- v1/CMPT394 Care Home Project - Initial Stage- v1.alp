@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.2.202012241846" AlpVersion="8.7.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.2.202012250315" AlpVersion="8.7.0">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -2314,41 +2314,6 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1617404908835</Id>
-					<Name><![CDATA[connector43]]></Name>
-					<X>-450</X><Y>830</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[residentBehaviour]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out3]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveTo]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>140</Y></Point>
-						<Point><X>110</X><Y>140</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1617404968302</Id>
 					<Name><![CDATA[connector45]]></Name>
 					<X>-70</X><Y>970</Y>
@@ -2386,7 +2351,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617404976737</Id>
 					<Name><![CDATA[connector44]]></Name>
-					<X>-300</X><Y>970</Y>
+					<X>-260</X><Y>970</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2413,7 +2378,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2480,14 +2445,14 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>40</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>180</Y></Point>
-						<Point><X>110</X><Y>180</Y></Point>
+						<Point><X>40</X><Y>220</Y></Point>
+						<Point><X>110</X><Y>220</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617406487699</Id>
 					<Name><![CDATA[connector48]]></Name>
-					<X>-300</X><Y>1030</Y>
+					<X>-300</X><Y>1070</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2520,7 +2485,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617406506253</Id>
 					<Name><![CDATA[connector49]]></Name>
-					<X>-180</X><Y>1030</Y>
+					<X>-180</X><Y>1070</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2553,7 +2518,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617406539482</Id>
 					<Name><![CDATA[connector50]]></Name>
-					<X>-70</X><Y>1030</Y>
+					<X>-70</X><Y>1070</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2581,9 +2546,9 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>20</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>-100</Y></Point>
-						<Point><X>-400</X><Y>-100</Y></Point>
-						<Point><X>-400</X><Y>-240</Y></Point>
+						<Point><X>20</X><Y>-140</Y></Point>
+						<Point><X>-400</X><Y>-140</Y></Point>
+						<Point><X>-400</X><Y>-280</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2620,6 +2585,109 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 						<Point><X>60</X><Y>-50</Y></Point>
 						<Point><X>-400</X><Y>-50</Y></Point>
 						<Point><X>-400</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1617481418623</Id>
+					<Name><![CDATA[connector43]]></Name>
+					<X>-450</X><Y>830</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[residentBehaviour]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out3]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isInBookClub]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>140</Y></Point>
+						<Point><X>80</X><Y>140</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1617481418627</Id>
+					<Name><![CDATA[connector51]]></Name>
+					<X>-350</X><Y>970</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isInBookClub]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outT]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveTo]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1617481830861</Id>
+					<Name><![CDATA[connector52]]></Name>
+					<X>-360</X><Y>980</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[isInBookClub]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[release6]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Release]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>30</Y></Point>
+						<Point><X>140</X><Y>30</Y></Point>
+						<Point><X>140</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -2787,6 +2855,185 @@ previousScheduleValue = synchronousEventSchedule.getValue();]]></Body>
 					<Id>1617396194358</Id>
 					<Name><![CDATA[synchronousEventSchedule]]></Name>
 					<X>-630</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ValueType>integer</ValueType>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<DefaultValue>1</DefaultValue>
+					<RepresentationMode>intervals</RepresentationMode>
+					<RepresentationType>week</RepresentationType>
+					<FirstDayOfWeek>sunday</FirstDayOfWeek>
+					<TimeUnitsInterval>hours</TimeUnitsInterval>
+					<RepeatTime>86400000</RepeatTime>
+					<RepeatTimeInterval>days</RepeatTimeInterval>
+					<IsSnapTo>false</IsSnapTo>
+					<SnapTo>1617396307308</SnapTo>
+					<SnapToTimeUnits>minutes</SnapToTimeUnits>
+					<AllDayExceptionMode>false</AllDayExceptionMode>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<IntervalsQuery>
+						<TableReference>
+						</TableReference>
+							<StartColumnReference>
+							</StartColumnReference>
+							<EndColumnReference>
+							</EndColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</IntervalsQuery>
+					<Action><![CDATA[updatePreviousScheduleValue();]]></Action>
+					<Intervals>
+						<Interval>
+							<Start>79200000</Start>
+							<End>3600000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>165600000</Start>
+							<End>90000000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>252000000</Start>
+							<End>176400000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>338400000</Start>
+							<End>262800000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>424800000</Start>
+							<End>349200000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>511200000</Start>
+							<End>435600000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>597600000</Start>
+							<End>522000000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>3600000</Start>
+							<End>7200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>90000000</Start>
+							<End>93600000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>176400000</Start>
+							<End>180000000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>262800000</Start>
+							<End>266400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>349200000</Start>
+							<End>352800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>435600000</Start>
+							<End>439200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>522000000</Start>
+							<End>525600000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>7200000</Start>
+							<End>10800000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>93600000</Start>
+							<End>97200000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>180000000</Start>
+							<End>183600000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>266400000</Start>
+							<End>270000000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>352800000</Start>
+							<End>356400000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>439200000</Start>
+							<End>442800000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>525600000</Start>
+							<End>529200000</End>
+							<Value>2</Value>
+						</Interval>
+						<Interval>
+							<Start>10800000</Start>
+							<End>14400000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>97200000</Start>
+							<End>100800000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>183600000</Start>
+							<End>187200000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>270000000</Start>
+							<End>273600000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>356400000</Start>
+							<End>360000000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>442800000</Start>
+							<End>446400000</End>
+							<Value>3</Value>
+						</Interval>
+						<Interval>
+							<Start>529200000</Start>
+							<End>532800000</End>
+							<Value>3</Value>
+						</Interval>
+					</Intervals>
+					<Exceptions>
+					</Exceptions>
+				</Schedule>
+				<Schedule>
+					<Id>1617482089772</Id>
+					<Name><![CDATA[synchronousEventSchedule1]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-390</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9044,7 +9291,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617404927618</Id>
 					<Name><![CDATA[moveTo]]></Name>
-					<X>-340</X><Y>950</Y>
+					<X>-300</X><Y>950</Y>
 					<Label><X>-15</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9314,7 +9561,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617406486009</Id>
 					<Name><![CDATA[moveTo6]]></Name>
-					<X>-340</X><Y>1010</Y>
+					<X>-340</X><Y>1050</Y>
 					<Label><X>-15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9470,7 +9717,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617406504587</Id>
 					<Name><![CDATA[release7]]></Name>
-					<X>-220</X><Y>1010</Y>
+					<X>-220</X><Y>1050</Y>
 					<Label><X>-10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9575,7 +9822,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617406527707</Id>
 					<Name><![CDATA[outsideTime]]></Name>
-					<X>-110</X><Y>1010</Y>
+					<X>-110</X><Y>1050</Y>
 					<Label><X>-15</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9637,6 +9884,93 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1617481416855</Id>
+					<Name><![CDATA[isInBookClub]]></Name>
+					<X>-380</X><Y>960</Y>
+					<Label><X>-20</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput]]></ClassName>
+							<ItemName><![CDATA[1412336242931]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.isInBookClub]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -16085,6 +16419,278 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 
 					<Z>0</Z>
 				</Network>
+				<Group>
+					<Id>1617482557620</Id>
+					<Name><![CDATA[clock]]></Name>
+					<X>-710</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Oval>
+					<Id>1617482557622</Id>
+					<Name><![CDATA[face]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>-50</X><Y>-60</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>40</RadiusX>
+					<RadiusY>40</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-460545</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
+				<Text>
+					<Id>1617482557624</Id>
+					<Name><![CDATA[weekdayText]]></Name>
+					<X>0</X><Y>-25</Y>
+					<Label><X>70</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>2</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<ColorCode><![CDATA[getDayOfWeek() == SATURDAY || getDayOfWeek() == SUNDAY ?
+	red : steelBlue]]></ColorCode>
+					<Text><![CDATA[TUE]]></Text>
+					<TextCode><![CDATA[formatDayOfWeek(getDayOfWeek(), false)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1617482557626</Id>
+					<Name><![CDATA[dateText]]></Name>
+					<X>0</X><Y>-15</Y>
+					<Label><X>70</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>2</Z>
+					<ZCode><![CDATA[1.01]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<Text><![CDATA[02 Nov]]></Text>
+					<TextCode><![CDATA[String.format("%02d", getDayOfMonth())
+ + " " + formatMonth(getMonth(), false)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1617482557628</Id>
+					<Name><![CDATA[timeText]]></Name>
+					<X>0</X><Y>10</Y>
+					<Label><X>70</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>2</Z>
+					<ZCode><![CDATA[1.01]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<Text><![CDATA[18:23]]></Text>
+					<TextCode><![CDATA[String.format("%02d:%02d", 
+ getHourOfDay(), getMinute())]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Group>
+					<Id>1617482557630</Id>
+					<Name><![CDATA[hourMarks]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[12]]></Code>
+					</ReplicationCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>1</Z>
+					<Rotation>0.0</Rotation>
+					<RotationCode><![CDATA[( index / 12. ) * 2 * PI]]></RotationCode>
+
+			<Presentation>
+				<Oval>
+					<Id>1617482557632</Id>
+					<Name><![CDATA[oval1]]></Name>
+					<X>0</X><Y>-36</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>2</RadiusX>
+					<RadiusY>2</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-5192482</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1617482557634</Id>
+					<Name><![CDATA[minuteGroup]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>2</Z>
+					<Rotation>0.0</Rotation>
+					<RotationCode><![CDATA[( getMinute() / 60. ) * 2 * PI]]></RotationCode>
+
+			<Presentation>
+				<Polyline>
+					<Id>1617482557636</Id>
+					<Name><![CDATA[minutes]]></Name>
+					<X>-2</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-16777216</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-42</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>false</Closed>
+				</Polyline>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1617482557638</Id>
+					<Name><![CDATA[hourGroup]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>1</Z>
+					<Rotation>0.0</Rotation>
+					<RotationCode><![CDATA[( ( getHourOfDay() + getMinute() / 60. ) / 12. ) * 2 * PI]]></RotationCode>
+
+			<Presentation>
+				<Polyline>
+					<Id>1617482557640</Id>
+					<Name><![CDATA[hours]]></Name>
+					<X>-2</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-16777216</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>1</X><Y>-25</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-28</Y><Z>0</Z></Point>
+					   <Point><X>3</X><Y>-25</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>false</Closed>
+				</Polyline>
+			</Presentation>
+
+				</Group>
+				<Oval>
+					<Id>1617482557642</Id>
+					<Name><![CDATA[center]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>1</Z>
+					<ZHeight>4</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>1</RadiusX>
+					<RadiusY>1</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
+			</Presentation>
+
+				</Group>
 			</Presentation>
 
 				</Level>
@@ -16316,6 +16922,21 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Type><![CDATA[INode]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617481342665</Id>
+					<Name><![CDATA[isInBookClub]]></Name>
+					<X>350</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[randomTrue(0.4)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>

@@ -41,12 +41,7 @@
 
 for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 	roomRepresentations.put(careHomeFloorPlan.nodes().get(i), rooms.get(i));
-}
-
-//populating schedule enumerator
-scheduleEnumeration.put(0, new Pair(diningRoom, 10));
-scheduleEnumeration.put(1, new Pair(diningRoom, 2));
-]]></StartupCode>
+}]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1613768872920</Id>
@@ -204,6 +199,33 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					<Id>1617406808094</Id>
 					<Name><![CDATA[previousScheduleValue]]></Name>
 					<X>-630</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617578170612</Id>
+					<Name><![CDATA[eventsToday]]></Name>
+					<X>490</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617578312275</Id>
+					<Name><![CDATA[eventsThisWeek]]></Name>
+					<X>490</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -841,7 +863,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Variable Class="Parameter">
 					<Id>1617572929708</Id>
 					<Name><![CDATA[visitorSpeed]]></Name>
-					<X>350</X><Y>360</Y>
+					<X>350</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -865,7 +887,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Variable Class="Parameter">
 					<Id>1617572932503</Id>
 					<Name><![CDATA[nursesSpeed]]></Name>
-					<X>350</X><Y>390</Y>
+					<X>350</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -887,9 +909,9 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1617574531539</Id>
-					<Name><![CDATA[numberOfGatheringsPerWeek]]></Name>
-					<X>-970</X><Y>600</Y>
+					<Id>1617578126831</Id>
+					<Name><![CDATA[dailyEventLimit]]></Name>
+					<X>350</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -902,7 +924,31 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 							<Code><![CDATA[1]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1617574531537</Id>
+							<Id>1617578126829</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617578139669</Id>
+					<Name><![CDATA[weeklyEventLimit]]></Name>
+					<X>350</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617578139667</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -991,6 +1037,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Variable Class="CollectionVariable">
 					<Id>1617396355780</Id>
 					<Name><![CDATA[scheduleEnumeration]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>-630</X><Y>660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1883,7 +1930,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617485818646</Id>
 					<Name><![CDATA[connector43]]></Name>
-					<X>-750</X><Y>1160</Y>
+					<X>-780</X><Y>1060</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1910,7 +1957,9 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>100</Y></Point>
+						<Point><X>80</X><Y>100</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1983,7 +2032,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617569078005</Id>
 					<Name><![CDATA[connector70]]></Name>
-					<X>-750</X><Y>1180</Y>
+					<X>-780</X><Y>1080</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2010,9 +2059,10 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>60</Y></Point>
-						<Point><X>160</X><Y>60</Y></Point>
+						<Point><X>10</X><Y>0</Y></Point>
+						<Point><X>10</X><Y>160</Y></Point>
+						<Point><X>80</X><Y>160</Y></Point>
+						<Point><X>190</X><Y>160</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2155,7 +2205,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617570676822</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>-770</X><Y>1120</Y>
+					<X>-800</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2182,14 +2232,14 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>-250</Y></Point>
+						<Point><X>-50</X><Y>0</Y></Point>
+						<Point><X>-50</X><Y>-150</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617571144502</Id>
 					<Name><![CDATA[connector7]]></Name>
-					<X>-750</X><Y>1200</Y>
+					<X>-780</X><Y>1100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2216,49 +2266,15 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>50</Y></Point>
-						<Point><X>-20</X><Y>50</Y></Point>
+						<Point><X>0</X><Y>150</Y></Point>
+						<Point><X>-20</X><Y>150</Y></Point>
 						<Point><X>-20</X><Y>-80</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1617573371738</Id>
-					<Name><![CDATA[connector15]]></Name>
-					<X>-750</X><Y>1120</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[freeTime]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out1]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveTo2]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617573682440</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>-680</X><Y>1050</Y>
+					<X>-680</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2291,7 +2307,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617573751898</Id>
 					<Name><![CDATA[connector17]]></Name>
-					<X>-510</X><Y>1050</Y>
+					<X>-510</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2324,7 +2340,7 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				<Connector>
 					<Id>1617573781165</Id>
 					<Name><![CDATA[connector19]]></Name>
-					<X>-470</X><Y>1050</Y>
+					<X>-470</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2352,9 +2368,42 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>80</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>-310</Y></Point>
-						<Point><X>-550</X><Y>-310</Y></Point>
-						<Point><X>-550</X><Y>-260</Y></Point>
+						<Point><X>80</X><Y>-280</Y></Point>
+						<Point><X>-550</X><Y>-280</Y></Point>
+						<Point><X>-550</X><Y>-230</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1617578028836</Id>
+					<Name><![CDATA[connector20]]></Name>
+					<X>-780</X><Y>1020</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[freeTime]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out1]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveTo2]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -2392,8 +2441,8 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 				</Event>
 				<Event>
 					<Id>1617137298277</Id>
-					<Name><![CDATA[resetVisitsToday]]></Name>
-					<X>390</X><Y>260</Y>
+					<Name><![CDATA[resetDailyCounts]]></Name>
+					<X>390</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2419,17 +2468,18 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[visitsToday = 0;]]></Action>
+					<Action><![CDATA[visitsToday = 0;
+eventsToday = 0;]]></Action>
 				</Event>
 				<Event>
-					<Id>1617574491211</Id>
-					<Name><![CDATA[scheduleEvents]]></Name>
-					<X>-970</X><Y>620</Y>
+					<Id>1617578275549</Id>
+					<Name><![CDATA[resetWeeklyCounts]]></Name>
+					<X>390</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="occuresOnce">
+					<Properties TriggerType="timeout" Mode="cyclic">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -2439,31 +2489,19 @@ scheduleEnumeration.put(1, new Pair(diningRoom, 2));
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1617609600000</OccurrenceDate>
+						<OccurrenceDate>1617177600000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[0]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[int week;
-int dayOfWeek;
-int hour;
-int duration;
-
-
-for(int i = 0; i < numberOfGatheringsPerWeek; i++){
-	week = 0;
-	dayOfWeek = uniform_discr(0,6);
-	hour = uniform_discr(16);
-	duration = uniform_discr(1,2);
-	
-	specialEventSchedule.addInterval(week, dayOfWeek, hour, 0, 0, week, dayOfWeek, hour + duration, 0, 0, 1);
-}]]></Action>
+					<Action><![CDATA[
+eventsToday = 0;]]></Action>
 				</Event>
 			</Events>
 			<Functions>
@@ -2562,223 +2600,9 @@ if(previousScheduleValue != -1){
 					</Exceptions>
 				</Schedule>
 				<Schedule>
-					<Id>1617396194358</Id>
+					<Id>1617485893794</Id>
 					<Name><![CDATA[synchronousEventSchedule]]></Name>
 					<X>-630</X><Y>680</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ValueType>integer</ValueType>
-					<UnitType><![CDATA[NONE]]></UnitType>
-					<DefaultValue>-1</DefaultValue>
-					<RepresentationMode>intervals</RepresentationMode>
-					<RepresentationType>week</RepresentationType>
-					<FirstDayOfWeek>sunday</FirstDayOfWeek>
-					<TimeUnitsInterval>hours</TimeUnitsInterval>
-					<RepeatTime>86400000</RepeatTime>
-					<RepeatTimeInterval>days</RepeatTimeInterval>
-					<IsSnapTo>false</IsSnapTo>
-					<SnapTo>1617396307308</SnapTo>
-					<SnapToTimeUnits>minutes</SnapToTimeUnits>
-					<AllDayExceptionMode>false</AllDayExceptionMode>
-					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
-					<IntervalsQuery>
-						<TableReference>
-						</TableReference>
-							<StartColumnReference>
-							</StartColumnReference>
-							<EndColumnReference>
-							</EndColumnReference>
-							<ValueColumnReference>
-							</ValueColumnReference>
-					</IntervalsQuery>
-					<Action><![CDATA[updatePreviousScheduleValue();]]></Action>
-					<Intervals>
-						<Interval>
-							<Start>79200000</Start>
-							<End>3600000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>165600000</Start>
-							<End>90000000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>252000000</Start>
-							<End>176400000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>338400000</Start>
-							<End>262800000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>424800000</Start>
-							<End>349200000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>511200000</Start>
-							<End>435600000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>597600000</Start>
-							<End>522000000</End>
-							<Value>0</Value>
-						</Interval>
-						<Interval>
-							<Start>3600000</Start>
-							<End>7200000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>90000000</Start>
-							<End>93600000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>176400000</Start>
-							<End>180000000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>262800000</Start>
-							<End>266400000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>349200000</Start>
-							<End>352800000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>435600000</Start>
-							<End>439200000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>522000000</Start>
-							<End>525600000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>21600000</Start>
-							<End>28800000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>108000000</Start>
-							<End>115200000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>194400000</Start>
-							<End>201600000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>280800000</Start>
-							<End>288000000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>367200000</Start>
-							<End>374400000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>453600000</Start>
-							<End>460800000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>540000000</Start>
-							<End>547200000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>43200000</Start>
-							<End>50400000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>129600000</Start>
-							<End>136800000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>216000000</Start>
-							<End>223200000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>302400000</Start>
-							<End>309600000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>388800000</Start>
-							<End>396000000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>475200000</Start>
-							<End>482400000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>561600000</Start>
-							<End>568800000</End>
-							<Value>1</Value>
-						</Interval>
-						<Interval>
-							<Start>14400000</Start>
-							<End>18000000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>100800000</Start>
-							<End>104400000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>187200000</Start>
-							<End>190800000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>273600000</Start>
-							<End>277200000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>360000000</Start>
-							<End>363600000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>446400000</Start>
-							<End>450000000</End>
-							<Value>2</Value>
-						</Interval>
-						<Interval>
-							<Start>532800000</Start>
-							<End>536400000</End>
-							<Value>2</Value>
-						</Interval>
-					</Intervals>
-					<Exceptions>
-					</Exceptions>
-				</Schedule>
-				<Schedule>
-					<Id>1617485893794</Id>
-					<Name><![CDATA[synchronousEventSchedule1]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-400</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2880,74 +2704,74 @@ if(previousScheduleValue != -1){
 							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>36000000</Start>
-							<End>39600000</End>
-							<Value>2</Value>
+							<Start>46800000</Start>
+							<End>54000000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>122400000</Start>
-							<End>126000000</End>
-							<Value>2</Value>
+							<Start>133200000</Start>
+							<End>140400000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>208800000</Start>
-							<End>212400000</End>
-							<Value>2</Value>
+							<Start>219600000</Start>
+							<End>226800000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>295200000</Start>
-							<End>298800000</End>
-							<Value>2</Value>
+							<Start>306000000</Start>
+							<End>313200000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>381600000</Start>
-							<End>385200000</End>
-							<Value>2</Value>
+							<Start>392400000</Start>
+							<End>399600000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>468000000</Start>
-							<End>471600000</End>
-							<Value>2</Value>
+							<Start>478800000</Start>
+							<End>486000000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>554400000</Start>
-							<End>558000000</End>
-							<Value>2</Value>
+							<Start>565200000</Start>
+							<End>572400000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>43200000</Start>
-							<End>46800000</End>
-							<Value>3</Value>
+							<Start>61200000</Start>
+							<End>68400000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>129600000</Start>
-							<End>133200000</End>
-							<Value>3</Value>
+							<Start>147600000</Start>
+							<End>154800000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>216000000</Start>
-							<End>219600000</End>
-							<Value>3</Value>
+							<Start>234000000</Start>
+							<End>241200000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>302400000</Start>
-							<End>306000000</End>
-							<Value>3</Value>
+							<Start>320400000</Start>
+							<End>327600000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>388800000</Start>
-							<End>392400000</End>
-							<Value>3</Value>
+							<Start>406800000</Start>
+							<End>414000000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>475200000</Start>
-							<End>478800000</End>
-							<Value>3</Value>
+							<Start>493200000</Start>
+							<End>500400000</End>
+							<Value>1</Value>
 						</Interval>
 						<Interval>
-							<Start>561600000</Start>
-							<End>565200000</End>
-							<Value>3</Value>
+							<Start>579600000</Start>
+							<End>586800000</End>
+							<Value>1</Value>
 						</Interval>
 					</Intervals>
 					<Exceptions>
@@ -2956,6 +2780,7 @@ if(previousScheduleValue != -1){
 				<Schedule>
 					<Id>1617575191828</Id>
 					<Name><![CDATA[specialEventSchedule]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>-630</X><Y>700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2965,7 +2790,7 @@ if(previousScheduleValue != -1){
 					<UnitType><![CDATA[NONE]]></UnitType>
 					<DefaultValue>-1</DefaultValue>
 					<RepresentationMode>intervals</RepresentationMode>
-					<RepresentationType>timeUnits</RepresentationType>
+					<RepresentationType>week</RepresentationType>
 					<FirstDayOfWeek>sunday</FirstDayOfWeek>
 					<TimeUnitsInterval>weeks</TimeUnitsInterval>
 					<RepeatTime>1209600000</RepeatTime>
@@ -2974,7 +2799,7 @@ if(previousScheduleValue != -1){
 					<SnapTo>0</SnapTo>
 					<SnapToTimeUnits>minutes</SnapToTimeUnits>
 					<AllDayExceptionMode>false</AllDayExceptionMode>
-					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<LoadFromDatabase><![CDATA[true]]></LoadFromDatabase>
 					<IntervalsQuery>
 						<TableReference>
 						</TableReference>
@@ -2988,6 +2813,12 @@ if(previousScheduleValue != -1){
 					<Intervals>
 					</Intervals>
 					<Exceptions>
+						<Exception>
+							<Annually>true</Annually>
+							<Start>1617576180000</Start>
+							<End>1617662580000</End>
+							<Value>0</Value>
+						</Exception>
 					</Exceptions>
 				</Schedule>
 			</Schedules>
@@ -6226,7 +6057,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[exitNumber]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[synchronousEventSchedule.getValue()]]></Code>
+								<Code><![CDATA[synchronousEventSchedule2.getValue()]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7473,7 +7304,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617570673278</Id>
 					<Name><![CDATA[freeTime]]></Name>
-					<X>-780</X><Y>1110</Y>
+					<X>-810</X><Y>1010</Y>
 					<Label><X>-55</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7499,7 +7330,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
+								<Code><![CDATA[false //specialEventSchedule != -1]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7596,7 +7427,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 				<EmbeddedObject>
 					<Id>1617573680389</Id>
 					<Name><![CDATA[moveTo2]]></Name>
-					<X>-720</X><Y>1030</Y>
+					<X>-720</X><Y>1000</Y>
 					<Label><X>-15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7770,7 +7601,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<EmbeddedObject>
 					<Id>1617573751853</Id>
 					<Name><![CDATA[party]]></Name>
-					<X>-510</X><Y>1030</Y>
+					<X>-510</X><Y>1000</Y>
 					<Label><X>-5</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7886,7 +7717,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<EmbeddedObject>
 					<Id>1617573751878</Id>
 					<Name><![CDATA[release1]]></Name>
-					<X>-610</X><Y>1030</Y>
+					<X>-610</X><Y>1000</Y>
 					<Label><X>-15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28851,7 +28682,10 @@ T agent - the agent. ]]></Description>
 					<ParameterName><![CDATA[nursesSpeed]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[numberOfGatheringsPerWeek]]></ParameterName>
+					<ParameterName><![CDATA[dailyEventLimit]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[weeklyEventLimit]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
@@ -28974,7 +28808,10 @@ T agent - the agent. ]]></Description>
 				<Id>1617572932503</Id>
 			</FreeformParamValue>
 			<FreeformParamValue>	
-				<Id>1617574531539</Id>
+				<Id>1617578126831</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617578139669</Id>
 			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
@@ -29089,7 +28926,11 @@ T agent - the agent. ]]></Description>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
-				<Id>1617574531539</Id>
+				<Id>1617578126831</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617578139669</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>

@@ -17604,7 +17604,7 @@ theAgent.sphere.setVisible(true);
 				<Variable Class="PlainVariable">
 					<Id>1617656874637</Id>
 					<Name><![CDATA[isAsleep]]></Name>
-					<X>170</X><Y>240</Y>
+					<X>260</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17631,21 +17631,6 @@ theAgent.sphere.setVisible(true);
 					</Properties>
 
 				</Variable>
-				<Variable Class="AuxVariable">
-					<Id>1617655460877</Id>
-					<Name><![CDATA[happinessInflow]]></Name>
-					<X>40</X><Y>130</Y>
-					<Label><X>-40</X><Y>-15</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[0]]></Formula>
-						<Value><![CDATA[0]]></Value>
-						<Color/>
-					</Properties>
-
-				</Variable>
 				<Variable Class="StockVariable">
 					<Id>1616446449348</Id>
 					<Name><![CDATA[happiness]]></Name>
@@ -17664,14 +17649,14 @@ theAgent.sphere.setVisible(true);
 				</Variable>
 				<Variable Class="Flow">
 					<Id>1616446494402</Id>
-					<Name><![CDATA[flow]]></Name>
+					<Name><![CDATA[happinessInflow]]></Name>
 					<X>160</X><Y>80</Y>
-					<Label><X>-10</X><Y>-20</Y></Label>
+					<Label><X>-65</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1616446449348" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[happinessInflow]]></Formula>
+						<Formula><![CDATA[0]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -17748,28 +17733,13 @@ theAgent.sphere.setVisible(true);
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1617655460877" TargetId="1616446494402" Polarity="null">
-					<Height>-15.455</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>220</X><Y>-50</Y></Direction>
-					<Id>1617655465235</Id>
-					<Name><![CDATA[happinessInflow - flow]]></Name>
-					<X>40</X><Y>130</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
 				<Link SourceId="1617656874637" TargetId="1616449761852" Polarity="null">
 					<Height>-15.419</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>280</X><Y>-160</Y></Direction>
+					<Direction><X>190</X><Y>-160</Y></Direction>
 					<Id>1617657625026</Id>
 					<Name><![CDATA[isAsleep - happinessDecay]]></Name>
-					<X>170</X><Y>240</Y>
+					<X>260</X><Y>240</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17806,7 +17776,9 @@ theAgent.sphere.setVisible(true);
 						<Name><![CDATA[changeInHappiness]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
-					<Body><![CDATA[happinessInflow += changeInHappiness;]]></Body>
+					<Body><![CDATA[traceln(happinessInflow);
+happinessInflow += changeInHappiness; 
+traceln(happinessInflow);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -18439,11 +18411,11 @@ T agent - the agent.
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[traceln("Before");
-traceln(agent.residentToVisit.mentalHealth.happiness);
+								<Code><![CDATA[//traceln("Before");
+//traceln(agent.residentToVisit.mentalHealth.happiness);
 agent.residentToVisit.resetHappiness();
-traceln("After");
-traceln(agent.residentToVisit.mentalHealth.happiness);]]></Code>
+//traceln("After");
+//traceln(agent.residentToVisit.mentalHealth.happiness);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>

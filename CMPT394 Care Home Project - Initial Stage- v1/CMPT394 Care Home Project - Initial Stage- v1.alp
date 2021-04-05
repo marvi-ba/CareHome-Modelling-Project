@@ -247,6 +247,9 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-1]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -968,6 +971,102 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617658142207</Id>
+					<Name><![CDATA[partyHappinessChange]]></Name>
+					<X>-350</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617658142205</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617658163634</Id>
+					<Name><![CDATA[courtYardHappinessChange]]></Name>
+					<X>-350</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617658163632</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617658180092</Id>
+					<Name><![CDATA[libraryHappinessChange]]></Name>
+					<X>-350</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617658180090</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617658201331</Id>
+					<Name><![CDATA[dinningHappinessChange]]></Name>
+					<X>-350</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617658201329</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1614895009261</Id>
 					<Name><![CDATA[bedCoordinates]]></Name>
@@ -1113,39 +1212,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>170</Y></Point>
 						<Point><X>60</X><Y>170</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1617058796812</Id>
-					<Name><![CDATA[connector10]]></Name>
-					<X>-1490</X><Y>350</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[visitorSource]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Source]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[antigenTestRequired]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>160</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2472,6 +2538,39 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Point><X>-280</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1617659511842</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>-1560</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[visitorSource]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[antigenTestRequired]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>230</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
 			<Events>
 				<Event>
@@ -2507,7 +2606,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				</Event>
 				<Event>
 					<Id>1617137298277</Id>
-					<Name><![CDATA[resetDailyCounts]]></Name>
+					<Name><![CDATA[dailyBookKeeping]]></Name>
 					<X>390</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2534,8 +2633,14 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[visitsToday = 0;
-eventsToday = 0;]]></Action>
+					<Action><![CDATA[//Reset Daily Counts
+visitsToday = 0;
+eventsToday = 0;
+
+//Record Daily Stats
+for(Resident r : residents){
+	r.mentalHealth.recordHappinessValue();
+}]]></Action>
 				</Event>
 				<Event>
 					<Id>1617578275549</Id>
@@ -2625,14 +2730,14 @@ if(previousScheduleValue != -1){
 				<Schedule>
 					<Id>1617319635957</Id>
 					<Name><![CDATA[visitingHoursSchedule]]></Name>
-					<X>-1510</X><Y>390</Y>
+					<X>-1600</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<ValueType>double_</ValueType>
 					<UnitType><![CDATA[RATE]]></UnitType>
-					<UnitOfValue Class="RateUnits"><![CDATA[PER_MINUTE]]></UnitOfValue>
+					<UnitOfValue Class="RateUnits"><![CDATA[PER_HOUR]]></UnitOfValue>
 					<DefaultValue>0.0</DefaultValue>
 					<RepresentationMode>intervals</RepresentationMode>
 					<RepresentationType>calendar</RepresentationType>
@@ -2659,7 +2764,7 @@ if(previousScheduleValue != -1){
 						<Interval>
 							<Start>36000000</Start>
 							<End>61200000</End>
-							<Value>1.0</Value>
+							<Value>5.0</Value>
 						</Interval>
 					</Intervals>
 					<Exceptions>
@@ -2884,6 +2989,8 @@ if(previousScheduleValue != -1){
 	}else{
 		specialEventScheduleDejureValue = -1;
 	}
+}else{			
+	specialEventScheduleDejureValue = -1;
 }]]></Action>
 					<Intervals>
 						<Interval>
@@ -3691,7 +3798,8 @@ currentResidentPopulation += 1;]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(diningRoom).roomInfectiousCount += 1;
-}]]></Code>
+}
+agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3702,7 +3810,8 @@ currentResidentPopulation += 1;]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
-}]]></Code>
+}
+agent.mentalHealth.addToHappinessInflow(-dinningHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4721,7 +4830,7 @@ currentResidentPopulation += 1;]]></Code>
 				<EmbeddedObject>
 					<Id>1616451117281</Id>
 					<Name><![CDATA[visitorSource]]></Name>
-					<X>-1520</X><Y>340</Y>
+					<X>-1590</X><Y>340</Y>
 					<Label><X>-5</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4792,15 +4901,9 @@ currentResidentPopulation += 1;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[limitArrivals]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[true]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maxArrivals]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[10]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationType]]></Name>
@@ -6547,7 +6650,8 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount += 1;
-}]]></Code>
+}
+agent.mentalHealth.toggleSleep();]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6558,7 +6662,8 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount -= 1;
-}]]></Code>
+}
+agent.mentalHealth.toggleSleep();]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6660,7 +6765,8 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(library).roomInfectiousCount += 1;
-}]]></Code>
+}
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6671,7 +6777,8 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(library).roomInfectiousCount -= 1;
-}]]></Code>
+}
+agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7030,6 +7137,9 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(1);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
@@ -7189,7 +7299,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[moveTo8_destinationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[walkPathStart]]></Code>
+								<Code><![CDATA[courtYardCenter]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7239,6 +7349,19 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 							<Name><![CDATA[selectOutput5_probability5]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[.30]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[moveToWalkStart_destinationNode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[walkPathStart]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[moveToWalkStart_speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[.3]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -7456,6 +7579,9 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(partyHappinessChange);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit2]]></Name>
@@ -7465,6 +7591,9 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit5]]></Name>
@@ -7739,7 +7868,9 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(diningRoom).roomInfectiousCount += 1;
-} // If no parties due to intervention, just loop to freeTime]]></Code>
+} // If no parties due to intervention, just loop to freeTime
+
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7750,7 +7881,8 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
-}]]></Code>
+}
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7956,6 +8088,9 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(-partyHappinessChange);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
@@ -12213,6 +12348,9 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[50]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -13987,7 +14125,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				</Path>
 				<PointNode>
 					<Id>1617486266801</Id>
-					<Name><![CDATA[walkingPathStart]]></Name>
+					<Name><![CDATA[someNode]]></Name>
 					<X>600</X><Y>1730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -14645,7 +14783,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
 					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
-					<NetworkType>USER_DEF</NetworkType>
+					<NetworkType>SCALE_FREE</NetworkType>
 					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
@@ -14849,6 +14987,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 					<OnReceive><![CDATA[infectionBehaviour.receive(msg);]]></OnReceive>
 					<HandleReceiveInConnections>false</HandleReceiveInConnections>
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentReferenceId>1613773166309</AgentReferenceId>
 					<AgentLinkBidirectional>true</AgentLinkBidirectional>
 					<MessageType><![CDATA[Object]]></MessageType>
 					<DrawLine>true</DrawLine>
@@ -17462,6 +17601,21 @@ theAgent.sphere.setVisible(true);
 			<CurrentLevel>1616445978145</CurrentLevel>
 			<ConnectionsId>1616445978141</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1617656874637</Id>
+					<Name><![CDATA[isAsleep]]></Name>
+					<X>170</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false //true]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="AuxVariable">
 					<Id>1616449701547</Id>
 					<Name><![CDATA[happinessUnitLifeTime]]></Name>
@@ -17472,6 +17626,21 @@ theAgent.sphere.setVisible(true);
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
 						<Formula><![CDATA[50]]></Formula>
+						<Value><![CDATA[0]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1617655460877</Id>
+					<Name><![CDATA[happinessInflow]]></Name>
+					<X>40</X><Y>130</Y>
+					<Label><X>-40</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[0]]></Formula>
 						<Value><![CDATA[0]]></Value>
 						<Color/>
 					</Properties>
@@ -17502,7 +17671,7 @@ theAgent.sphere.setVisible(true);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1616446449348" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[0]]></Formula>
+						<Formula><![CDATA[happinessInflow]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -17521,7 +17690,7 @@ theAgent.sphere.setVisible(true);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1616446449348" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[happiness * 1 / happinessUnitLifeTime]]></Formula>
+						<Formula><![CDATA[!isAsleep ? (happiness * 1 / happinessUnitLifeTime) : 0]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -17531,6 +17700,21 @@ theAgent.sphere.setVisible(true);
 							<Point><X>190</X><Y>0</Y></Point>
 						</Points>
 					</Properties>
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1617656087903</Id>
+					<Name><![CDATA[dailyHappinessLevelRecord]]></Name>
+					<X>40</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedList]]></CollectionClass>
+						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
 				</Variable>
 			</Variables>
 			<Dependences>
@@ -17564,6 +17748,36 @@ theAgent.sphere.setVisible(true);
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
+				<Link SourceId="1617655460877" TargetId="1616446494402" Polarity="null">
+					<Height>-15.455</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>220</X><Y>-50</Y></Direction>
+					<Id>1617655465235</Id>
+					<Name><![CDATA[happinessInflow - flow]]></Name>
+					<X>40</X><Y>130</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1617656874637" TargetId="1616449761852" Polarity="null">
+					<Height>-15.419</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>280</X><Y>-160</Y></Direction>
+					<Id>1617657625026</Id>
+					<Name><![CDATA[isAsleep - happinessDecay]]></Name>
+					<X>170</X><Y>240</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
 			</Dependences>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -17577,6 +17791,47 @@ theAgent.sphere.setVisible(true);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[happiness = 100;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617655428808</Id>
+					<Name><![CDATA[addToHappinessInflow]]></Name>
+					<X>40</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[changeInHappiness]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[happinessInflow += changeInHappiness;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617656067206</Id>
+					<Name><![CDATA[recordHappinessValue]]></Name>
+					<X>40</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[dailyHappinessLevelRecord.addLast(happiness);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617656823569</Id>
+					<Name><![CDATA[toggleSleep]]></Name>
+					<X>40</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[isAsleep = !isAsleep;
+]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -18183,6 +18438,13 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("Before");
+traceln(agent.residentToVisit.mentalHealth.happiness);
+agent.residentToVisit.resetHappiness();
+traceln("After");
+traceln(agent.residentToVisit.mentalHealth.happiness);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -21755,6 +22017,73 @@ T agent - the agent.
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617661041456</Id>
+					<Name><![CDATA[moveToWalkStart_destinationNode]]></Name>
+					<Description><![CDATA[[Visible if Destination is the Specified node] The name of the network node where the agent will move.
+
+<b>Parameter:</b> 
+T agent - the agent. 
+]]></Description>
+					<X>300</X><Y>800</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="false" ModificatorType="DYNAMIC">
+						<Type><![CDATA[INode]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<MethodArgument>
+							<Name><![CDATA[agent]]></Name>
+							<Type><![CDATA[Resident]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1617661041454</Id>
+							<Label><![CDATA[moveTo8, Node]]></Label>
+							<EditorContolType>ELEMENT_CHOOSER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617661041467</Id>
+					<Name><![CDATA[moveToWalkStart_speed]]></Name>
+					<Description><![CDATA[The speed of agent.
+
+<b>Parameter:</b> 
+T agent - the agent. 
+]]></Description>
+					<X>300</X><Y>850</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="false" ModificatorType="DYNAMIC">
+						<Type><![CDATA[]]></Type>
+						<UnitType><![CDATA[VELOCITY]]></UnitType>
+						<UnitOfValue Class="SpeedUnits"><![CDATA[MPS]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeUnitValue">
+							<Code><![CDATA[]]></Code>
+							<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+						</DefaultValue>
+						<MethodArgument>
+							<Name><![CDATA[agent]]></Name>
+							<Type><![CDATA[Resident]]></Type>
+						</MethodArgument>
+						<ParameterEditor>
+							<Id>1617661041465</Id>
+							<Label><![CDATA[moveTo8, Speed]]></Label>
+							<EditorContolType>UNIT_EDITOR</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Ports>
 				<Port>
@@ -21786,7 +22115,7 @@ T agent - the agent.
 				<Connector>
 					<Id>1617569075706</Id>
 					<Name><![CDATA[connector54]]></Name>
-					<X>520</X><Y>490</Y>
+					<X>470</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -21813,8 +22142,8 @@ T agent - the agent.
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>-90</Y></Point>
+						<Point><X>-30</X><Y>0</Y></Point>
+						<Point><X>-30</X><Y>-90</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -21853,7 +22182,7 @@ T agent - the agent.
 				<Connector>
 					<Id>1617569075710</Id>
 					<Name><![CDATA[connector65]]></Name>
-					<X>560</X><Y>490</Y>
+					<X>610</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -21861,7 +22190,7 @@ T agent - the agent.
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
-						<ItemName><![CDATA[moveTo8]]></ItemName>
+						<ItemName><![CDATA[moveToWalkStart]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -21881,8 +22210,8 @@ T agent - the agent.
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>40</Y></Point>
-						<Point><X>-160</X><Y>40</Y></Point>
-						<Point><X>-160</X><Y>110</Y></Point>
+						<Point><X>-210</X><Y>40</Y></Point>
+						<Point><X>-210</X><Y>110</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -22475,6 +22804,39 @@ T agent - the agent.
 						<Point><X>0</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1617660946604</Id>
+					<Name><![CDATA[connector2]]></Name>
+					<X>570</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
+						<ItemName><![CDATA[moveToWalkStart]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
+						<ItemName><![CDATA[moveTo8]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-60</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
 			<AgentLinks>
 				<AgentLink>
@@ -22542,6 +22904,9 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.DEST_XYZ]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
@@ -22560,12 +22925,21 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationX]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.randomRoomX]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationY]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.randomRoomY]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationZ]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[0]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationLatitude]]></Name>
@@ -22633,6 +23007,12 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Point randomRoomPoint = moveTo6_destinationNode(agent).randomPointInside();
+
+agent.randomRoomX = randomRoomPoint.getX();
+agent.randomRoomY = randomRoomPoint.getY();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -22856,6 +23236,9 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(-main.courtYardHappinessChange);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -24517,8 +24900,8 @@ T agent - the agent.
 				<EmbeddedObject>
 					<Id>1617569075692</Id>
 					<Name><![CDATA[moveTo8]]></Name>
-					<X>520</X><Y>470</Y>
-					<Label><X>-15</X><Y>-15</Y></Label>
+					<X>470</X><Y>470</Y>
+					<Label><X>-20</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -24633,6 +25016,13 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[/**Model logic error:
+
+root.courtYardBehaviour.moveTo8:
+at 303 hours in. At any speed. 
+**/]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -24951,6 +25341,169 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1617660945245</Id>
+					<Name><![CDATA[moveToWalkStart]]></Name>
+					<X>570</X><Y>470</Y>
+					<Label><X>-10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[MoveTo]]></ClassName>
+							<ItemName><![CDATA[1412336243157]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[moveToWalkStart_destinationNode(agent)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationResource]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationAgent]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[useOffsets]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[offsetZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[straightMovement]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationUseRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destinationVerticalRotation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[movementType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[tripTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setSpeed]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[moveToWalkStart_speed(agent)]]></Code>
+								<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[restoreSpeedOnArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onRemove]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -28859,6 +29412,18 @@ T agent - the agent. ]]></Description>
 				<Parameter>
 					<ParameterName><![CDATA[weeklyEventLimit]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[partyHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[courtYardHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[libraryHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[dinningHappinessChange]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -28985,6 +29550,18 @@ T agent - the agent. ]]></Description>
 			<FreeformParamValue>	
 				<Id>1617578139669</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658142207</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658163634</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658180092</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658201331</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -29103,6 +29680,22 @@ T agent - the agent. ]]></Description>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1617578139669</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658142207</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658163634</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658180092</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658201331</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>

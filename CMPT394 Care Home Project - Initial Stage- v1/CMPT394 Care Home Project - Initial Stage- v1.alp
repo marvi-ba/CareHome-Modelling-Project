@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.2.202012241846" AlpVersion="8.7.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -2088,6 +2088,8 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>30</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
+						<Point><X>100</X><Y>50</Y></Point>
 						<Point><X>100</X><Y>70</Y></Point>
 					</Points>
 				</Connector>
@@ -3811,7 +3813,7 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
 }
-agent.mentalHealth.addToHappinessInflow(-dinningHappinessChange);]]></Code>
+agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6651,7 +6653,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount += 1;
 }
-agent.mentalHealth.toggleSleep();]]></Code>
+agent.mentalHealth.toggleSleep(true);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6663,7 +6665,7 @@ agent.mentalHealth.toggleSleep();]]></Code>
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount -= 1;
 }
-agent.mentalHealth.toggleSleep();]]></Code>
+agent.mentalHealth.toggleSleep(false);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7188,7 +7190,7 @@ agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 					<Id>1617569076071</Id>
 					<Name><![CDATA[courtYardBehaviour]]></Name>
 					<X>-590</X><Y>1220</Y>
-					<Label><X>-55</X><Y>-5</Y></Label>
+					<Label><X>5</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -8953,7 +8955,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722738</Id>
 					<Name><![CDATA[bed1]]></Name>
-					<X>10</X><Y>0</Y>
+					<X>11.312999999999988</X><Y>5.634999999999991</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9104,7 +9106,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722746</Id>
 					<Name><![CDATA[bed2]]></Name>
-					<X>9.999999999999972</X><Y>50</Y>
+					<X>11.313999999999993</X><Y>55.63499999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10196,7 +10198,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722810</Id>
 					<Name><![CDATA[bed5]]></Name>
-					<X>10</X><Y>-70</Y>
+					<X>-8.687000000000012</X><Y>-64.36599999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11132,7 +11134,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722864</Id>
 					<Name><![CDATA[bed10]]></Name>
-					<X>10</X><Y>0</Y>
+					<X>11.313999999999993</X><Y>5.6340000000000146</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11841,7 +11843,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722904</Id>
 					<Name><![CDATA[bed15]]></Name>
-					<X>0</X><Y>-20</Y>
+					<X>-8.687000000000012</X><Y>-24.365999999999985</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12028,7 +12030,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<Attractor>
 					<Id>1616460722914</Id>
 					<Name><![CDATA[bed14]]></Name>
-					<X>10</X><Y>-70</Y>
+					<X>-8.687000000000012</X><Y>-64.36599999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17604,7 +17606,7 @@ theAgent.sphere.setVisible(true);
 				<Variable Class="PlainVariable">
 					<Id>1617656874637</Id>
 					<Name><![CDATA[isAsleep]]></Name>
-					<X>260</X><Y>240</Y>
+					<X>510</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17612,14 +17614,29 @@ theAgent.sphere.setVisible(true);
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false //true]]></Code>
+							<Code><![CDATA[true	//initially true because residents are sleeping.]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617720403978</Id>
+					<Name><![CDATA[happinessIncrease]]></Name>
+					<X>190</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="AuxVariable">
 					<Id>1616449701547</Id>
 					<Name><![CDATA[happinessUnitLifeTime]]></Name>
-					<X>40</X><Y>160</Y>
+					<X>570</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17656,7 +17673,7 @@ theAgent.sphere.setVisible(true);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1616446449348" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[0]]></Formula>
+						<Formula><![CDATA[0 + happinessIncrease]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -17670,7 +17687,7 @@ theAgent.sphere.setVisible(true);
 					<Id>1616449761852</Id>
 					<Name><![CDATA[happinessDecay]]></Name>
 					<X>360</X><Y>80</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<Label><X>10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -17689,7 +17706,7 @@ theAgent.sphere.setVisible(true);
 				<Variable Class="CollectionVariable">
 					<Id>1617656087903</Id>
 					<Name><![CDATA[dailyHappinessLevelRecord]]></Name>
-					<X>40</X><Y>360</Y>
+					<X>40</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17706,10 +17723,10 @@ theAgent.sphere.setVisible(true);
 				<Link SourceId="1616449701547" TargetId="1616449761852" Polarity="null">
 					<Height>-46.746</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>410</X><Y>-80</Y></Direction>
+					<Direction><X>-120</X><Y>50</Y></Direction>
 					<Id>1616449795875</Id>
 					<Name><![CDATA[happinessUnitLifeTime - happinessDecay]]></Name>
-					<X>40</X><Y>160</Y>
+					<X>570</X><Y>30</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17736,10 +17753,25 @@ theAgent.sphere.setVisible(true);
 				<Link SourceId="1617656874637" TargetId="1616449761852" Polarity="null">
 					<Height>-15.419</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>190</X><Y>-160</Y></Direction>
+					<Direction><X>-60</X><Y>-90</Y></Direction>
 					<Id>1617657625026</Id>
 					<Name><![CDATA[isAsleep - happinessDecay]]></Name>
-					<X>260</X><Y>240</Y>
+					<X>510</X><Y>170</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1617720403978" TargetId="1616446494402" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>70</X><Y>-70</Y></Direction>
+					<Id>1617720459851</Id>
+					<Name><![CDATA[happinessIncrease - happinessInflow]]></Name>
+					<X>190</X><Y>150</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17776,16 +17808,14 @@ theAgent.sphere.setVisible(true);
 						<Name><![CDATA[changeInHappiness]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
-					<Body><![CDATA[traceln(happinessInflow);
-happinessInflow += changeInHappiness; 
-traceln(happinessInflow);]]></Body>
+					<Body><![CDATA[happinessIncrease += changeInHappiness; ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1617656067206</Id>
 					<Name><![CDATA[recordHappinessValue]]></Name>
-					<X>40</X><Y>340</Y>
+					<X>40</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17802,7 +17832,11 @@ traceln(happinessInflow);]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[isAsleep = !isAsleep;
+					<Parameter>
+						<Name><![CDATA[isAgentAsleep]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[isAsleep = isAgentAsleep;
 ]]></Body>
 				</Function>
 			</Functions>

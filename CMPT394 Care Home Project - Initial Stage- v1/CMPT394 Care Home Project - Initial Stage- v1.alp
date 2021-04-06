@@ -35,8 +35,11 @@
 			<Id>1613768872922</Id>
 			<Name><![CDATA[Main]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<StartupCode><![CDATA[for(Attractor attractor : bedAttractors){
-	bedCoordinates.add(new Bed(attractor.getX(), attractor.getY()));
+			<StartupCode><![CDATA[for(Attractor attractor : bedAttractorsWard1){
+	bedCoordinates.add(new Bed(attractor.getX(), attractor.getY(), 1));
+}
+for(Attractor attractor : bedAttractorsWard2){
+	bedCoordinates.add(new Bed(attractor.getX(), attractor.getY(), 2));
 }
 
 for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
@@ -254,7 +257,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1613768901538</Id>
-					<Name><![CDATA[staffPopulation]]></Name>
+					<Name><![CDATA[nursePopulation]]></Name>
 					<X>40</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -265,7 +268,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[20]]></Code>
+							<Code><![CDATA[4]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1613768901536</Id>
@@ -1091,6 +1094,30 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617748084784</Id>
+					<Name><![CDATA[enableStaffCohorting]]></Name>
+					<X>690</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617748084782</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1614895009261</Id>
 					<Name><![CDATA[bedCoordinates]]></Name>
@@ -1123,7 +1150,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1615063558209</Id>
-					<Name><![CDATA[bedAttractors]]></Name>
+					<Name><![CDATA[bedAttractorsWard1]]></Name>
 					<X>270</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1134,7 +1161,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<ElementClass><![CDATA[Attractor]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 						<CollectionInitializer Class="CodeValue">
-							<Code><![CDATA[{ bed1, bed2, bed3, bed4, bed5, bed6, bed7, bed8, bed9, bed10, bed11, bed13, bed14, bed15, bed16, bed17, bed18, bed19, bed20 }]]></Code>
+							<Code><![CDATA[{ bed1, bed2, bed3, bed4, bed5, bed6, bed7, bed8, bed9, bed10, bed11, bed13, bed14, bed15 }]]></Code>
 						</CollectionInitializer>
 					</Properties>
 
@@ -1158,7 +1185,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Id>1616274901078</Id>
 					<Name><![CDATA[roomRepresentations]]></Name>
 					<X>380</X><Y>560</Y>
-					<Label><X>10</X><Y>0</Y></Label>
+					<Label><X>-50</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1166,6 +1193,24 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<CollectionClass><![CDATA[LinkedHashMap]]></CollectionClass>
 						<ElementClass><![CDATA[Node]]></ElementClass>
 						<ValueElementClass><![CDATA[Room]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1617750326210</Id>
+					<Name><![CDATA[bedAttractorsWard2]]></Name>
+					<X>410</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Attractor]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{ bed16, bed17, bed18, bed19, bed20 }]]></Code>
+						</CollectionInitializer>
 					</Properties>
 
 				</Variable>
@@ -2751,6 +2796,29 @@ if(previousScheduleValue != -1){
 	courtYardBehaviour.outsideTime.stopDelayForAll();
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[ResourcePool]]></ReturnType>
+					<Id>1617748037636</Id>
+					<Name><![CDATA[getAvailableNurses]]></Name>
+					<X>-790</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agent]]></Name>
+						<Type><![CDATA[Resident]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (enableStaffCohorting) {
+	if (agent.wardNumber == 1){
+		return availableNursesWard1;
+	}else{
+		return availableNursesWard2;
+	}
+}
+return availableNursesWard1;   // The default nurse pool if staff sharing allowed. ]]></Body>
+				</Function>
 			</Functions>
 			<Schedules>
 				<Schedule>
@@ -3709,6 +3777,7 @@ agent.setNetwork(careHomeFloorPlan);]]></Code>
 								<Code><![CDATA[for(Bed aBed : bedCoordinates){ // Look for an available bed to assign to resident.
 	if (aBed.owner == null){
 		agent.myBed = aBed;
+		agent.wardNumber = aBed.wardNumber;
 		
 		aBed.setOwner(agent);
 		break;
@@ -3948,7 +4017,7 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 				<EmbeddedObject>
 					<Id>1614980352102</Id>
 					<Name><![CDATA[availableNursesWard2]]></Name>
-					<X>-1310</X><Y>1100</Y>
+					<X>-1330</X><Y>1110</Y>
 					<Label><X>-25</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3977,7 +4046,7 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[enableStaffCohorting ? nursePopulation/2 : 0]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4403,7 +4472,7 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 						<Parameter>
 							<Name><![CDATA[resourcePool]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[availableNursesWard2]]></Code>
+								<Code><![CDATA[getAvailableNurses(agent)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5904,7 +5973,7 @@ visitsToday += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[getTested_resourcePool]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[availableNursesWard2]]></Code>
+								<Code><![CDATA[availableNursesWard1]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7491,7 +7560,7 @@ agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 						<Parameter>
 							<Name><![CDATA[seize2_resourcePool]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[availableNursesWard2]]></Code>
+								<Code><![CDATA[getAvailableNurses(agent)]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -8189,6 +8258,9 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[enableStaffCohorting ? nursePopulation/2 : nursePopulation]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacityBasedOnAttractors]]></Name>
@@ -8848,6 +8920,28 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 					<Width>30</Width>
 					<Height>20</Height>
 					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1617742399700</Id>
+					<Name><![CDATA[rectangle14]]></Name>
+					<X>730</X><Y>970</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>30</Width>
+					<Height>20</Height>
+					<Rotation>90.0</Rotation>
 					<FillColor>-1</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
@@ -16247,28 +16341,6 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 					<Z>0</Z>
 				</Network>
 				<Rectangle>
-					<Id>1617742399700</Id>
-					<Name><![CDATA[rectangle14]]></Name>
-					<X>730</X><Y>970</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>30</Width>
-					<Height>20</Height>
-					<Rotation>90.0</Rotation>
-					<FillColor>-1</FillColor>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Rectangle>
 					<Id>1617742481618</Id>
 					<Name><![CDATA[rectangle15]]></Name>
 					<X>820</X><Y>970</Y>
@@ -16800,6 +16872,21 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617749182781</Id>
+					<Name><![CDATA[wardNumber]]></Name>
+					<X>70</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 			</Variables>
@@ -31192,7 +31279,7 @@ T agent - the agent. ]]></Description>
 
 			<Parameters>			
 				<Parameter>
-					<ParameterName><![CDATA[staffPopulation]]></ParameterName>
+					<ParameterName><![CDATA[nursePopulation]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[residentPopulation]]></ParameterName>
@@ -31295,6 +31382,9 @@ T agent - the agent. ]]></Description>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[enableMaskUse]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[enableStaffCohorting]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
@@ -31437,6 +31527,9 @@ T agent - the agent. ]]></Description>
 			<FreeformParamValue>	
 				<Id>1617729915572</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617748084784</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -31577,6 +31670,10 @@ T agent - the agent. ]]></Description>
 				<Id>1617729915572</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617748084784</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
@@ -31615,13 +31712,15 @@ public class Bed implements Serializable {
 	public double xCoordinate = 0;
 	public double yCoordinate = 0;
 	public Resident owner = null;
+	public int wardNumber = 0;
 
     /**
      * Default constructor
      */
-    public Bed(double x, double y) {
+    public Bed(double x, double y, int ward) {
     	this.xCoordinate =  x;
     	this.yCoordinate = y;
+    	this.wardNumber = ward;
     }
     
     public double getX() {
@@ -31630,6 +31729,10 @@ public class Bed implements Serializable {
     
     public double getY() {
     	return this.yCoordinate;
+    }
+    
+    public int getWardNumber() {
+    	return this.wardNumber;
     }
     
     public void setOwner(Resident resident) {

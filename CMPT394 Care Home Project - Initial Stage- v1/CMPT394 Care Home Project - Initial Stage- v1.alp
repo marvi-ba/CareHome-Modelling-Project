@@ -255,6 +255,36 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617829688488</Id>
+					<Name><![CDATA[previousScheduleValueWard1]]></Name>
+					<X>-920</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617829730635</Id>
+					<Name><![CDATA[previousScheduleValueWard2]]></Name>
+					<X>-920</X><Y>690</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1613768901538</Id>
 					<Name><![CDATA[nursePopulation]]></Name>
@@ -1107,7 +1137,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1617748084782</Id>
@@ -2775,23 +2805,41 @@ eventsToday = 0;]]></Action>
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1617406056469</Id>
-					<Name><![CDATA[updateSynchScheduleValue]]></Name>
-					<X>-630</X><Y>640</Y>
+					<Name><![CDATA[updateDailyScheduleValue]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-770</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if(previousScheduleValue == 0){
+					<Parameter>
+						<Name><![CDATA[eventScheduleValue]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[wardNumber]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[// TODO: clean ths up. 
+previousValue = previousScheduleValue;
+if (wardNumber == 1) {
+	previousValue = previousScheduleValueWard1;
+}else{
+	previousValue = previousScheduleValueWard2;
+}
+
+
+if(previousValue == 0){
 	sleep.stopDelayForAll();
 }
-if(previousScheduleValue == 1){
+if(previousValue == 1){
 	dining.stopDelayForAll();
 }
 
-previousScheduleValue = synchronousEventSchedule.getValue();
+//previousScheduleValue = synchronousEventSchedule.getValue();
+previousValue = eventScheduleValue;
 
-
-if(previousScheduleValue != -1){
+if(previousValue != -1){
 	reading.stopDelayForAll();
 	courtYardBehaviour.outsideTime.stopDelayForAll();
 }]]></Body>
@@ -2801,7 +2849,7 @@ if(previousScheduleValue != -1){
 					<ReturnType><![CDATA[ResourcePool]]></ReturnType>
 					<Id>1617748037636</Id>
 					<Name><![CDATA[getAvailableNurses]]></Name>
-					<X>-790</X><Y>680</Y>
+					<X>-1150</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2818,6 +2866,53 @@ if(previousScheduleValue != -1){
 	}
 }
 return availableNursesWard1;   // The default nurse pool if staff sharing allowed. ]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[Schedule<Integer>]]></ReturnType>
+					<Id>1617828915932</Id>
+					<Name><![CDATA[getValueFromDailyScheduleForWard]]></Name>
+					<X>-1150</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agent]]></Name>
+						<Type><![CDATA[Resident]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (enableStaffCohorting){
+	if (agent.wardNumber == 1){
+		return eventScheduleForWard1;
+	}else{
+		return eventScheduleForWard2;
+	}
+} else {
+	return synchronousEventSchedule;
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617835202326</Id>
+					<Name><![CDATA[getFreeTimeDelay]]></Name>
+					<X>-1150</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agent]]></Name>
+						<Type><![CDATA[Resident]]></Type>
+					</Parameter>
+					<Body><![CDATA[double timeout_value = getValueFromDailyScheduleForWard(agent).getTimeoutToNextValue();
+
+if (timeout_value <= 0.25){
+	return 0.25;
+}else{
+	return uniform(0.25, timeout_value);
+}]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
@@ -2896,7 +2991,7 @@ return availableNursesWard1;   // The default nurse pool if staff sharing allowe
 							<ValueColumnReference>
 							</ValueColumnReference>
 					</IntervalsQuery>
-					<Action><![CDATA[updateSynchScheduleValue();]]></Action>
+					<Action><![CDATA[//updateDailyScheduleValue(self.getValue(), previousScheduleValue);]]></Action>
 					<Intervals>
 						<Interval>
 							<Start>79200000</Start>
@@ -3105,6 +3200,432 @@ return availableNursesWard1;   // The default nurse pool if staff sharing allowe
 							<End>1617662580000</End>
 							<Value>0</Value>
 						</Exception>
+					</Exceptions>
+				</Schedule>
+				<Schedule>
+					<Id>1617828375312</Id>
+					<Name><![CDATA[eventScheduleForWard1]]></Name>
+					<X>-920</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ValueType>integer</ValueType>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<DefaultValue>0</DefaultValue>
+					<RepresentationMode>intervals</RepresentationMode>
+					<RepresentationType>week</RepresentationType>
+					<FirstDayOfWeek>sunday</FirstDayOfWeek>
+					<TimeUnitsInterval>hours</TimeUnitsInterval>
+					<RepeatTime>86400000</RepeatTime>
+					<RepeatTimeInterval>days</RepeatTimeInterval>
+					<IsSnapTo>false</IsSnapTo>
+					<SnapTo>1617396307308</SnapTo>
+					<SnapToTimeUnits>minutes</SnapToTimeUnits>
+					<AllDayExceptionMode>false</AllDayExceptionMode>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<IntervalsQuery>
+						<TableReference>
+						</TableReference>
+							<StartColumnReference>
+							</StartColumnReference>
+							<EndColumnReference>
+							</EndColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</IntervalsQuery>
+					<Action><![CDATA[//updateDailyScheduleValue(self.getValue(), previousScheduleValue)]]></Action>
+					<Intervals>
+						<Interval>
+							<Start>79200000</Start>
+							<End>28800000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>165600000</Start>
+							<End>115200000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>252000000</Start>
+							<End>201600000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>338400000</Start>
+							<End>288000000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>424800000</Start>
+							<End>374400000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>511200000</Start>
+							<End>460800000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>597600000</Start>
+							<End>547200000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>28800000</Start>
+							<End>32400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>115200000</Start>
+							<End>118800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>201600000</Start>
+							<End>205200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>288000000</Start>
+							<End>291600000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>374400000</Start>
+							<End>378000000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>460800000</Start>
+							<End>464400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>547200000</Start>
+							<End>550800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>46800000</Start>
+							<End>50400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>133200000</Start>
+							<End>136800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>219600000</Start>
+							<End>223200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>306000000</Start>
+							<End>309600000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>392400000</Start>
+							<End>396000000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>478800000</Start>
+							<End>482400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>565200000</Start>
+							<End>568800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>61200000</Start>
+							<End>64800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>147600000</Start>
+							<End>151200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>234000000</Start>
+							<End>237600000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>320400000</Start>
+							<End>324000000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>406800000</Start>
+							<End>410400000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>493200000</Start>
+							<End>496800000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>579600000</Start>
+							<End>583200000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>54000000</Start>
+							<End>61200000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>140400000</Start>
+							<End>147600000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>226800000</Start>
+							<End>234000000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>313200000</Start>
+							<End>320400000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>399600000</Start>
+							<End>406800000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>486000000</Start>
+							<End>493200000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>572400000</Start>
+							<End>579600000</End>
+							<Value>-1</Value>
+						</Interval>
+					</Intervals>
+					<Exceptions>
+					</Exceptions>
+				</Schedule>
+				<Schedule>
+					<Id>1617828737539</Id>
+					<Name><![CDATA[eventScheduleForWard2]]></Name>
+					<X>-920</X><Y>710</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ValueType>integer</ValueType>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<DefaultValue>0</DefaultValue>
+					<RepresentationMode>intervals</RepresentationMode>
+					<RepresentationType>week</RepresentationType>
+					<FirstDayOfWeek>sunday</FirstDayOfWeek>
+					<TimeUnitsInterval>hours</TimeUnitsInterval>
+					<RepeatTime>86400000</RepeatTime>
+					<RepeatTimeInterval>days</RepeatTimeInterval>
+					<IsSnapTo>false</IsSnapTo>
+					<SnapTo>1617828736554</SnapTo>
+					<SnapToTimeUnits>minutes</SnapToTimeUnits>
+					<AllDayExceptionMode>false</AllDayExceptionMode>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<IntervalsQuery>
+						<TableReference>
+						</TableReference>
+							<StartColumnReference>
+							</StartColumnReference>
+							<EndColumnReference>
+							</EndColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</IntervalsQuery>
+					<Action><![CDATA[//updateDailyScheduleValue(self.getValue(), previousScheduleValueWard2);]]></Action>
+					<Intervals>
+						<Interval>
+							<Start>79200000</Start>
+							<End>32700000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>165600000</Start>
+							<End>119100000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>252000000</Start>
+							<End>205500000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>338400000</Start>
+							<End>291900000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>424800000</Start>
+							<End>378300000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>511200000</Start>
+							<End>464700000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>597600000</Start>
+							<End>551100000</End>
+							<Value>0</Value>
+						</Interval>
+						<Interval>
+							<Start>32700000</Start>
+							<End>36300000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>119100000</Start>
+							<End>122700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>205500000</Start>
+							<End>209100000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>291900000</Start>
+							<End>295500000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>378300000</Start>
+							<End>381900000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>464700000</Start>
+							<End>468300000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>551100000</Start>
+							<End>554700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>50700000</Start>
+							<End>54300000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>137100000</Start>
+							<End>140700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>223500000</Start>
+							<End>227100000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>309900000</Start>
+							<End>313500000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>396300000</Start>
+							<End>399900000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>482700000</Start>
+							<End>486300000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>569100000</Start>
+							<End>572700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>65100000</Start>
+							<End>68700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>151500000</Start>
+							<End>155100000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>237900000</Start>
+							<End>241500000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>324300000</Start>
+							<End>327900000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>410700000</Start>
+							<End>414300000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>497100000</Start>
+							<End>500700000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>583500000</Start>
+							<End>587100000</End>
+							<Value>1</Value>
+						</Interval>
+						<Interval>
+							<Start>36300000</Start>
+							<End>43500000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>122700000</Start>
+							<End>129900000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>209100000</Start>
+							<End>216300000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>295500000</Start>
+							<End>302700000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>381900000</Start>
+							<End>389100000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>468300000</Start>
+							<End>475500000</End>
+							<Value>-1</Value>
+						</Interval>
+						<Interval>
+							<Start>554700000</Start>
+							<End>561900000</End>
+							<Value>-1</Value>
+						</Interval>
+					</Intervals>
+					<Exceptions>
 					</Exceptions>
 				</Schedule>
 			</Schedules>
@@ -3856,14 +4377,11 @@ currentResidentPopulation += 1;]]></Code>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[type]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[self.MANUAL]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[10//scheduleEnumeration.get(synchronousEventSchedule.getValue()).getSecond()]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getTimeoutToNextValue()]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
@@ -6286,19 +6804,19 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[synchronousEventSchedule.getValue() == 0]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getValue() == 0]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition2]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[synchronousEventSchedule.getValue() == 1]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getValue() == 1]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition3]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[synchronousEventSchedule.getValue() == 2]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getValue() == 2]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6708,14 +7226,11 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[type]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[self.MANUAL]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[10]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getTimeoutToNextValue()]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
@@ -6830,7 +7345,7 @@ agent.mentalHealth.toggleSleep(false);]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(.25, 2)]]></Code>
+								<Code><![CDATA[getFreeTimeDelay(agent)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
@@ -25389,7 +25904,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(.25, 2)]]></Code>
+								<Code><![CDATA[main.getFreeTimeDelay(agent)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>

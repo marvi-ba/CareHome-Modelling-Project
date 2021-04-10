@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -559,7 +559,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613773827926</Id>
 					<Name><![CDATA[meanImmunityDurationInDays]]></Name>
-					<X>690</X><Y>220</Y>
+					<X>690</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1059,7 +1059,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617729915572</Id>
 					<Name><![CDATA[enableMaskUse]]></Name>
-					<X>690</X><Y>270</Y>
+					<X>690</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1069,7 +1069,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1617729915570</Id>
@@ -1083,7 +1083,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617748084784</Id>
 					<Name><![CDATA[enableStaffCohorting]]></Name>
-					<X>690</X><Y>290</Y>
+					<X>690</X><Y>330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1121,6 +1121,32 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1617913464073</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618079480635</Id>
+					<Name><![CDATA[fractionEmissionWhenMaskOn]]></Name>
+					<X>690</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[// Emission of aerosol spread reduced by ~74%.
+// literature referenced in report. 
+1 - 0.74]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618079480633</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -3533,7 +3559,7 @@ eventsToday = 0;]]></Action>
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1617138103157</Id>
 					<Name><![CDATA[isAtDailyVisitorCapacity]]></Name>
-					<X>690</X><Y>350</Y>
+					<X>690</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3545,7 +3571,7 @@ eventsToday = 0;]]></Action>
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1617138111990</Id>
 					<Name><![CDATA[isAtMaxVisitorCapacity]]></Name>
-					<X>690</X><Y>370</Y>
+					<X>690</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5339,9 +5365,10 @@ currentResidentPopulation += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(diningRoom).roomInfectiousCount += 1;
-}
+								<Code><![CDATA[agent.infectionBehaviour.maskOn = false;
+
+agent.infectionBehaviour.increaseRoomInfectiousCount(diningRoom);
+
 agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
@@ -5351,9 +5378,10 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
-}
+								<Code><![CDATA[agent.infectionBehaviour.maskOn = true;
+
+agent.infectionBehaviour.decreaseRoomInfectiousCount(diningRoom);
+
 agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 							</Value>
 						</Parameter>
@@ -8196,8 +8224,12 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount += 1;
+								<Code><![CDATA[agent.infectionBehaviour.maskOn = false;
+
+//agent.infectionBehaviour.increaseRoomInfectiousCount(agent.myBedRoom);
+
+if(agent.isInfectious()){
+	roomRepresentations.get(agent.myBedRoom).roomInfectiousCountNoMask += 1;
 }
 agent.mentalHealth.toggleSleep(true);]]></Code>
 							</Value>
@@ -8208,9 +8240,14 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount -= 1;
+								<Code><![CDATA[agent.infectionBehaviour.maskOn = true;
+
+//agent.infectionBehaviour.decreaseRoomInfectiousCount(agent.myBedRoom);
+
+if(agent.isInfectious()){
+	roomRepresentations.get(agent.myBedRoom).roomInfectiousCountNoMask -= 1;
 }
+
 agent.mentalHealth.toggleSleep(false);]]></Code>
 							</Value>
 						</Parameter>
@@ -8311,10 +8348,8 @@ agent.mentalHealth.toggleSleep(false);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(library).roomInfectiousCount += 1;
-}
-]]></Code>
+								<Code><![CDATA[agent.infectionBehaviour.increaseRoomInfectiousCount(library);
+agent.mentalHealth.addToHappinessInflow(libraryHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8323,9 +8358,7 @@ agent.mentalHealth.toggleSleep(false);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(library).roomInfectiousCount -= 1;
-}
+								<Code><![CDATA[agent.infectionBehaviour.decreaseRoomInfectiousCount(library);
 agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
@@ -9372,9 +9405,9 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(diningRoom).roomInfectiousCount += 1;
-} // If no parties due to intervention, just loop to freeTime
+								<Code><![CDATA[agent.infectionBehaviour.increaseRoomInfectiousCount(diningRoom);
+
+// If no parties due to intervention, just loop to freeTime
 
 ]]></Code>
 							</Value>
@@ -9385,9 +9418,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(agent.isInfectious()){
-	roomRepresentations.get(diningRoom).roomInfectiousCount -= 1;
-}
+								<Code><![CDATA[agent.infectionBehaviour.decreaseRoomInfectiousCount(diningRoom);
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -10496,7 +10527,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[newUnit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[new Doctor()]]></Code>
+								<Code><![CDATA[new SpecialVisitor()]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10804,6 +10835,11 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.increaseRoomInfectiousCount(medicalRoom);
+
+]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -10811,7 +10847,8 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.visitedDoctor = true;]]></Code>
+								<Code><![CDATA[agent.infectionBehaviour.decreaseRoomInfectiousCount(medicalRoom);
+agent.visitedDoctor = true;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -21943,7 +21980,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1614899226427</Id>
 					<Name><![CDATA[breakfastQuestion]]></Name>
-					<X>350</X><Y>80</Y>
+					<X>350</X><Y>70</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -21988,7 +22025,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1617398150189</Id>
 					<Name><![CDATA[myBedRoom]]></Name>
-					<X>350</X><Y>120</Y>
+					<X>350</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22003,7 +22040,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1617485772534</Id>
 					<Name><![CDATA[inBookclub]]></Name>
-					<X>350</X><Y>170</Y>
+					<X>350</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22018,7 +22055,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1617574047318</Id>
 					<Name><![CDATA[randomRoomX]]></Name>
-					<X>350</X><Y>210</Y>
+					<X>350</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22030,7 +22067,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1617574051986</Id>
 					<Name><![CDATA[randomRoomY]]></Name>
-					<X>350</X><Y>230</Y>
+					<X>350</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22042,7 +22079,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1617749182781</Id>
 					<Name><![CDATA[wardNumber]]></Name>
-					<X>70</X><Y>270</Y>
+					<X>350</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22076,7 +22113,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1614978105950</Id>
 					<Name><![CDATA[isInfectious]]></Name>
-					<X>350</X><Y>100</Y>
+					<X>60</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22088,7 +22125,7 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1616450079437</Id>
 					<Name><![CDATA[resetHappiness]]></Name>
-					<X>70</X><Y>230</Y>
+					<X>60</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -22140,8 +22177,8 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<EmbeddedObject>
 					<Id>1613773364630</Id>
 					<Name><![CDATA[infectionBehaviour]]></Name>
-					<X>70</X><Y>170</Y>
-					<Label><X>15</X><Y>0</Y></Label>
+					<X>60</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -22201,8 +22238,8 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 				<EmbeddedObject>
 					<Id>1616446004202</Id>
 					<Name><![CDATA[mentalHealth]]></Name>
-					<X>70</X><Y>210</Y>
-					<Label><X>20</X><Y>-5</Y></Label>
+					<X>60</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -22536,6 +22573,21 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618080168567</Id>
+					<Name><![CDATA[maskOn]]></Name>
+					<X>450</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[resident == null ? main.enableMaskUse : false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -22659,7 +22711,6 @@ if (nurse != null){
 if (visitor != null){
 	calculateWieghtOfExposure(visitor.getX(), visitor.getY(), visitor);
 }
-
 ]]></Action>
 					</Properties>	
 				</StatechartElement>
@@ -22692,8 +22743,7 @@ if (visitor != null){
 					</Points>
 					<IconOffset>30.0</IconOffset>
 					<Properties Source="1613773379292" Target="1613773412005" Trigger="message">
-						<Action><![CDATA[
-main.exposures += 1;]]></Action>
+						<Action><![CDATA[main.exposures += 1;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -23101,8 +23151,6 @@ if (visitor != null){
 INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(theAgent, infectiousAgentPoint);
 Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
 
-	
-	
 Point pointForParticles = infectiousAgentRoom.infectiousEventsInRoom.element();
 if (pointForParticles != null){ 
 	Double distanceFromParticles = Math.abs(infectiousAgentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
@@ -23135,12 +23183,22 @@ if (pointForParticles != null){
 INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(theAgent, infectiousAgentPoint);
 Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
 
-for(Agent susceptibleAgent : theAgent.agentsInRange(main.allPeopleAgents, main.infectionTransmissionRadius)){
-	INode susceptibleAgentNode = main.careHomeFloorPlan.getNearestNode(susceptibleAgent, new Point(susceptibleAgent.getX(), susceptibleAgent.getY()));
-	if(susceptibleAgentNode.equals(infectiousAgentNode)){
-		susceptibleAgent.receive(SEIRMessages.Exposed);
+boolean shouldInfect = true;
+if (main.enableMaskUse){
+	if (this.maskOn){
+		shouldInfect = randomTrue(main.fractionEmissionWhenMaskOn);
 	}
 }
+
+if (shouldInfect) {
+	for(Agent susceptibleAgent : theAgent.agentsInRange(main.allPeopleAgents, main.infectionTransmissionRadius)){
+		INode susceptibleAgentNode = main.careHomeFloorPlan.getNearestNode(susceptibleAgent, new Point(susceptibleAgent.getX(), susceptibleAgent.getY()));
+		if(susceptibleAgentNode.equals(infectiousAgentNode)){
+			susceptibleAgent.receive(SEIRMessages.Exposed);
+		}
+	}
+}
+
 // Infectious agent exhaling COVID particles into the air. 
 infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);]]></Body>
 				</Function>
@@ -23182,6 +23240,50 @@ theAgent.sphere.setVisible(true);
 
 // Getting an error, I think it's because we're specifying agent rather than a specific type. 
 //Ignored for now]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1618087064133</Id>
+					<Name><![CDATA[increaseRoomInfectiousCount]]></Name>
+					<X>450</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[room]]></Name>
+						<Type><![CDATA[INode]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(this.isInfectious()){
+	if (main.enableMaskUse && this.maskOn) {
+		main.roomRepresentations.get(room).roomInfectiousWithMask += 1;
+	}else{
+		main.roomRepresentations.get(room).roomInfectiousCountNoMask += 1;
+	}
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1618087211465</Id>
+					<Name><![CDATA[decreaseRoomInfectiousCount]]></Name>
+					<X>450</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[room]]></Name>
+						<Type><![CDATA[INode]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(this.isInfectious()){
+	if (main.enableMaskUse && this.maskOn) {
+		main.roomRepresentations.get(room).roomInfectiousWithMask -= 1;
+	}else{
+		main.roomRepresentations.get(room).roomInfectiousCountNoMask -= 1;
+	}
+}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -23957,8 +24059,8 @@ theAgent.sphere.setVisible(true);
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1616274063128</Id>
-					<Name><![CDATA[roomInfectiousCount]]></Name>
-					<X>360</X><Y>240</Y>
+					<Name><![CDATA[roomInfectiousCountNoMask]]></Name>
+					<X>20</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -23970,20 +24072,35 @@ theAgent.sphere.setVisible(true);
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="AuxVariable">
-					<Id>1616274063154</Id>
-					<Name><![CDATA[probablilityOfInfection]]></Name>
-					<X>190</X><Y>270</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+				<Variable Class="PlainVariable">
+					<Id>1618085574928</Id>
+					<Name><![CDATA[fractionAerosolsSpread]]></Name>
+					<X>60</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[50 * roomInfectiousCount]]></Formula>
-						<Value><![CDATA[0]]></Value>
-						<Color/>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[main.enableMaskUse ? main.fractionEmissionWhenMaskOn : 1]]></Code>
+						</InitialValue>
 					</Properties>
-
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618085922720</Id>
+					<Name><![CDATA[roomInfectiousWithMask]]></Name>
+					<X>100</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
 				</Variable>
 				<Variable Class="StockVariable">
 					<Id>1616274063156</Id>
@@ -24010,7 +24127,7 @@ theAgent.sphere.setVisible(true);
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1616274063156" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[infectionArisolSpread * roomInfectiousCount]]></Formula>
+						<Formula><![CDATA[infectionArisolSpread * roomInfectiousCountNoMask //+ (roomInfectiousWithMask * fractionAerosolsSpread)]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -24128,21 +24245,6 @@ theAgent.sphere.setVisible(true);
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1616274063128" TargetId="1616274063154" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-170</X><Y>30</Y></Direction>
-					<Id>1616274063152</Id>
-					<Name><![CDATA[roomInfectiousCount - probablilityOfInfection]]></Name>
-					<X>360</X><Y>240</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
 				<Link SourceId="1616274211218" TargetId="1616274063130" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
@@ -24176,11 +24278,43 @@ theAgent.sphere.setVisible(true);
 				<Link SourceId="1616274063128" TargetId="1616274063130" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-270</X><Y>-150</Y></Direction>
+					<Direction><X>70</X><Y>-150</Y></Direction>
 					<Id>1616274702005</Id>
-					<Name><![CDATA[roomInfectiousCount - spread]]></Name>
-					<X>360</X><Y>240</Y>
+					<Name><![CDATA[roomInfectiousCountNoMask - spread]]></Name>
+					<X>20</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1618085574928" TargetId="1616274063130" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>30</X><Y>-120</Y></Direction>
+					<Id>1618085667942</Id>
+					<Name><![CDATA[fractionAerosolsSpread - spread]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>60</X><Y>210</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1618085922720" TargetId="1616274063130" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-10</X><Y>-90</Y></Direction>
+					<Id>1618088038160</Id>
+					<Name><![CDATA[roomInfectiousWithMask - spread]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>100</X><Y>180</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
@@ -37405,6 +37539,9 @@ T agent - the agent. ]]></Description>
 				<Parameter>
 					<ParameterName><![CDATA[patientListSize]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[fractionEmissionWhenMaskOn]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -37552,6 +37689,9 @@ T agent - the agent. ]]></Description>
 			<FreeformParamValue>	
 				<Id>1617913464075</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618079480635</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -37698,6 +37838,10 @@ T agent - the agent. ]]></Description>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1617913464075</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618079480635</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>

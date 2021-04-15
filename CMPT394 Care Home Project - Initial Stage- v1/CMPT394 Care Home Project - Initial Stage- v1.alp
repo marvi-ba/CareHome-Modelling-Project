@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -664,7 +664,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1615756413312</Id>
 					<Name><![CDATA[particlesNeededToBeInfected]]></Name>
-					<X>40</X><Y>320</Y>
+					<X>40</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8715,6 +8715,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.isInfectious()){
 	roomRepresentations.get(agent.myBedRoom).roomInfectiousCount -= 1;
+	// todo do we have to handle the case where someone recovers/moves out of the infectious
+	// state, and this check isn't executed so the particle count for the room keeps
+	// going up?
 }
 agent.mentalHealth.toggleSleep(false);]]></Code>
 							</Value>
@@ -27350,16 +27353,19 @@ if (visitor != null){
 						<Name><![CDATA[theAgent]]></Name>
 						<Type><![CDATA[Agent]]></Type>
 					</Parameter>
-					<Body><![CDATA[Point infectiousAgentPoint = new Point(agentX, agentY);
-INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(theAgent, infectiousAgentPoint);
-Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
+					<Body><![CDATA[Point susceptibleAgentPoint = new Point(agentX, agentY);
+INode agentCurrentNode = main.careHomeFloorPlan.getNearestNode(theAgent, susceptibleAgentPoint);
 
-	
-	
-Point pointForParticles = infectiousAgentRoom.infectiousEventsInRoom.element();
-if (pointForParticles != null){ 
-	Double distanceFromParticles = Math.abs(infectiousAgentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
-	weightOfExposure = infectiousAgentRoom.roomParticleCount * 1/distanceFromParticles;
+if (agentCurrentNode.contains(agentX, agentY)){
+	// If the susceptible agent is IN a given room, then calculate the weight of exposure for that 
+	// room. This avoids cases where an agent could possibly be infected by particles if they are passing 
+	// by the room (walls prevent that from happening in the real world).
+	Room agentCurrentRoom = main.roomRepresentations.get(agentCurrentNode);
+	Point pointForParticles = agentCurrentRoom.infectiousEventsInRoom.element();
+	if (pointForParticles != null){ 
+		Double distanceFromParticles = Math.abs(susceptibleAgentPoint.distance2D(pointForParticles)) / scale.pixelsPerUnit(METER);
+		weightOfExposure = agentCurrentRoom.roomParticleCount * (1/distanceFromParticles);
+	}
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -28228,7 +28234,7 @@ theAgent.sphere.setVisible(true);
 				<Variable Class="PlainVariable">
 					<Id>1616274063128</Id>
 					<Name><![CDATA[roomInfectiousCount]]></Name>
-					<X>360</X><Y>240</Y>
+					<X>70</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28239,21 +28245,6 @@ theAgent.sphere.setVisible(true);
 							<Code><![CDATA[0]]></Code>
 						</InitialValue>
 					</Properties>
-				</Variable>
-				<Variable Class="AuxVariable">
-					<Id>1616274063154</Id>
-					<Name><![CDATA[probablilityOfInfection]]></Name>
-					<X>190</X><Y>270</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[50 * roomInfectiousCount]]></Formula>
-						<Value><![CDATA[0]]></Value>
-						<Color/>
-					</Properties>
-
 				</Variable>
 				<Variable Class="StockVariable">
 					<Id>1616274063156</Id>
@@ -28398,21 +28389,6 @@ theAgent.sphere.setVisible(true);
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1616274063128" TargetId="1616274063154" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-170</X><Y>30</Y></Direction>
-					<Id>1616274063152</Id>
-					<Name><![CDATA[roomInfectiousCount - probablilityOfInfection]]></Name>
-					<X>360</X><Y>240</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
 				<Link SourceId="1616274211218" TargetId="1616274063130" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
@@ -28446,10 +28422,10 @@ theAgent.sphere.setVisible(true);
 				<Link SourceId="1616274063128" TargetId="1616274063130" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-270</X><Y>-150</Y></Direction>
+					<Direction><X>20</X><Y>-120</Y></Direction>
 					<Id>1616274702005</Id>
 					<Name><![CDATA[roomInfectiousCount - spread]]></Name>
-					<X>360</X><Y>240</Y>
+					<X>70</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>

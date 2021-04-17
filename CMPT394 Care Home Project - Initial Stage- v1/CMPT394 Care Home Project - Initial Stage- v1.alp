@@ -29919,7 +29919,7 @@ traceln("No longer Quarantined");]]></Action>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[randomTrue(.5)]]></Code>
+							<Code><![CDATA[nurse != null ? true : randomTrue(.5)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>

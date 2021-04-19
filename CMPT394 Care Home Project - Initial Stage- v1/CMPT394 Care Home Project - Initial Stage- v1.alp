@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -196,7 +196,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="PlainVariable">
 					<Id>1614896113766</Id>
 					<Name><![CDATA[currentResidentPopulation]]></Name>
-					<X>140</X><Y>560</Y>
+					<X>140</X><Y>600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -211,7 +211,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="PlainVariable">
 					<Id>1614985305432</Id>
 					<Name><![CDATA[exposures]]></Name>
-					<X>560</X><Y>230</Y>
+					<X>1000</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -288,7 +288,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="PlainVariable">
 					<Id>1618697919409</Id>
 					<Name><![CDATA[quarantiningResidents]]></Name>
-					<X>560</X><Y>250</Y>
+					<X>580</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -303,7 +303,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="PlainVariable">
 					<Id>1618762404455</Id>
 					<Name><![CDATA[maskUseEfficacyOnInfectiousAgent]]></Name>
-					<X>880</X><Y>320</Y>
+					<X>1000</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -312,6 +312,21 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[0.74]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618868572331</Id>
+					<Name><![CDATA[covidRelatedDeaths]]></Name>
+					<X>1000</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -462,7 +477,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613770038491</Id>
 					<Name><![CDATA[infectionTransmissionRadius]]></Name>
-					<X>40</X><Y>280</Y>
+					<X>40</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -488,7 +503,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Id>1613770082727</Id>
 					<Name><![CDATA[infectionArisolSpread]]></Name>
 					<Description><![CDATA[How many particles one infected person breaths out. ]]></Description>
-					<X>40</X><Y>460</Y>
+					<X>40</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -514,7 +529,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613770223106</Id>
 					<Name><![CDATA[infectionTransmissionProbablity]]></Name>
-					<X>40</X><Y>260</Y>
+					<X>40</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -538,7 +553,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613770315380</Id>
 					<Name><![CDATA[infectionArisolLifetime]]></Name>
-					<X>40</X><Y>480</Y>
+					<X>40</X><Y>570</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -564,7 +579,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613770478388</Id>
 					<Name><![CDATA[initialResidentsInfectedCount]]></Name>
-					<X>40</X><Y>380</Y>
+					<X>40</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -612,7 +627,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613772383918</Id>
 					<Name><![CDATA[ventilatorEfficiency]]></Name>
-					<X>690</X><Y>190</Y>
+					<X>810</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -633,7 +648,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613773827926</Id>
 					<Name><![CDATA[meanImmunityDurationInDays]]></Name>
-					<X>690</X><Y>220</Y>
+					<X>810</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -657,7 +672,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613773904759</Id>
 					<Name><![CDATA[initialNurseInfectedCount]]></Name>
-					<X>40</X><Y>400</Y>
+					<X>40</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -678,7 +693,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613774619069</Id>
 					<Name><![CDATA[infectionDurationInDays]]></Name>
-					<X>40</X><Y>240</Y>
+					<X>40</X><Y>330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -702,7 +717,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1613776647686</Id>
 					<Name><![CDATA[symptomaticInfectiousSymptomsPerMinute]]></Name>
-					<X>40</X><Y>300</Y>
+					<X>40</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -726,7 +741,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1615756413312</Id>
 					<Name><![CDATA[particlesNeededToBeInfected]]></Name>
-					<X>40</X><Y>310</Y>
+					<X>40</X><Y>410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -750,7 +765,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1615758574921</Id>
 					<Name><![CDATA[susceptibleCheckSurroundingsTime]]></Name>
-					<X>40</X><Y>340</Y>
+					<X>40</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -776,7 +791,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1616431800691</Id>
 					<Name><![CDATA[initialVisitorInfectedCount]]></Name>
-					<X>40</X><Y>420</Y>
+					<X>40</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1133,7 +1148,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617729915572</Id>
 					<Name><![CDATA[enableMaskUseForEveryone]]></Name>
-					<X>690</X><Y>270</Y>
+					<X>810</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1157,7 +1172,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617748084784</Id>
 					<Name><![CDATA[enableStaffCohorting]]></Name>
-					<X>690</X><Y>290</Y>
+					<X>810</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1181,7 +1196,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617913464075</Id>
 					<Name><![CDATA[patientListSize]]></Name>
-					<X>670</X><Y>480</Y>
+					<X>790</X><Y>480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1205,7 +1220,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1618604103012</Id>
 					<Name><![CDATA[enableResidentQuarantine]]></Name>
-					<X>690</X><Y>310</Y>
+					<X>810</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1229,7 +1244,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1618604589602</Id>
 					<Name><![CDATA[residentTestingFrequency]]></Name>
-					<X>690</X><Y>420</Y>
+					<X>810</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1253,7 +1268,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1618608577797</Id>
 					<Name><![CDATA[swabTestTimeForResult]]></Name>
-					<X>670</X><Y>500</Y>
+					<X>790</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1279,7 +1294,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1618760647265</Id>
 					<Name><![CDATA[enableMaskUseForNursesAndAllVisitors]]></Name>
-					<X>880</X><Y>270</Y>
+					<X>1000</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1348,10 +1363,106 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618865597134</Id>
+					<Name><![CDATA[ageRangeMin]]></Name>
+					<X>40</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[65]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618865597132</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618865612021</Id>
+					<Name><![CDATA[ageRangeMax]]></Name>
+					<X>160</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[85]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618865612019</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618866042861</Id>
+					<Name><![CDATA[chanceOfUnderlyingCondition]]></Name>
+					<X>40</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[.70]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618866042859</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618868432109</Id>
+					<Name><![CDATA[movementImpairmentFraction]]></Name>
+					<X>40</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[.95]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618868432107</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1614895009261</Id>
 					<Name><![CDATA[bedCoordinates]]></Name>
-					<X>140</X><Y>580</Y>
+					<X>140</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1414,7 +1525,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="CollectionVariable">
 					<Id>1616274901078</Id>
 					<Name><![CDATA[roomRepresentations]]></Name>
-					<X>140</X><Y>600</Y>
+					<X>140</X><Y>640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2190,7 +2301,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1617485818649</Id>
 					<Name><![CDATA[connector51]]></Name>
-					<X>-630</X><Y>1440</Y>
+					<X>-640</X><Y>1440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2217,13 +2328,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617485853849</Id>
 					<Name><![CDATA[connector52]]></Name>
-					<X>-640</X><Y>1450</Y>
+					<X>-650</X><Y>1450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2251,8 +2362,8 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>50</Y></Point>
-						<Point><X>60</X><Y>50</Y></Point>
-						<Point><X>60</X><Y>70</Y></Point>
+						<Point><X>70</X><Y>50</Y></Point>
+						<Point><X>70</X><Y>70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2411,7 +2522,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[isPartyOver]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -2420,13 +2531,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617640114132</Id>
 					<Name><![CDATA[connector20]]></Name>
-					<X>-400</X><Y>1020</Y>
+					<X>-360</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2434,7 +2545,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[isPartyOver]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -2453,16 +2564,16 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>240</X><Y>0</Y></Point>
-						<Point><X>240</X><Y>-300</Y></Point>
-						<Point><X>-770</X><Y>-300</Y></Point>
-						<Point><X>-770</X><Y>-230</Y></Point>
+						<Point><X>200</X><Y>0</Y></Point>
+						<Point><X>200</X><Y>-300</Y></Point>
+						<Point><X>-810</X><Y>-300</Y></Point>
+						<Point><X>-810</X><Y>-230</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617640641015</Id>
 					<Name><![CDATA[connector22]]></Name>
-					<X>-410</X><Y>1030</Y>
+					<X>-370</X><Y>1030</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2470,7 +2581,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
+						<ItemName><![CDATA[isPartyOver]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -2490,10 +2601,10 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>20</Y></Point>
-						<Point><X>-320</X><Y>20</Y></Point>
+						<Point><X>-360</X><Y>20</Y></Point>
+						<Point><X>-360</X><Y>10</Y></Point>
 						<Point><X>-320</X><Y>10</Y></Point>
-						<Point><X>-280</X><Y>10</Y></Point>
-						<Point><X>-280</X><Y>-10</Y></Point>
+						<Point><X>-320</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2662,13 +2773,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1617914861920</Id>
 					<Name><![CDATA[connector36]]></Name>
-					<X>-210</X><Y>1100</Y>
+					<X>-200</X><Y>1100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2695,10 +2806,10 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>0</Y></Point>
-						<Point><X>50</X><Y>-380</Y></Point>
-						<Point><X>-960</X><Y>-380</Y></Point>
-						<Point><X>-960</X><Y>-310</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-380</Y></Point>
+						<Point><X>-970</X><Y>-380</Y></Point>
+						<Point><X>-970</X><Y>-310</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -3029,8 +3140,8 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>10</Y></Point>
-						<Point><X>180</X><Y>10</Y></Point>
-						<Point><X>180</X><Y>-10</Y></Point>
+						<Point><X>190</X><Y>10</Y></Point>
+						<Point><X>190</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -4448,7 +4559,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>30</X><Y>0</Y></Point>
 						<Point><X>30</X><Y>130</Y></Point>
-						<Point><X>100</X><Y>130</Y></Point>
+						<Point><X>90</X><Y>130</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -4554,7 +4665,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1618786015606</Id>
 					<Name><![CDATA[connector97]]></Name>
-					<X>-300</X><Y>1270</Y>
+					<X>-240</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4572,7 +4683,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay2]]></ItemName>
+						<ItemName><![CDATA[ward3DoctorAppointment]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4581,13 +4692,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
+						<Point><X>-170</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1618786015609</Id>
 					<Name><![CDATA[connector98]]></Name>
-					<X>-420</X><Y>1270</Y>
+					<X>-450</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4595,7 +4706,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay2]]></ItemName>
+						<ItemName><![CDATA[ward3DoctorAppointment]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4614,13 +4725,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-130</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1618786193153</Id>
 					<Name><![CDATA[connector99]]></Name>
-					<X>-260</X><Y>1270</Y>
+					<X>-200</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4647,10 +4758,10 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>100</X><Y>0</Y></Point>
-						<Point><X>100</X><Y>-550</Y></Point>
-						<Point><X>-910</X><Y>-550</Y></Point>
-						<Point><X>-910</X><Y>-480</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-550</Y></Point>
+						<Point><X>-970</X><Y>-550</Y></Point>
+						<Point><X>-970</X><Y>-480</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -4684,7 +4795,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>40</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>20</Y></Point>
+						<Point><X>40</X><Y>40</Y></Point>
 						<Point><X>70</X><Y>40</Y></Point>
 					</Points>
 				</Connector>
@@ -4709,7 +4820,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seize4]]></ItemName>
+						<ItemName><![CDATA[ward3StylistSeize]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4724,7 +4835,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1618786668764</Id>
 					<Name><![CDATA[connector114]]></Name>
-					<X>-500</X><Y>1330</Y>
+					<X>-450</X><Y>1330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4732,7 +4843,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay6]]></ItemName>
+						<ItemName><![CDATA[ward3StylistAppointment]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4742,7 +4853,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seize4]]></ItemName>
+						<ItemName><![CDATA[ward3StylistSeize]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4751,13 +4862,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-50</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1618786674075</Id>
 					<Name><![CDATA[connector115]]></Name>
-					<X>-410</X><Y>1330</Y>
+					<X>-240</X><Y>1330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4775,7 +4886,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[delay6]]></ItemName>
+						<ItemName><![CDATA[ward3StylistAppointment]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -4784,13 +4895,13 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-50</X><Y>0</Y></Point>
+						<Point><X>-170</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1618787190359</Id>
 					<Name><![CDATA[connector116]]></Name>
-					<X>-370</X><Y>1330</Y>
+					<X>-200</X><Y>1330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4817,10 +4928,10 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>210</X><Y>0</Y></Point>
-						<Point><X>210</X><Y>-610</Y></Point>
-						<Point><X>-800</X><Y>-610</Y></Point>
-						<Point><X>-800</X><Y>-540</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-610</Y></Point>
+						<Point><X>-970</X><Y>-610</Y></Point>
+						<Point><X>-970</X><Y>-540</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5064,7 +5175,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1618857488773</Id>
 					<Name><![CDATA[connector42]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-260</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5082,7 +5193,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isBedTime]]></ItemName>
+						<ItemName><![CDATA[checkBloodPressure]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5090,8 +5201,8 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>-260</X><Y>790</Y></Point>
-						<Point><X>-210</X><Y>790</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5105,7 +5216,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isBedTime]]></ItemName>
+						<ItemName><![CDATA[checkBloodPressure]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5124,8 +5235,8 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-40</Y></Point>
+						<Point><X>20</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>-40</Y></Point>
 						<Point><X>-340</X><Y>-40</Y></Point>
 						<Point><X>-340</X><Y>0</Y></Point>
 						<Point><X>-310</X><Y>0</Y></Point>
@@ -5142,7 +5253,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isBedTime]]></ItemName>
+						<ItemName><![CDATA[checkBloodPressure]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5315,7 +5426,7 @@ for(Resident r : residents){
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1617138103157</Id>
 					<Name><![CDATA[isAtDailyVisitorCapacity]]></Name>
-					<X>690</X><Y>350</Y>
+					<X>810</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5327,7 +5438,7 @@ for(Resident r : residents){
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1617138111990</Id>
 					<Name><![CDATA[isAtMaxVisitorCapacity]]></Name>
-					<X>690</X><Y>370</Y>
+					<X>810</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5503,7 +5614,7 @@ if (timeout_value <= 0.25){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1618762019201</Id>
 					<Name><![CDATA[maskUseAsPPE]]></Name>
-					<X>880</X><Y>300</Y>
+					<X>1000</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5528,7 +5639,7 @@ if (timeout_value <= 0.25){
 						<Name><![CDATA[room]]></Name>
 						<Type><![CDATA[Room]]></Type>
 					</Parameter>
-					<Body><![CDATA[if(infectionBehaviour.isInfectious()){
+					<Body><![CDATA[if(infectionBehaviour.isInfectious() && room != null){
 	if (infectionBehaviour.maskOn){
 		room.roomInfectiousCountWithMask += 1;
 	}else{
@@ -5554,7 +5665,7 @@ if (timeout_value <= 0.25){
 						<Name><![CDATA[room]]></Name>
 						<Type><![CDATA[Room]]></Type>
 					</Parameter>
-					<Body><![CDATA[if(infectionBehaviour.isInfectious()){
+					<Body><![CDATA[if(infectionBehaviour.isInfectious() && room != null){
 	if (infectionBehaviour.maskOn){
 		room.roomInfectiousCountWithMask -= 1;
 	}else{
@@ -6887,7 +6998,7 @@ if (timeout_value <= 0.25){
 				<AgentLink>
 					<Id>1613768872917</Id>
 					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
+					<X>30</X><Y>-40</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7669,29 +7780,36 @@ currentResidentPopulation += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.setMaskValueForResident(false);
+								<Code><![CDATA[//Take off masks when eating 
+agent.infectionBehaviour.setMaskValueForResident(false);
 
+//Set the room for Stock and Flow infection model and increment infecteds in room
 Room currentRoom = roomRepresentations.get(diningRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 
+//Mental health ongoing effects of dining
 agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);]]></Code>
+								<Code><![CDATA[//After dinning we reduce the number of infecteds in the room
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.setMaskValueForResident(true);
+								<Code><![CDATA[//After eating masks go on
+agent.infectionBehaviour.setMaskValueForResident(true);
 
+//They are no longer in the room after dining
 agent.infectionBehaviour.currentRoom = null;
 
+//no longer dining so mental health no longer takes it into account
 agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 							</Value>
 						</Parameter>
@@ -8188,9 +8306,15 @@ agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Go to next destination without nurse]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Request nurse aid in moving to next destination. ]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -10491,7 +10615,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 					<Id>1617400366929</Id>
 					<Name><![CDATA[sleep]]></Name>
 					<X>-300</X><Y>770</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<Label><X>0</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -10553,9 +10677,6 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -10664,11 +10785,11 @@ agent.mentalHealth.toggleSleep(false);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(library);
+								<Code><![CDATA[//Set the library as the room for contamination.
+Room currentRoom = roomRepresentations.get(library);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
-incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
-]]></Code>
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10677,9 +10798,11 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+								<Code><![CDATA[//No longer contaminating the library, they have left.
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
 agent.infectionBehaviour.currentRoom = null;
 
+//Mental Health is no longer impacted by library activities.
 agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
@@ -10999,7 +11122,7 @@ agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 				<EmbeddedObject>
 					<Id>1617485817620</Id>
 					<Name><![CDATA[isInBookclub]]></Name>
-					<X>-660</X><Y>1430</Y>
+					<X>-670</X><Y>1430</Y>
 					<Label><X>-20</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11739,7 +11862,8 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(diningRoom);
+								<Code><![CDATA[//Party is held in dining room so that will be the room they contaminate
+Room currentRoom = roomRepresentations.get(diningRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
@@ -11750,11 +11874,6 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
-agent.infectionBehaviour.currentRoom = null;
-]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -11918,9 +12037,9 @@ agent.infectionBehaviour.currentRoom = null;
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1617640112385</Id>
-					<Name><![CDATA[selectOutput]]></Name>
-					<X>-430</X><Y>1010</Y>
-					<Label><X>-35</X><Y>-25</Y></Label>
+					<Name><![CDATA[isPartyOver]]></Name>
+					<X>-390</X><Y>1010</Y>
+					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -11960,7 +12079,10 @@ agent.infectionBehaviour.currentRoom = null;
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(-partyHappinessChange);]]></Code>
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(-partyHappinessChange);
+
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+agent.infectionBehaviour.currentRoom = null;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -13188,10 +13310,14 @@ agent.infectionBehaviour.currentRoom = null;
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(medicalRoom);
+								<Code><![CDATA[//The residents will contaminate the medical room they entered.
+Room currentRoom = roomRepresentations.get(medicalRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
-incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
+
+//TODO: mental health effects for doctor visits.
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -13200,10 +13326,13 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+								<Code><![CDATA[//They leave the medical room and no longer contribute to infection particle count.
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+agent.infectionBehaviour.currentRoom = null;
 
+//Since they have seen the doctor they will wait for another appointment
 agent.visitedDoctor = true;
-agent.infectionBehaviour.currentRoom = null;]]></Code>
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -13366,7 +13495,7 @@ agent.infectionBehaviour.currentRoom = null;]]></Code>
 				<EmbeddedObject>
 					<Id>1617914860720</Id>
 					<Name><![CDATA[release3]]></Name>
-					<X>-250</X><Y>1080</Y>
+					<X>-240</X><Y>1080</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13601,7 +13730,8 @@ availableDoctor.set_homeNodes(newHomeNode);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(medicalRoom);
+								<Code><![CDATA[//An infectious doctor will spread the infection in the room he/she works in.
+Room currentRoom = roomRepresentations.get(medicalRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
@@ -15307,7 +15437,8 @@ availableHairStylists.set_homeNodes(newHomeNode);
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(hairStylistRoom);
+								<Code><![CDATA[//An infectious stylist will spread the infection in the room he/she works in.
+Room currentRoom = roomRepresentations.get(hairStylistRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
@@ -15884,15 +16015,15 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit2]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit3]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit5]]></Name>
@@ -16392,10 +16523,14 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Room currentRoom = roomRepresentations.get(hairStylistRoom);
+								<Code><![CDATA[//They enter the room for hair cuts so they will contaminate it. 
+Room currentRoom = roomRepresentations.get(hairStylistRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
-incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
+
+//TODO: mental health effects for hair styling visits.
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -16404,10 +16539,13 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+								<Code><![CDATA[//They leave and no longer contaminate the room.
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+agent.infectionBehaviour.currentRoom = null;
 
+//They have had their hair cut and are no longer in need of one.
 agent.hadHaircut = true;
-agent.infectionBehaviour.currentRoom = null;]]></Code>
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -19390,6 +19528,13 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Demential patients have in room consultation. So they contaminate their own room.
+Room currentRoom = roomRepresentations.get(agent.myBedRoom);
+agent.infectionBehaviour.currentRoom = currentRoom;
+
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -20093,7 +20238,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 					<Id>1618786001969</Id>
 					<Name><![CDATA[ward3DoctorSeize]]></Name>
 					<X>-590</X><Y>1250</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<Label><X>-5</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -20341,7 +20486,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObject>
 					<Id>1618786006007</Id>
 					<Name><![CDATA[release10]]></Name>
-					<X>-300</X><Y>1250</Y>
+					<X>-240</X><Y>1250</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -20454,9 +20599,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1618786014697</Id>
-					<Name><![CDATA[delay2]]></Name>
-					<X>-420</X><Y>1250</Y>
-					<Label><X>-5</X><Y>-15</Y></Label>
+					<Name><![CDATA[ward3DoctorAppointment]]></Name>
+					<X>-450</X><Y>1250</Y>
+					<Label><X>-5</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -20511,6 +20656,15 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//They leave their own room and no longer contribute to infection particle count.
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+agent.infectionBehaviour.currentRoom = null;
+
+//Since they have seen the doctor they will wait for another appointment
+agent.visitedDoctor = true;
+]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -20680,6 +20834,13 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Demential patients have in room consultation. So they contaminate their own room.
+Room currentRoom = roomRepresentations.get(agent.myBedRoom);
+agent.infectionBehaviour.currentRoom = currentRoom;
+
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -20729,7 +20890,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1618786635959</Id>
-					<Name><![CDATA[seize4]]></Name>
+					<Name><![CDATA[ward3StylistSeize]]></Name>
 					<X>-590</X><Y>1310</Y>
 					<Label><X>-5</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -20970,7 +21131,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObject>
 					<Id>1618786636012</Id>
 					<Name><![CDATA[release14]]></Name>
-					<X>-410</X><Y>1310</Y>
+					<X>-240</X><Y>1310</Y>
 					<Label><X>-10</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -21005,7 +21166,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						<Parameter>
 							<Name><![CDATA[seizeBlocks]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[{ seize4 }]]></Code>
+								<Code><![CDATA[{ ward3StylistSeize }]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -21083,8 +21244,8 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1618786636062</Id>
-					<Name><![CDATA[delay6]]></Name>
-					<X>-500</X><Y>1310</Y>
+					<Name><![CDATA[ward3StylistAppointment]]></Name>
+					<X>-450</X><Y>1310</Y>
 					<Label><X>-10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -21140,6 +21301,14 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//They leave and no longer contaminate the room.
+decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+agent.infectionBehaviour.currentRoom = null;
+
+//They have had their hair cut and are no longer in need of one.
+agent.hadHaircut = true;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -21303,9 +21472,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1618857482724</Id>
-					<Name><![CDATA[isBedTime]]></Name>
+					<Name><![CDATA[checkBloodPressure]]></Name>
 					<X>-220</X><Y>780</Y>
-					<Label><X>-25</X><Y>-20</Y></Label>
+					<Label><X>-25</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -21347,6 +21516,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -21430,7 +21602,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1616427951569</Id>
 					<Name><![CDATA[visitors_presentation]]></Name>
-					<X>40</X><Y>10</Y>
+					<X>-50</X><Y>-10</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -32828,7 +33000,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1617913082724</Id>
 					<Name><![CDATA[specialVisitors_presentation]]></Name>
-					<X>80</X><Y>10</Y>
+					<X>-70</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33073,7 +33245,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1613773166314</Id>
 					<Name><![CDATA[residents_presentation]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-60</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33095,7 +33267,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1614980083183</Id>
 					<Name><![CDATA[nurses_presentation]]></Name>
-					<X>20</X><Y>0</Y>
+					<X>-70</X><Y>-20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33216,7 +33388,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1613774271338</Id>
-					<Name><![CDATA[immunoCompromised]]></Name>
+					<Name><![CDATA[hasUnderlyingCondition]]></Name>
 					<X>60</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -33224,6 +33396,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[randomTrue(main.chanceOfUnderlyingCondition)]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
@@ -33267,7 +33442,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[randomTrue(.5)]]></Code>
+							<Code><![CDATA[randomTrue(main.movementImpairmentFraction)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -33442,6 +33617,21 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618865448018</Id>
+					<Name><![CDATA[age]]></Name>
+					<X>60</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[uniform_discr(main.ageRangeMin, main.ageRangeMax) //try other dists]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -33624,7 +33814,7 @@ traceln("No longer Quarantined");]]></Action>
 					<Id>1616446004202</Id>
 					<Name><![CDATA[mentalHealth]]></Name>
 					<X>70</X><Y>560</Y>
-					<Label><X>20</X><Y>-5</Y></Label>
+					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -34088,6 +34278,8 @@ if (currentRoom != null){
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
+						<EntryAction><![CDATA[main.covidRelatedDeaths += 1;
+main.remove_residents(resident);]]></EntryAction>
 						<FillColor>-3308225</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -34125,6 +34317,18 @@ if (visitor != null){
 }
 
 ]]></Action>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+					<Id>1618867319624</Id>
+					<Name><![CDATA[branch2]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>70</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Properties>	
 					</Properties>	
 				</StatechartElement>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
@@ -34298,7 +34502,7 @@ if (visitor != null){
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[false//randomTrue(0.05 + (.95 * resident.immunoCompromised))]]></Condition>
+						<Condition><![CDATA[resident != null ? randomTrue(chanceOfDeathForResident()) : false]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
@@ -34325,7 +34529,7 @@ if (visitor != null){
 					<IconOffset>30.0</IconOffset>
 					<Properties Source="1613773415006" Target="1613774577580" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[Math.abs(normal(main.infectionDurationInDays))]]></Code>
+							<Code><![CDATA[Math.abs(normal(1 ,main.infectionDurationInDays))]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -34524,6 +34728,103 @@ if (visitor != null){
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1618867231439</Id>
+					<Name><![CDATA[transition9]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>140</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-70</X><Y>0</Y></Point>
+						<Point><X>-70</X><Y>90</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1613773415006" Target="1618867319624" Trigger="rate">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1618867324503</Id>
+					<Name><![CDATA[transition10]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>70</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>70</Y></Point>
+						<Point><X>20</X><Y>70</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1618867319624" Target="1613774103099" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>false</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1618867327091</Id>
+					<Name><![CDATA[transition11]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>58</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-28</X><Y>0</Y></Point>
+						<Point><X>-28</X><Y>-110</Y></Point>
+						<Point><X>82</X><Y>-110</Y></Point>
+					</Points>
+					<IconOffset>0.0</IconOffset>
+					<Properties Source="1618867319624" Target="1613773415006" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
 			</StatechartElements>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -34698,7 +34999,87 @@ theAgent.sphere.setVisible(true);
 }
 ]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1618866412201</Id>
+					<Name><![CDATA[chanceOfDeathForResident]]></Name>
+					<X>450</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(resident.hasUnderlyingCondition){
+	return underlyingConditionDeathChance(resident.age);
+}else{
+	return regularChanceOfDeath(resident.age);
+}]]></Body>
+				</Function>
 			</Functions>
+			<TableFunctions>
+				<TableFunction AccessType="public" StaticFunction="false">
+					<Id>1618866560420</Id>
+					<Name><![CDATA[underlyingConditionDeathChance]]></Name>
+					<X>450</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<InterpolationMethod>STEP</InterpolationMethod>
+					<OutOfRangeBehaviour>ERROR</OutOfRangeBehaviour>
+					<OutOfRangeCustomValue><![CDATA[0.0]]></OutOfRangeCustomValue>
+					<ApproximationOrder><![CDATA[1]]></ApproximationOrder>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<ValuesQuery>
+						<TableReference>
+						</TableReference>
+							<ArgumentColumnReference>
+							</ArgumentColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</ValuesQuery>
+// arguments and values
+					<Argument><![CDATA[60.0]]></Argument>
+					<Argument><![CDATA[70.0]]></Argument>
+					<Argument><![CDATA[80.0]]></Argument>
+					<Argument><![CDATA[85.0]]></Argument>
+					<Value><![CDATA[16.7]]></Value>
+					<Value><![CDATA[31.7]]></Value>
+					<Value><![CDATA[49.7]]></Value>
+					<Value><![CDATA[49.7]]></Value>
+				</TableFunction>
+				<TableFunction AccessType="public" StaticFunction="false">
+					<Id>1618866824666</Id>
+					<Name><![CDATA[regularChanceOfDeath]]></Name>
+					<X>450</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<InterpolationMethod>STEP</InterpolationMethod>
+					<OutOfRangeBehaviour>ERROR</OutOfRangeBehaviour>
+					<OutOfRangeCustomValue><![CDATA[0.0]]></OutOfRangeCustomValue>
+					<ApproximationOrder><![CDATA[1]]></ApproximationOrder>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<ValuesQuery>
+						<TableReference>
+						</TableReference>
+							<ArgumentColumnReference>
+							</ArgumentColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</ValuesQuery>
+// arguments and values
+					<Argument><![CDATA[60.0]]></Argument>
+					<Argument><![CDATA[70.0]]></Argument>
+					<Argument><![CDATA[80.0]]></Argument>
+					<Argument><![CDATA[85.0]]></Argument>
+					<Value><![CDATA[2.4]]></Value>
+					<Value><![CDATA[10.2]]></Value>
+					<Value><![CDATA[29.8]]></Value>
+					<Value><![CDATA[29.8]]></Value>
+				</TableFunction>
+			</TableFunctions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1613773344051</Id>
@@ -34941,6 +35322,55 @@ theAgent.sphere.setVisible(true);
 
 				</Variable>
 			</Variables>
+			<Events>
+				<Event>
+					<Id>1618872482281</Id>
+					<Name><![CDATA[nurseRoomUpdate]]></Name>
+					<X>180</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1618905600000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[15]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[30]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[if(this.isInfectious()){
+	Point infectiousAgentPoint = new Point(this.getX(), this.getY());
+	INode infectiousAgentNode = main.careHomeFloorPlan.getNearestNode(this, infectiousAgentPoint);
+
+	if (infectiousAgentNode.contains(this.getX(), this.getY())){
+		Room infectiousAgentRoom = main.roomRepresentations.get(infectiousAgentNode);
+		Room currentRoom = this.infectionBehaviour.currentRoom;
+		
+		if(currentRoom != infectiousAgentRoom){
+			main.decrementAgentsInRoomCount(this.infectionBehaviour, currentRoom);
+			
+			this.infectionBehaviour.currentRoom = infectiousAgentRoom;
+			
+			main.incrementAgentsInRoomCount(this.infectionBehaviour, infectiousAgentRoom);
+		}
+	}
+}]]></Action>
+				</Event>
+			</Events>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -37190,10 +37620,11 @@ T agent - the agent.
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.currentRoom = agent.residentToVisit.infectionBehaviour.currentRoom;
-
+								<Code><![CDATA[//An infected visitor will contaminate the room they enter.
+agent.infectionBehaviour.currentRoom = agent.residentToVisit.infectionBehaviour.currentRoom;
 Room agentCurrentRoom = agent.infectionBehaviour.currentRoom;
 
+//They increment the infection counts if the resident is not in transit or in the courtyard.
 if (agentCurrentRoom != null){
 	main.incrementAgentsInRoomCount(agent.infectionBehaviour, agentCurrentRoom);
 }]]></Code>
@@ -37202,7 +37633,10 @@ if (agentCurrentRoom != null){
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.residentToVisit.resetHappiness();
+								<Code><![CDATA[//We reset the happiness of a resident after a visit.
+agent.residentToVisit.resetHappiness();
+
+//If the visitor was contaminating a room it will no longer do so.
 if (agent.infectionBehaviour.currentRoom != null){
 	main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
 }]]></Code>
@@ -37211,7 +37645,8 @@ if (agent.infectionBehaviour.currentRoom != null){
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.currentRoom = null;]]></Code>
+								<Code><![CDATA[//Regardless, we set the visitors room to null.
+agent.infectionBehaviour.currentRoom = null;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -41935,7 +42370,8 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(-main.courtYardHappinessChange);]]></Code>
+								<Code><![CDATA[//No longer subject to courtyard happiness effect.
+agent.mentalHealth.addToHappinessInflow(-main.courtYardHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -42116,7 +42552,7 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 				<EmbeddedObject>
 					<Id>1617569075668</Id>
 					<Name><![CDATA[availableBenches]]></Name>
-					<X>650</X><Y>430</Y>
+					<X>740</X><Y>400</Y>
 					<Label><X>-25</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -43030,13 +43466,6 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[/**Model logic error:
-
-root.courtYardBehaviour.moveTo8:
-at 303 hours in. At any speed. 
-**/]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -53420,6 +53849,18 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 				<Parameter>
 					<ParameterName><![CDATA[doctorInitiallyInfected]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ageRangeMin]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ageRangeMax]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[chanceOfUnderlyingCondition]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[movementImpairmentFraction]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -53585,6 +54026,18 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 			<FreeformParamValue>	
 				<Id>1618768041442</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618865597134</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618865612021</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618866042861</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618868432109</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -53755,6 +54208,22 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618768041442</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618865597134</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618865612021</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618866042861</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618868432109</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>

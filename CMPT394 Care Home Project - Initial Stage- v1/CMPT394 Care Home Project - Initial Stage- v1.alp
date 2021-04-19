@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -33707,15 +33707,13 @@ traceln("No longer Quarantined");]]></Action>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[// TODO use the colorAgentAsExposed method? 
-if (resident != null){
+						<EntryAction><![CDATA[if (resident != null){
 	resident.shapeBody.setFillColor(yellow);
 }
 
 if (visitor != null){
 	visitor.shapeBody.setFillColor(yellow);
-}
-]]></EntryAction>
+}]]></EntryAction>
 						<FillColor>-256</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -33728,14 +33726,19 @@ if (visitor != null){
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[// TODO use the colorAgentAsInfectious method?
-if (resident != null){
+						<EntryAction><![CDATA[if (resident != null){
 	resident.shapeBody.setFillColor(red);
 	resident.sphere.setVisible(true);
 }
 if (visitor != null){
 	visitor.shapeBody.setFillColor(red);
 	visitor.sphere.setVisible(true);
+}
+if (specialVisitor != null){
+	specialVisitor.sphere.setVisible(true);
+}
+if (nurse != null){
+	nurse.sphere.setVisible(true);
 }]]></EntryAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
@@ -33820,6 +33823,9 @@ if (visitor != null){
 	calculateWieghtOfExposure(visitor.getX(), visitor.getY(), visitor);
 }
 
+if (specialVisitor != null){
+	calculateWieghtOfExposure(specialVisitor.getX(), specialVisitor.getY(), specialVisitor);
+}
 ]]></Action>
 					</Properties>	
 				</StatechartElement>
@@ -33926,8 +33932,8 @@ if (visitor != null){
 	spreadInfection(visitor.getX(), visitor.getY(), visitor);
 }
 
-if (visitor != null){
-	spreadInfection(visitor.getX(), visitor.getY(), specialVisitor);
+if (specialVisitor != null){
+	spreadInfection(specialVisitor.getX(), specialVisitor.getY(), specialVisitor);
 }]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -48060,7 +48066,7 @@ T agent - the agent. ]]></Description>
 				<Variable Class="Parameter">
 					<Id>1618093008141</Id>
 					<Name><![CDATA[specialVisitorType]]></Name>
-					<X>10</X><Y>100</Y>
+					<X>100</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -48158,7 +48164,7 @@ T agent - the agent. ]]></Description>
 				<EmbeddedObject>
 					<Id>1617918819738</Id>
 					<Name><![CDATA[infectionBehaviour]]></Name>
-					<X>100</X><Y>170</Y>
+					<X>100</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -48515,6 +48521,42 @@ T agent - the agent. ]]></Description>
 			</Presentation>
 
 				</Group>
+				<Figure3D>
+					<Id>1618846669491</Id>
+					<Name><![CDATA[sphere]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[3d/sphere.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+							<Color>1023344640</Color>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_27]]></Name>
+							<OriginalColor>-16764597</OriginalColor>
+							<Color>1191116800</Color>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>false</AutoScale>
+					<Scale>6.5</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+					<VisibleCode><![CDATA[isInfectious()]]></VisibleCode>
+				</Figure3D>
 			</Presentation>
 
 				</Level>

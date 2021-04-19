@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -9585,8 +9585,7 @@ visitsToday += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[moveToResident1_onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[currentVisitorPopulation += 1;
-visitsToday += 1;]]></Code>
+								<Code><![CDATA[visitsToday += 1;]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -9907,8 +9906,8 @@ visitsToday += 1;]]></Code>
 
 if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome.size() != 0){
 	visitorEntranceTestingBlock.queue.stopDelay(visitorEntranceTestingBlock.queueToEnterCareHome.removeFirst());
+	traceln("Visitor exiting the facility (enter)");
 }
-
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -34317,8 +34316,10 @@ if (shouldSpreadInfection){
 		}
 	}
 }
-// Infectious agent exhaling COVID particles into the air. 
-infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);]]></Body>
+if (infectiousAgentNode.contains(agentX, agentY)){
+	// Infectious agent exhaling COVID particles into the air. 
+	infectiousAgentRoom.infectiousEventsInRoom.addFirst(infectiousAgentPoint);
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -36682,9 +36683,15 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationNode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[main.node23]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationAttractor]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[main.bed13]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destinationResource]]></Name>
@@ -36692,7 +36699,7 @@ T agent - the agent.
 						<Parameter>
 							<Name><![CDATA[destinationAgent]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[moveToResident1_destinationAgent(agent)]]></Code>
+								<Code><![CDATA[agent.residentToVisit]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -36772,17 +36779,11 @@ T agent - the agent.
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[moveToResident1_onEnter(agent);
-
-// TODO
-//Room currentRoom = main.roomRepresentations.get(moveToResident1_destinationAgent(agent));
-//agent.infectionBehaviour.currentRoom = currentRoom;]]></Code>
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.currentRoom = null;]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -36856,7 +36857,7 @@ T agent - the agent.
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[uniform(20, 60)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -36883,19 +36884,30 @@ T agent - the agent.
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.currentRoom = agent.residentToVisit.infectionBehaviour.currentRoom;
+
+Room agentCurrentRoom = agent.infectionBehaviour.currentRoom;
+
+if (agentCurrentRoom != null){
+	main.incrementAgentsInRoomCount(agent.infectionBehaviour, agentCurrentRoom);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[//traceln("Before");
-//traceln(agent.residentToVisit.mentalHealth.happiness);
-agent.residentToVisit.resetHappiness();
-//traceln("After");
-//traceln(agent.residentToVisit.mentalHealth.happiness);]]></Code>
+								<Code><![CDATA[agent.residentToVisit.resetHappiness();
+if (agent.infectionBehaviour.currentRoom != null){
+	main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.currentRoom = null;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>

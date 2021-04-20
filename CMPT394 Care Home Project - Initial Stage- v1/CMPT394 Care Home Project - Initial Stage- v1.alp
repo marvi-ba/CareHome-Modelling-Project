@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181544" AlpVersion="8.7.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.7.3.202103181411" AlpVersion="8.7.1">
 <Model>
 	<Id>1613768872916</Id>
 	<Name><![CDATA[CMPT394 Care Home Project - Initial Stage- v1]]></Name>
@@ -210,7 +210,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1614985305432</Id>
-					<Name><![CDATA[exposures]]></Name>
+					<Name><![CDATA[totalExposures]]></Name>
 					<X>1000</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -390,6 +390,78 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618954619735</Id>
+					<Name><![CDATA[avgHappiness]]></Name>
+					<X>1000</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618954632275</Id>
+					<Name><![CDATA[residentInfections]]></Name>
+					<X>1000</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618954927747</Id>
+					<Name><![CDATA[facilityPopulationInfections]]></Name>
+					<X>1000</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618956491300</Id>
+					<Name><![CDATA[facilityPopulationExposures]]></Name>
+					<X>1000</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1618956684593</Id>
+					<Name><![CDATA[residentExposures]]></Name>
+					<X>1000</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1613768901538</Id>
 					<Name><![CDATA[nursePopulation]]></Name>
@@ -427,7 +499,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[2]]></Code>
+							<Code><![CDATA[22]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1613768938432</Id>
@@ -2544,7 +2616,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1617315766210</Id>
 					<Name><![CDATA[connector18]]></Name>
-					<X>-460</X><Y>830</Y>
+					<X>-540</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2571,7 +2643,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5973,7 +6045,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1618949344240</Id>
 					<Name><![CDATA[connector47]]></Name>
-					<X>-380</X><Y>830</Y>
+					<X>-420</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6000,7 +6072,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -6196,6 +6268,53 @@ for(Resident r : residents){
 }
 ]]></Action>
 				</Event>
+				<Event>
+					<Id>1618952721967</Id>
+					<Name><![CDATA[stopSimulation]]></Name>
+					<X>1190</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="occuresOnce">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1618992000000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[31]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[//Recording Avg happiness.
+double totalHappiness = 0;
+double count = 0;
+traceln("Ending Simulation");
+for(Resident r : residents){
+	for(double happinessLevel : r.mentalHealth.dailyHappinessLevelRecord){
+		totalHappiness += happinessLevel;
+		traceln(happinessLevel);
+		count += 1;
+	}
+}
+avgHappiness = totalHappiness / count; 
+//####################################
+
+
+
+this.finishSimulation()]]></Action>
+				</Event>
 			</Events>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -6307,10 +6426,12 @@ return availableNursesWard1;   // The default nurse pool if staff sharing allowe
 						<Type><![CDATA[Resident]]></Type>
 					</Parameter>
 					<Body><![CDATA[if(agent.wardNumber == 3){
+	traceln("dementia");
+
 	return eventScheduleForWard3;
 }
 
-
+traceln("Before for loop");
 if (enableStaffCohorting){
 	if (agent.wardNumber == 1){
 		return eventScheduleForWard1;
@@ -6318,6 +6439,7 @@ if (enableStaffCohorting){
 		return eventScheduleForWard2;
 	}
 } else {
+	traceln("synch");
 	return synchronousEventSchedule;
 }
 ]]></Body>
@@ -6423,7 +6545,6 @@ if (timeout_value <= 0.25){
 		room.roomInfectiousCountWithMask += 1;
 	}else{
 		room.roomInfectiousCountNoMask += 1;
-		traceln("Incrementing this count...");
 	}
 }]]></Body>
 				</Function>
@@ -7892,7 +8013,7 @@ return 0;]]></Body>
 				<EmbeddedObject>
 					<Id>1613780356599</Id>
 					<Name><![CDATA[residentSource]]></Name>
-					<X>-490</X><Y>820</Y>
+					<X>-570</X><Y>820</Y>
 					<Label><X>-35</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8343,7 +8464,7 @@ agent.setNetwork(careHomeFloorPlan);]]></Code>
 				<EmbeddedObject>
 					<Id>1614897189505</Id>
 					<Name><![CDATA[roomInitalSpawn]]></Name>
-					<X>-420</X><Y>810</Y>
+					<X>-460</X><Y>810</Y>
 					<Label><X>-15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15517,7 +15638,7 @@ doctorAllowedEntry = true;]]></Code>
 								<Code><![CDATA[if (hairStylistInitiallyInfected){
 	if (unit.specialVisitorType == SpecialVisitorOption.HairStylist){
 		unit.receive(InitialInfection);
-		traceln(unit.isInfectious());
+		//traceln(unit.isInfectious());
 	}
 }
 
@@ -19206,7 +19327,7 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[!agent.residentToVisit.shouldQuarantine]]></Code>
+								<Code><![CDATA[agent.residentToVisit != null || !agent.residentToVisit.shouldQuarantine]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -34695,7 +34816,7 @@ agent.hadHaircut = true;]]></Code>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[shouldQuarantine = false;
-traceln("No longer Quarantined");]]></Action>
+//traceln("No longer Quarantined");]]></Action>
 				</Event>
 			</Events>
 			<Functions>
@@ -35231,12 +35352,19 @@ traceln("No longer Quarantined");]]></Action>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[// TODO use the colorAgentAsExposed method? 
 if (resident != null){
+	main.residentExposures += 1; 
 	resident.shapeBody.setFillColor(yellow);
 }
 
 if (visitor != null){
 	visitor.shapeBody.setFillColor(yellow);
 }
+
+if(resident != null || nurse != null){
+	main.facilityPopulationExposures += 1;
+}
+
+main.totalExposures += 1;
 ]]></EntryAction>
 						<FillColor>-256</FillColor>
 					</Properties>
@@ -35252,13 +35380,16 @@ if (visitor != null){
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[// TODO use the colorAgentAsInfectious method?
 if (resident != null){
+	main.residentInfections += 1;
 	resident.shapeBody.setFillColor(red);
 	resident.sphere.setVisible(true);
 }
 if (visitor != null){
 	visitor.shapeBody.setFillColor(red);
 	visitor.sphere.setVisible(true);
-}]]></EntryAction>
+}
+
+main.facilityPopulationInfections += 1;]]></EntryAction>
 						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -35313,7 +35444,7 @@ main.remove_residents(resident);
 
 //Notifying other residents about the death in the facilities.
 for(Resident r : main.residents){
-	traceln("Told that death occurs.");
+	//traceln("Told that death occurs.");
 	if(r.hasDementia){
 		r.mentalHealth.addToHappinessInflow(main.deathOccurrenceHappinessChange);
 	}else{
@@ -35402,7 +35533,7 @@ if (visitor != null){
 					<IconOffset>30.0</IconOffset>
 					<Properties Source="1613773379292" Target="1613773412005" Trigger="message">
 						<Action><![CDATA[
-main.exposures += 1;]]></Action>
+]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -36035,14 +36166,25 @@ theAgent.sphere.setVisible(true);
 					</Parameter>
 					<Body><![CDATA[if (main.enableMaskUseForEveryone){
 	if (resident != null){
-		this.maskOn = shouldPutMaskOn;
+		
+		
+		if(currentRoom != null && resident.shouldQuarantine){
+			main.decrementAgentsInRoomCount(this, currentRoom);
+			this.maskOn = shouldPutMaskOn;
+			main.incrementAgentsInRoomCount(this, currentRoom);
+		}else{
+			this.maskOn = shouldPutMaskOn;
+		}
+		
 		if(resident.hasDementia){
 			if(shouldPutMaskOn){
 				resident.mentalHealth.addToHappinessInflow(main.maskIrritationHappinessChangeForDementia);
 			}else{
 				resident.mentalHealth.addToHappinessInflow(-1 * main.maskIrritationHappinessChangeForDementia);				
 			}
-		}	
+		}
+		
+			
 	}
 }
 ]]></Body>
@@ -37956,7 +38098,7 @@ theAgent.sphere.setVisible(true);
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[LinkedList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -51968,7 +52110,7 @@ T agent - the agent. ]]></Description>
 							<Value Class="CodeValue">
 								<Code><![CDATA[main.quarantiningResidents += 1;
 
-agent.infectionBehaviour.setMaskValueForResident(true);
+agent.infectionBehaviour.setMaskValueForResident(false);
 
 Room currentRoom = main.roomRepresentations.get(agent.myBedRoom);
 agent.infectionBehaviour.currentRoom = currentRoom;
@@ -52755,6 +52897,9 @@ if(agent.wardNumber == 3){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.setMaskValueForResident(true);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTimeout]]></Name>
@@ -52993,6 +53138,9 @@ agent.waitingForResult = false;
 
 
 //TODO: infecteds get their results twice. Take a look
+
+agent.infectionBehaviour.setMaskValueForResident(false);
+
 
 //Mental health Effect for testing Postitive
 if(agent.wardNumber == 3){
@@ -53256,6 +53404,7 @@ if(agent.wardNumber == 3){
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[sleep1_onEnter(agent, delayTime);
+
 
 agent.mentalHealth.toggleSleep(true);]]></Code>
 							</Value>
@@ -53560,6 +53709,9 @@ if(agent.wardNumber == 3){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.setMaskValueForResident(true);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTimeout]]></Name>
@@ -53939,6 +54091,9 @@ if(agent.wardNumber == 3){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.infectionBehaviour.setMaskValueForResident(false);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onReleaseUnit]]></Name>
@@ -54272,7 +54427,9 @@ if(agent.wardNumber == 3){
 	agent.mentalHealth.addToHappinessInflow(.75 * main.dinningHappinessChangeForDementia);
 }else{
 	agent.mentalHealth.addToHappinessInflow(.75 * main.dinningHappinessChange);
-}]]></Code>
+}
+
+agent.infectionBehaviour.setMaskValueForResident(false);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -54286,7 +54443,9 @@ if(agent.wardNumber == 3){
 	agent.mentalHealth.addToHappinessInflow(-1 * main.dinningHappinessChangeForDementia);
 }else{
 	agent.mentalHealth.addToHappinessInflow(-1 * main.dinningHappinessChange);
-}]]></Code>
+}
+
+agent.infectionBehaviour.setMaskValueForResident(true);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -55670,8 +55829,8 @@ import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;]]></Import>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
-			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<MaximumMemory>1024</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<BeforeEachExperimentRunCode><![CDATA[csvName = csvTimeStampFormatter.format(LocalDateTime.now()) + "_" + scenarioName + "_" + currentIteratationOfParameter +".csv";
 
@@ -55681,15 +55840,31 @@ try{
 
 	csvWriter = new FileWriter(csvName);
 	
-	csvWriter.write("exposures");
-	
+	//Writing Headers
+	csvWriter.write("covidRelatedDeaths");
+	csvWriter.write(", totalExposures");
+	csvWriter.write(", facilityPopulationExposures");
+	csvWriter.write(", avgHappiness");
+	csvWriter.write(", residentInfections");
+	csvWriter.write(", facilityPopulationInfections");
+	csvWriter.write(", residentExposures");
 	csvWriter.write("\n");	
+	
 }catch(IOException e){
 	traceln("csvWrite Error in row headers for: \n" + scenarioDescription);
 	e.printStackTrace();
 }]]></BeforeEachExperimentRunCode>
 			<AfterSimulationRunCode><![CDATA[try{
-	csvWriter.write(String.valueOf(root.exposures));
+	//Entering Data	
+	csvWriter.write(String.valueOf(root.covidRelatedDeaths));
+	csvWriter.write("," + String.valueOf(root.totalExposures));
+	csvWriter.write("," + String.valueOf(root.facilityPopulationExposures));
+	csvWriter.write("," + String.valueOf(root.avgHappiness));
+	csvWriter.write("," + String.valueOf(root.residentInfections));
+	csvWriter.write("," + String.valueOf(root.facilityPopulationInfections));
+	csvWriter.write("," + String.valueOf(root.residentExposures));
+	
+	//End of row	
 	csvWriter.write("\n");
 }catch(IOException e){
 	traceln("csvWrite Error in attempting to: \n" + scenarioDescription);
@@ -55716,12 +55891,21 @@ try{
 	csvForRun = new File(csvName);
 	csvForRun.createNewFile();
 	
-	csvWriter = new FileWriter(csvName);	
+	csvWriter = new FileWriter(csvName);
+	
+	csvWriter.write("covidRelatedDeaths");
+	csvWriter.write(", totalExposures");
+	csvWriter.write(", facilityPopulationExposures");
+	csvWriter.write(", avgHappiness");
+	csvWriter.write(", residentInfections");
+	csvWriter.write(", facilityPopulationInfections");
+	csvWriter.write(", residentExposures");
+			
 }catch(IOException e){
 	traceln("csvWrite Error in creating file for: \n" + scenarioDescription);
 	e.printStackTrace();
 }]]></AfterIterationCode>
-			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<AllowParallelEvaluations>false</AllowParallelEvaluations>
 			<UseFreeformParameters>false</UseFreeformParameters>
 			<NumberOfRuns>10</NumberOfRuns>
 			<FreeformParamValue>	
@@ -56210,7 +56394,7 @@ try{
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<StopOption><![CDATA[Never]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1616112000000]]></FinalDate>	
@@ -56223,9 +56407,9 @@ try{
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 			</PresentationProperties>
 			<ReplicationsProperties>
-				<UseReplication>false</UseReplication>
+				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>10</ReplicationPerIteration>
+				<ReplicationPerIteration>1</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>

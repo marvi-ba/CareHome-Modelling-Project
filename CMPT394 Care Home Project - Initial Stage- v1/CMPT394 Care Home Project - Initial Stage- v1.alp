@@ -35899,6 +35899,13 @@ theAgent.sphere.setVisible(true);
 					<Body><![CDATA[if (main.enableMaskUseForEveryone){
 	if (resident != null){
 		this.maskOn = shouldPutMaskOn;
+		if(resident.hasDementia){
+			if(shouldPutMaskOn){
+				resident.mentalHealth.addToHappinessInflow(main.maskIrritationHappinessChangeForDementia);
+			}else{
+				resident.mentalHealth.addToHappinessInflow(-1 * main.maskIrritationHappinessChangeForDementia);				
+			}
+		}	
 	}
 }
 ]]></Body>

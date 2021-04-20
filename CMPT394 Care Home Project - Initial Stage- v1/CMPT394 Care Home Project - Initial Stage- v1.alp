@@ -303,7 +303,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="PlainVariable">
 					<Id>1618762404455</Id>
 					<Name><![CDATA[maskUseEfficacyOnInfectiousAgent]]></Name>
-					<X>1000</X><Y>320</Y>
+					<X>1040</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1052,7 +1052,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617658142207</Id>
 					<Name><![CDATA[partyHappinessChange]]></Name>
-					<X>-350</X><Y>550</Y>
+					<X>1050</X><Y>520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1076,7 +1076,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617658163634</Id>
 					<Name><![CDATA[courtYardHappinessChange]]></Name>
-					<X>-350</X><Y>570</Y>
+					<X>1050</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1100,7 +1100,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617658180092</Id>
 					<Name><![CDATA[libraryHappinessChange]]></Name>
-					<X>-350</X><Y>590</Y>
+					<X>1050</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1124,7 +1124,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1617658201331</Id>
 					<Name><![CDATA[dinningHappinessChange]]></Name>
-					<X>-350</X><Y>610</Y>
+					<X>1050</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1294,7 +1294,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1618760647265</Id>
 					<Name><![CDATA[enableMaskUseForNursesAndAllVisitors]]></Name>
-					<X>1000</X><Y>270</Y>
+					<X>1040</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1452,6 +1452,387 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1618868432107</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876341938</Id>
+					<Name><![CDATA[quarantineHappinessChange]]></Name>
+					<X>1050</X><Y>600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1618876341936</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876420793</Id>
+					<Name><![CDATA[haircutHappinessChange]]></Name>
+					<X>1050</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876420791</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876423324</Id>
+					<Name><![CDATA[doctorVisitHappinessChange]]></Name>
+					<X>1050</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876423322</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461568</Id>
+					<Name><![CDATA[partyHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461566</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461579</Id>
+					<Name><![CDATA[courtYardHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461577</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461588</Id>
+					<Name><![CDATA[libraryHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461586</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461595</Id>
+					<Name><![CDATA[dinningHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461593</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461602</Id>
+					<Name><![CDATA[quarantineHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461600</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461608</Id>
+					<Name><![CDATA[haircutHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461606</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876461615</Id>
+					<Name><![CDATA[doctorVisitHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876461613</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618876674649</Id>
+					<Name><![CDATA[swabTestHappinessChange]]></Name>
+					<X>1050</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618876674647</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618877093894</Id>
+					<Name><![CDATA[swabTestHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618877093892</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618877139363</Id>
+					<Name><![CDATA[deathOccurrenceHappinessChange]]></Name>
+					<X>1050</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618877139361</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618877213154</Id>
+					<Name><![CDATA[deathOccurrenceHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618877213152</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618879356178</Id>
+					<Name><![CDATA[testingPositiveHappinessChange]]></Name>
+					<X>1050</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618879356176</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1618879375785</Id>
+					<Name><![CDATA[testingPositiveHappinessChangeForDementia]]></Name>
+					<X>1050</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1618879375783</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -2296,74 +2677,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>50</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1617485818649</Id>
-					<Name><![CDATA[connector51]]></Name>
-					<X>-640</X><Y>1440</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isInBookclub]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outT]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[moveTo]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1617485853849</Id>
-					<Name><![CDATA[connector52]]></Name>
-					<X>-650</X><Y>1450</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isInBookclub]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[courtYardBehaviour]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
-						<ItemName><![CDATA[port1]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>50</Y></Point>
-						<Point><X>70</X><Y>50</Y></Point>
-						<Point><X>70</X><Y>70</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -4528,41 +4841,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1618176260557</Id>
-					<Name><![CDATA[connector43]]></Name>
-					<X>-750</X><Y>1310</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[freeTime]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out3]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[isInBookclub]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>130</Y></Point>
-						<Point><X>90</X><Y>130</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1618785327704</Id>
 					<Name><![CDATA[connector95]]></Name>
 					<X>-680</X><Y>1270</Y>
@@ -5279,6 +5557,41 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Point><X>-970</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1618878205828</Id>
+					<Name><![CDATA[connector43]]></Name>
+					<X>-750</X><Y>1310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[freeTime]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out3]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[moveTo]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>130</Y></Point>
+						<Point><X>170</X><Y>130</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
 			<Events>
 				<Event>
@@ -5617,7 +5930,7 @@ if (timeout_value <= 0.25){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1618762019201</Id>
 					<Name><![CDATA[maskUseAsPPE]]></Name>
-					<X>1000</X><Y>300</Y>
+					<X>1040</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7793,7 +8106,11 @@ agent.infectionBehaviour.currentRoom = currentRoom;
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 
 //Mental health ongoing effects of dining
-agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);]]></Code>
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(dinningHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(dinningHappinessChange);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7813,7 +8130,11 @@ agent.infectionBehaviour.setMaskValueForResident(true);
 agent.infectionBehaviour.currentRoom = null;
 
 //no longer dining so mental health no longer takes it into account
-agent.mentalHealth.addToHappinessInflow(dinningHappinessChange * -1);]]></Code>
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * dinningHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * dinningHappinessChange);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10792,7 +11113,14 @@ agent.mentalHealth.toggleSleep(false);]]></Code>
 Room currentRoom = roomRepresentations.get(library);
 agent.infectionBehaviour.currentRoom = currentRoom;
 
-incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
+incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
+
+//The effect of reading on the mental health of either resident. 
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(libraryHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(libraryHappinessChange);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -10806,7 +11134,11 @@ decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.cu
 agent.infectionBehaviour.currentRoom = null;
 
 //Mental Health is no longer impacted by library activities.
-agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * libraryHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * libraryHappinessChange);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -11081,99 +11413,6 @@ agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onWrapUpTerminated]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1617485817620</Id>
-					<Name><![CDATA[isInBookclub]]></Name>
-					<X>-670</X><Y>1430</Y>
-					<Label><X>-20</X><Y>-5</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutput]]></ClassName>
-							<ItemName><![CDATA[1412336242931]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[conditionIsProbabilistic]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.inBookclub]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onAtEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExitTrue]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(libraryHappinessChange);]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExitFalse]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
-							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -11568,13 +11807,6 @@ agent.mentalHealth.addToHappinessInflow(-libraryHappinessChange);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[/*traceln("Conditionals for hairstylists.");
-traceln(hairStylistsVisit.getValue());
-traceln(availableHairStylists.idle() == 1);
-traceln(!agent.hadHaircut);
-traceln("\n");*/]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
@@ -11590,9 +11822,6 @@ traceln("\n");*/]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit5]]></Name>
@@ -13294,8 +13523,8 @@ agent.infectionBehaviour.currentRoom = null;]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(.5, 2)]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+								<Code><![CDATA[uniform(.5, 1)]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -13325,8 +13554,8 @@ agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 
-//TODO: mental health effects for doctor visits.
-]]></Code>
+//Taking into account the mental health effect of visiting the doctor.
+agent.mentalHealth.addToHappinessInflow(doctorVisitHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -13341,7 +13570,7 @@ agent.infectionBehaviour.currentRoom = null;
 
 //Since they have seen the doctor they will wait for another appointment
 agent.visitedDoctor = true;
-]]></Code>
+agent.mentalHealth.addToHappinessInflow(-1 * doctorVisitHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -15986,7 +16215,7 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition3]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[randomTrue( 0.5 )]]></Code>
+								<Code><![CDATA[agent.inBookclub && randomTrue( 0.5 )]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -16030,9 +16259,6 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit5]]></Name>
@@ -16538,8 +16764,7 @@ agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 
-//TODO: mental health effects for hair styling visits.
-]]></Code>
+agent.mentalHealth.addToHappinessInflow(haircutHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -16554,7 +16779,9 @@ agent.infectionBehaviour.currentRoom = null;
 
 //They have had their hair cut and are no longer in need of one.
 agent.hadHaircut = true;
-]]></Code>
+
+//Mental Health Change for Hair cut
+agent.mentalHealth.addToHappinessInflow(-1 * haircutHappinessChange);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -20659,6 +20886,10 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Taking into consideration the mental health effect of a doctors visit.
+agent.mentalHealth.addToHappinessInflow(doctorVisitHappinessChangeForDementia);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -20672,7 +20903,9 @@ agent.infectionBehaviour.currentRoom = null;
 
 //Since they have seen the doctor they will wait for another appointment
 agent.visitedDoctor = true;
-]]></Code>
+
+//No longer subjected to the mental health effects of a doctor visit
+agent.mentalHealth.addToHappinessInflow(-1 * doctorVisitHappinessChangeForDementia);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -21304,6 +21537,10 @@ incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Taking into consideration the mental health effect of a haircut.
+agent.mentalHealth.addToHappinessInflow(haircutHappinessChangeForDementia);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -21316,7 +21553,10 @@ decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.cu
 agent.infectionBehaviour.currentRoom = null;
 
 //They have had their hair cut and are no longer in need of one.
-agent.hadHaircut = true;]]></Code>
+agent.hadHaircut = true;
+
+//No longer taking into consideration the mental health effects of a haircut.
+agent.mentalHealth.addToHappinessInflow(-1 * haircutHappinessChangeForDementia);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -21611,7 +21851,7 @@ agent.hadHaircut = true;]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1616427951569</Id>
 					<Name><![CDATA[visitors_presentation]]></Name>
-					<X>-50</X><Y>-10</Y>
+					<X>-60</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33076,7 +33316,7 @@ agent.hadHaircut = true;]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1617913082724</Id>
 					<Name><![CDATA[specialVisitors_presentation]]></Name>
-					<X>-70</X><Y>0</Y>
+					<X>-120</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33321,7 +33561,7 @@ agent.hadHaircut = true;]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1613773166314</Id>
 					<Name><![CDATA[residents_presentation]]></Name>
-					<X>-60</X><Y>0</Y>
+					<X>-280</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -33343,7 +33583,7 @@ agent.hadHaircut = true;]]></Code>
 				<EmbeddedObjectPresentation>
 					<Id>1614980083183</Id>
 					<Name><![CDATA[nurses_presentation]]></Name>
-					<X>-70</X><Y>-20</Y>
+					<X>-180</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -37050,7 +37290,13 @@ theAgent.sphere.setVisible(true);
 						<Name><![CDATA[changeInHappiness]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
-					<Body><![CDATA[happinessIncrease += changeInHappiness; ]]></Body>
+					<Body><![CDATA[if(resident.hasDementia){
+	happinessIncrease += changeInHappiness * (main.enableStaffCohorting ? .75 : 1); 
+}else{
+	happinessIncrease += changeInHappiness * (main.enableStaffCohorting ? .75 : 1); 
+}
+
+]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -42449,7 +42695,11 @@ agent.randomRoomY = randomRoomPoint.getY();]]></Code>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[//No longer subject to courtyard happiness effect.
-agent.mentalHealth.addToHappinessInflow(-main.courtYardHappinessChange);]]></Code>
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * main.courtYardHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * main.courtYardHappinessChange);
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -42571,6 +42821,13 @@ agent.mentalHealth.addToHappinessInflow(-main.courtYardHappinessChange);]]></Cod
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(main.courtYardHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(main.courtYardHappinessChange);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
@@ -51360,6 +51617,15 @@ T agent - the agent. ]]></Description>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(1.25 * main.swabTestHappinessChangeForDementia);
+	agent.mentalHealth.addToHappinessInflow(1.25 * main.quarantineHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(main.swabTestHappinessChange);
+	agent.mentalHealth.addToHappinessInflow(main.quarantineHappinessChange);
+}	]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -51369,7 +51635,12 @@ agent.waitingForResult = true;
 
 agent.quarantineTimeout.restart(48); //TODO: parameterize it
 
-//TODO: mentalHeath for waiting for test results]]></Code>
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * main.swabTestHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * main.swabTestHappinessChange);
+}
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -51919,10 +52190,14 @@ agent.quarantineTimeout.restart(48); //TODO: parameterize it
 agent.shouldQuarantine = true;
 agent.waitingForResult = false;
 
-//infecteds get their results twice. Take a look
+//TODO: infecteds get their results twice. Take a look
 
-
-//TODO: Mental health effect for testing postive]]></Code>
+//Mental health Effect for testing Postitive
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(main.testingPositiveHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(main.testingPositiveHappinessChange);
+}	]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -51930,7 +52205,13 @@ agent.waitingForResult = false;
 							<Value Class="CodeValue">
 								<Code><![CDATA[main.quarantiningResidents -= 1;
 
-main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);]]></Code>
+main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehaviour.currentRoom);
+
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * main.quarantineHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * main.quarantineHappinessChange);
+}	]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -52171,7 +52452,9 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[sleep1_onEnter(agent, delayTime);]]></Code>
+								<Code><![CDATA[sleep1_onEnter(agent, delayTime);
+
+agent.mentalHealth.toggleSleep(true);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -52180,7 +52463,9 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[sleep1_onExit(agent);]]></Code>
+								<Code><![CDATA[agent.mentalHealth.toggleSleep(false);
+
+sleep1_onExit(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -52272,6 +52557,14 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//Mental health Effect for getting tested again.
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * main.testingPositiveHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * main.testingPositiveHappinessChange);
+}	]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -53171,12 +53464,27 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(.75 * main.dinningHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(.75 * main.dinningHappinessChange);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[//no longer dining so mental health no longer takes it into account
+if(agent.wardNumber == 3){
+	agent.mentalHealth.addToHappinessInflow(-1 * main.dinningHappinessChangeForDementia);
+}else{
+	agent.mentalHealth.addToHappinessInflow(-1 * main.dinningHappinessChange);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -53721,7 +54029,7 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
 	<Frame>
-		<Width>1320</Width>
+		<Width>1620</Width>
 		<Height>710</Height>
 	</Frame>
 	<Database>
@@ -53939,6 +54247,54 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 				<Parameter>
 					<ParameterName><![CDATA[movementImpairmentFraction]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[quarantineHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[haircutHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[doctorVisitHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[partyHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[courtYardHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[libraryHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[dinningHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[quarantineHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[haircutHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[doctorVisitHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[swabTestHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[swabTestHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[deathOccurrenceHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[deathOccurrenceHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingPositiveHappinessChange]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[testingPositiveHappinessChangeForDementia]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -54116,6 +54472,54 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 			<FreeformParamValue>	
 				<Id>1618868432109</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876341938</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876420793</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876423324</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461568</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461579</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461588</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461595</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461602</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461608</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461615</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876674649</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877093894</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877139363</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877213154</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618879356178</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618879375785</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -54304,6 +54708,70 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 				<Id>1618868432109</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876341938</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876420793</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876423324</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461568</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461579</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461588</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461595</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461602</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461608</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461615</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876674649</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877093894</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877139363</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877213154</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618879356178</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618879375785</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
@@ -54327,7 +54795,602 @@ main.decrementAgentsInRoomCount(agent.infectionBehaviour, agent.infectionBehavio
 				<ErrorPercent>0.5</ErrorPercent>
 				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
 			</ReplicationsProperties>
+		</ParamVariationExperiment>
+		<!--   =========  Parameter Variation Experiment   ========  -->
+		<ParamVariationExperiment ActiveObjectClassId="1613768872922">
+			<Id>1618879890648</Id>
+			<Name><![CDATA[dailyVisitorLimit]]></Name>
+			<AdditionalClassCode><![CDATA[DateTimeFormatter csvTimeStampFormatter = DateTimeFormatter.ofPattern("MM_dd_HHmm");  
+String csvName;
+FileWriter csvWriter;
+File csvForRun;
+int currentIteratationOfParameter = 0;
+
+
+String scenarioDescription = "iteration the value of dailyVisitorLimit.";
+String scenarioName = "dailyVisitorLimit";]]></AdditionalClassCode>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Import><![CDATA[import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
+
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;]]></Import>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<BeforeEachExperimentRunCode><![CDATA[csvName = csvTimeStampFormatter.format(LocalDateTime.now()) + "_" + scenarioName + "_" + currentIteratationOfParameter +".csv";
+
+try{
+	csvForRun = new File(csvName);
+	csvForRun.createNewFile();
+
+	csvWriter = new FileWriter(csvName);
+	
+	csvWriter.write("exposures");
+	
+	csvWriter.write("\n");	
+}catch(IOException e){
+	traceln("csvWrite Error in row headers for: \n" + scenarioDescription);
+	e.printStackTrace();
+}]]></BeforeEachExperimentRunCode>
+			<AfterSimulationRunCode><![CDATA[try{
+	csvWriter.write(String.valueOf(root.exposures));
+	csvWriter.write("\n");
+}catch(IOException e){
+	traceln("csvWrite Error in attempting to: \n" + scenarioDescription);
+}]]></AfterSimulationRunCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+
+			<AfterIterationCode><![CDATA[currentIteratationOfParameter += 1;
+try{
+	csvWriter.close();
+}catch(IOException e){
+	traceln("csvWrite Error in closing file for: \n" + scenarioDescription); //Maybe iteration number would be better
+	e.printStackTrace();
+}
+
+traceln("Completed the run for file " + csvName);
+csvName = csvTimeStampFormatter.format(LocalDateTime.now()) + "_" + scenarioName + "_" + currentIteratationOfParameter +".csv";
+
+
+try{
+	csvForRun = new File(csvName);
+	csvForRun.createNewFile();
+	
+	csvWriter = new FileWriter(csvName);	
+}catch(IOException e){
+	traceln("csvWrite Error in creating file for: \n" + scenarioDescription);
+	e.printStackTrace();
+}]]></AfterIterationCode>
+			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<UseFreeformParameters>false</UseFreeformParameters>
+			<NumberOfRuns>10</NumberOfRuns>
+			<FreeformParamValue>	
+				<Id>1613768901538</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613768938434</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613768990461</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613769041692</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613769213801</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613769314213</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770038491</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770082727</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770223106</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770315380</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770478388</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613770531798</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613772383918</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613773827926</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613773904759</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613774619069</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1613776647686</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1615756413312</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1615758574921</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1616431800691</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1616964233559</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1616964953732</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1616964992745</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1616966106771</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617058834173</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617572922506</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617572929708</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617572932503</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617578126831</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617578139669</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658142207</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658163634</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658180092</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617658201331</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617729915572</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617748084784</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1617913464075</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618604103012</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618604589602</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618608577797</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618760647265</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618767774866</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618768041442</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618865597134</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618865612021</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618866042861</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618868432109</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876341938</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876420793</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876423324</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461568</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461579</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461588</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461595</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461602</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461608</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876461615</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618876674649</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877093894</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877139363</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618877213154</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618879356178</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1618879375785</Id>
+			</FreeformParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613768901538</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613768938434</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613768990461</Id>
+				<Type>RANGE</Type>
+				<From Class="CodeValue">
+					<Code><![CDATA[5]]></Code>
+				</From>
+				<To Class="CodeValue">
+					<Code><![CDATA[25]]></Code>
+				</To>
+				<Step Class="CodeValue">
+					<Code><![CDATA[5]]></Code>
+				</Step>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613769041692</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613769213801</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613769314213</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770038491</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770082727</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770223106</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770315380</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770478388</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613770531798</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613772383918</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613773827926</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613773904759</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613774619069</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1613776647686</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1615756413312</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1615758574921</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1616431800691</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1616964233559</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1616964953732</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1616964992745</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1616966106771</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617058834173</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617572922506</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617572929708</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617572932503</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617578126831</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617578139669</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658142207</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658163634</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658180092</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617658201331</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617729915572</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617748084784</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1617913464075</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618604103012</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618604589602</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618608577797</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618760647265</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618767774866</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618768041442</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618865597134</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618865612021</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618866042861</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618868432109</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876341938</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876420793</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876423324</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461568</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461579</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461588</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461595</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461602</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461608</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876461615</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618876674649</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877093894</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877139363</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618877213154</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618879356178</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1618879375785</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1616112000000]]></FinalDate>	
+				<FinalTime><![CDATA[100.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<Title><![CDATA[CMPT394 Care Home Project - Initial Stage- v1 : dailyVisitorLimit]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+			</PresentationProperties>
+			<ReplicationsProperties>
+				<UseReplication>false</UseReplication>
+				<FixedReplicationsNumber>true</FixedReplicationsNumber>
+				<ReplicationPerIteration>10</ReplicationPerIteration>
+				<MinimumReplication>2</MinimumReplication>
+				<MaximumReplication>10</MaximumReplication>
+				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
+				<ErrorPercent>0.5</ErrorPercent>
+				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
+			</ReplicationsProperties>
 		</ParamVariationExperiment>	
+		<!--   =========  Custom Experiment   ========  -->
+		<CustomExperiment>
+			<Id>0</Id>
+			<Name><![CDATA[guilessRunner]]></Name>
+			<MaximumMemory>512</MaximumMemory>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<Code><![CDATA[/** Create Engine, initialize random number generator:
+Engine engine = createEngine();
+engine.setTimeUnit( HOUR );
+// Fixed seed (reproducible simulation runs)
+engine.getDefaultRandomGenerator().setSeed( 1 );
+engine.setStartTime( 0.0 );
+engine.setStartDate( toDate( 2021, FEBRUARY, 19, 0, 0, 0 ) );
+// Set stop time:
+engine.setStopTime( 100.0 );
+**/
+
+// Create new root object:
+VisitorLimitVariation root = new VisitorLimitVariation();
+// Parameters are already determined
+
+// root.nursePopulation = 123;
+// ...
+// Prepare Engine for simulation:
+traceln("Running simulation");
+root.run();
+
+while(root.getState() != root.FINISHED){
+	//traceln(engine.getProgress() * 100);
+	try{
+		Thread.sleep(1000);
+	}catch(Exception e){
+		traceln("Error");
+	}
+}
+
+// TODO Process results of simulation here
+// traceln( "residents:" );
+// traceln( inspectOf( root.residents ) );
+// ...
+
+// Destroy the model:
+traceln("Done");
+engine.stop();]]></Code>
+		</CustomExperiment>
 	</Experiments>
 	<JavaClasses>
 		<!--   =========   Java Class   ========  -->

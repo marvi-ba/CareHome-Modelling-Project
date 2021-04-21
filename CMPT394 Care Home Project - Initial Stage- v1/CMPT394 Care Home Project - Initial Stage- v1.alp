@@ -3866,41 +3866,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1618176300980</Id>
-					<Name><![CDATA[connector63]]></Name>
-					<X>-750</X><Y>1330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[freeTime]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out4]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[courtYardBehaviour]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
-						<ItemName><![CDATA[port1]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>190</Y></Point>
-						<Point><X>170</X><Y>190</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1618176602169</Id>
 					<Name><![CDATA[connector65]]></Name>
 					<X>-450</X><Y>1180</Y>
@@ -4156,18 +4121,18 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[dementiaSpecialEventSkip]]></ItemName>
+						<ItemName><![CDATA[courtYardBehaviour]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
+						<ItemName><![CDATA[port1]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-140</X><Y>0</Y></Point>
-						<Point><X>-140</X><Y>-330</Y></Point>
+						<Point><X>0</X><Y>170</Y></Point>
+						<Point><X>170</X><Y>170</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5632,7 +5597,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Connector>
 					<Id>1618939013704</Id>
 					<Name><![CDATA[connector23]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-780</X><Y>1040</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5658,10 +5623,10 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>-780</X><Y>1040</Y></Point>
-						<Point><X>-750</X><Y>1040</Y></Point>
-						<Point><X>-750</X><Y>1100</Y></Point>
-						<Point><X>-700</X><Y>1100</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>60</Y></Point>
+						<Point><X>80</X><Y>60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5695,40 +5660,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>70</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1618939644158</Id>
-					<Name><![CDATA[connector51]]></Name>
-					<X>-690</X><Y>1110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[effectOfAbsentDoctor]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[testResidents]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-350</X><Y>0</Y></Point>
-						<Point><X>-350</X><Y>-320</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5800,41 +5731,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1618939798566</Id>
-					<Name><![CDATA[connector90]]></Name>
-					<X>-690</X><Y>1190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[effectOfAbsentStylist]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[testResidents]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-130</X><Y>0</Y></Point>
-						<Point><X>-350</X><Y>0</Y></Point>
-						<Point><X>-350</X><Y>-400</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1618941143152</Id>
 					<Name><![CDATA[connector95]]></Name>
 					<X>-510</X><Y>1270</Y>
@@ -5898,43 +5794,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-100</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1618941188068</Id>
-					<Name><![CDATA[connector105]]></Name>
-					<X>-640</X><Y>1280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[ward3EffectOfAbsentDoc]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[testResidents]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>20</Y></Point>
-						<Point><X>-260</X><Y>20</Y></Point>
-						<Point><X>-260</X><Y>-90</Y></Point>
-						<Point><X>-400</X><Y>-90</Y></Point>
-						<Point><X>-400</X><Y>-490</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -6006,43 +5865,6 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1618941389292</Id>
-					<Name><![CDATA[connector108]]></Name>
-					<X>-640</X><Y>1340</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[ward3EffectOfAbsentStylist]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[testResidents]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>40</Y></Point>
-						<Point><X>-260</X><Y>40</Y></Point>
-						<Point><X>-260</X><Y>-150</Y></Point>
-						<Point><X>-400</X><Y>-150</Y></Point>
-						<Point><X>-400</X><Y>-550</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1618949344240</Id>
 					<Name><![CDATA[connector47]]></Name>
 					<X>-420</X><Y>830</Y>
@@ -6106,6 +5928,145 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>-40</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1618961608332</Id>
+					<Name><![CDATA[connector51]]></Name>
+					<X>-690</X><Y>1110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[effectOfAbsentDoctor]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[freeTime]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-190</X><Y>0</Y></Point>
+						<Point><X>-190</X><Y>160</Y></Point>
+						<Point><X>-80</X><Y>160</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1618961630874</Id>
+					<Name><![CDATA[connector63]]></Name>
+					<X>-690</X><Y>1190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[effectOfAbsentStylist]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[freeTime]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-190</X><Y>0</Y></Point>
+						<Point><X>-190</X><Y>80</Y></Point>
+						<Point><X>-80</X><Y>80</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1618963319967</Id>
+					<Name><![CDATA[connector90]]></Name>
+					<X>-640</X><Y>1340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ward3EffectOfAbsentStylist]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[courtYardBehaviour]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
+						<ItemName><![CDATA[port1]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>180</Y></Point>
+						<Point><X>60</X><Y>180</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1618963328365</Id>
+					<Name><![CDATA[connector105]]></Name>
+					<X>-640</X><Y>1280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ward3EffectOfAbsentDoc]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[courtYardBehaviour]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[cmpt394_care_home_project___initial_stage__v1]]></PackageName>
+						<ClassName><![CDATA[CourtYardBehaviour]]></ClassName>
+						<ItemName><![CDATA[port1]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>240</Y></Point>
+						<Point><X>60</X><Y>240</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -6191,6 +6152,7 @@ for(Resident r : residents){
 			r.mentalHealth.addToHappinessInflow((double)p.getSecond());
 		}
 	}
+	listOfSpecialVisitorEffects.clear();
 	
 //Record Daily Stats
 	r.mentalHealth.recordHappinessValue();
@@ -6425,23 +6387,35 @@ return availableNursesWard1;   // The default nurse pool if staff sharing allowe
 						<Name><![CDATA[agent]]></Name>
 						<Type><![CDATA[Resident]]></Type>
 					</Parameter>
-					<Body><![CDATA[if(agent.wardNumber == 3){
+					<Body><![CDATA[try{
+	if(agent.wardNumber == 3){
 	traceln("dementia");
 
 	return eventScheduleForWard3;
 }
-
-traceln("Before for loop");
-if (enableStaffCohorting){
-	if (agent.wardNumber == 1){
-		return eventScheduleForWard1;
-	}else{
-		return eventScheduleForWard2;
-	}
-} else {
-	traceln("synch");
-	return synchronousEventSchedule;
+}catch(Exception e){
+	traceln("dementia caused an error");
+	stopSimulation();
 }
+
+
+try{
+	if (enableStaffCohorting){
+		if (agent.wardNumber == 1){
+			return eventScheduleForWard1;
+		}else{
+			return eventScheduleForWard2;
+		}
+	} else {
+		traceln("synch");
+		return synchronousEventSchedule;
+	}
+}catch(Exception e){
+	traceln("regular schedule caused an error");
+	stopSimulation();
+}
+
+return synchronousEventSchedule;
 ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -11148,7 +11122,7 @@ if(!isAtMaxVisitorCapacity() && visitorEntranceTestingBlock.queueToEnterCareHome
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getValue() == 0 || agent.shouldQuarantine]]></Code>
+								<Code><![CDATA[getValueFromDailyScheduleForWard(agent).getValue() == 0]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -14586,7 +14560,7 @@ agent.infectionBehaviour.currentRoom = currentRoom;
 
 incrementAgentsInRoomCount(agent.infectionBehaviour, currentRoom);
 
-doctorAllowedEntry = true;]]></Code>
+stylistAllowedEntry = true;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -16863,6 +16837,9 @@ stylistAllowedEntry = true;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition4]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false//randomTrue( 0.5 )]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability1]]></Name>
@@ -16902,6 +16879,9 @@ stylistAllowedEntry = true;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit5]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(agent.wardNumber == 3){
 	agent.mentalHealth.addToHappinessInflow(courtYardHappinessChangeForDementia);
@@ -16909,9 +16889,6 @@ stylistAllowedEntry = true;]]></Code>
 	agent.mentalHealth.addToHappinessInflow(courtYardHappinessChange);
 }]]></Code>
 							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit5]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -19965,6 +19942,9 @@ agent.mentalHealth.toggleSleep(true);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[!agent.hasDementia]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability]]></Name>
@@ -35440,7 +35420,7 @@ if (currentRoom != null){
 						<EntryAction><![CDATA[main.covidRelatedDeaths += 1;
 
 
-main.remove_residents(resident);
+//main.remove_residents(resident);
 
 //Notifying other residents about the death in the facilities.
 for(Resident r : main.residents){
@@ -38201,6 +38181,11 @@ theAgent.sphere.setVisible(true);
 
 if(happiness <= 0){
 	happiness = 0;
+	happinessIncrease = 0;
+}
+
+if(happiness >= 100){
+	happiness = 100;
 	happinessIncrease = 0;
 }
 ]]></Body>
@@ -53128,13 +53113,16 @@ if(agent.wardNumber == 3){
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.shouldQuarantine = true;
+agent.waitingForResult = false;
+agent.quarantineTimeout.restart(14 * 24);//TODO: Parameterize]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.quarantineTimeout.restart(14 * 24);//TODO: Parameterize
-agent.shouldQuarantine = true;
-agent.waitingForResult = false;
+								<Code><![CDATA[
 
 
 //TODO: infecteds get their results twice. Take a look
@@ -56409,7 +56397,7 @@ try{
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>1</ReplicationPerIteration>
+				<ReplicationPerIteration>10</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -56421,7 +56409,7 @@ try{
 		<CustomExperiment>
 			<Id>0</Id>
 			<Name><![CDATA[GUIlessRunner]]></Name>
-			<MaximumMemory>512</MaximumMemory>
+			<MaximumMemory>1024</MaximumMemory>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<VmArgs><![CDATA[]]></VmArgs>
 			<Code><![CDATA[/** Create Engine, initialize random number generator:
@@ -56448,11 +56436,6 @@ root.run();
 
 while(root.getState() != root.FINISHED){
 	//traceln(engine.getProgress() * 100);
-	try{
-		Thread.sleep(1000);
-	}catch(Exception e){
-		traceln("Error");
-	}
 }
 
 // TODO Process results of simulation here
@@ -56462,7 +56445,7 @@ while(root.getState() != root.FINISHED){
 
 // Destroy the model:
 traceln("Done");
-//engine.stop();]]></Code>
+//engine.stop();**/]]></Code>
 		</CustomExperiment>
 	</Experiments>
 	<JavaClasses>

@@ -2098,6 +2098,30 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1619025520209</Id>
+					<Name><![CDATA[durationInDays]]></Name>
+					<X>250</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[31]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1619025520207</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1614895009261</Id>
 					<Name><![CDATA[bedCoordinates]]></Name>
@@ -6476,7 +6500,7 @@ for(Resident r : residents){
 					<X>1190</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TriggerType="timeout" Mode="occuresOnce">
 						<Timeout Class="CodeUnitValue">
@@ -6490,7 +6514,7 @@ for(Resident r : residents){
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1618992000000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[15]]></Code>
+							<Code><![CDATA[durationInDays]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
@@ -56135,6 +56159,9 @@ agent.infectionBehaviour.setMaskValueForResident(true);]]></Code>
 				<Parameter>
 					<ParameterName><![CDATA[maskIrritationHappinessChangeForDementia]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[durationInDays]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -56457,6 +56484,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -56751,6 +56781,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -57081,6 +57115,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -57366,6 +57403,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -57696,6 +57737,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -57978,6 +58022,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -58226,6 +58274,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -58496,6 +58547,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -58744,6 +58799,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -59014,6 +59072,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -59344,6 +59406,9 @@ try{
 			<FreeformParamValue>	
 				<Id>1618935113799</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1619025520209</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1613768901538</Id>
 				<Type>FIXED</Type>
@@ -59623,6 +59688,10 @@ try{
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1618935113799</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1619025520209</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>

@@ -925,7 +925,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1616431800691</Id>
-					<Name><![CDATA[initialVisitorInfectedCount]]></Name>
+					<Name><![CDATA[visitorInfectedFraction]]></Name>
 					<X>40</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -935,6 +935,9 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<Type><![CDATA[double]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</DefaultValue>
 						<ParameterEditor>
 							<Id>1616431800689</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
@@ -1365,7 +1368,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1618604103010</Id>
@@ -2101,7 +2104,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 				<Variable Class="Parameter">
 					<Id>1619025520209</Id>
 					<Name><![CDATA[durationInDays]]></Name>
-					<X>250</X><Y>100</Y>
+					<X>40</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6364,7 +6367,7 @@ for(int i = 0; i < careHomeFloorPlan.nodes().size(); i++){
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[residents.random().receive(InitialInfection);
+					<Action><![CDATA[//residents.random().receive(InitialInfection);
 //nurses.random().receive(InitialInfection);]]></Action>
 				</Event>
 				<Event>
@@ -6533,7 +6536,7 @@ for(Resident r : residents){
 		count += 1;
 	}
 }
-avgHappiness = totalHappiness / count; 
+avgHappiness = totalHappiness / count;
 //####################################
 
 
@@ -10231,7 +10234,10 @@ if(agent.wardNumber == 3){
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.residentToVisit = residents.random();]]></Code>
+								<Code><![CDATA[if(randomTrue(visitorInfectedFraction)){
+	agent.receive(InitialInfection);
+}
+agent.residentToVisit = residents.random();]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -15857,7 +15863,11 @@ stylistAllowedEntry = true;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (hairStylistInitiallyInfected){
+								<Code><![CDATA[if(randomTrue(visitorInfectedFraction)){
+	unit.receive(InitialInfection);
+}
+
+if (hairStylistInitiallyInfected){
 	if (unit.specialVisitorType == SpecialVisitorOption.HairStylist){
 		unit.receive(InitialInfection);
 		//traceln(unit.isInfectious());
@@ -23034,7 +23044,7 @@ agent.hadHaircut = true;]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.infectionBehaviour.statechart.getState() == agent.infectionBehaviour.deceased]]></Code>
+								<Code><![CDATA[agent.infectionBehaviour.statechart.getState() != agent.infectionBehaviour.deceased]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -36231,7 +36241,8 @@ agent.hadHaircut = true;]]></Code>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[// TODO use the colorAgentAsExposed method? 
 if (resident != null){
-	main.residentExposures += 1; 
+	main.residentExposures += 1;
+	
 	resident.shapeBody.setFillColor(yellow);
 }
 
@@ -36317,7 +36328,7 @@ if (currentRoom != null){
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[main.covidRelatedDeaths += 1;
-
+traceln("SomeOneDied");
 
 //main.remove_residents(resident);
 
@@ -56013,7 +56024,7 @@ agent.infectionBehaviour.setMaskValueForResident(true);]]></Code>
 					<ParameterName><![CDATA[susceptibleCheckSurroundingsTime]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[initialVisitorInfectedCount]]></ParameterName>
+					<ParameterName><![CDATA[visitorInfectedFraction]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[oligoSymptomaticInfectiousSymptomsPerMinute]]></ParameterName>
@@ -56803,7 +56814,7 @@ try{
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<ReplicationPerIteration>5</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -56857,7 +56868,8 @@ try{
 	traceln("csvWrite Error in row headers for: \n" + scenarioDescription);
 	e.printStackTrace();
 }]]></BeforeEachExperimentRunCode>
-			<AfterSimulationRunCode><![CDATA[try{
+			<AfterSimulationRunCode><![CDATA[traceln(root.covidRelatedDeaths);
+try{
 	//Entering Data	
 	csvWriter.write(String.valueOf(root.covidRelatedDeaths));
 	csvWriter.write("," + String.valueOf(root.totalExposures));
@@ -57410,7 +57422,7 @@ try{
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<StopOption><![CDATA[Never]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1616112000000]]></FinalDate>	
@@ -57425,7 +57437,7 @@ try{
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<ReplicationPerIteration>5</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -58044,7 +58056,7 @@ try{
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<ReplicationPerIteration>5</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -58056,18 +58068,100 @@ try{
 		<ParamVariationExperiment ActiveObjectClassId="1613768872922">
 			<Id>1618991071707</Id>
 			<Name><![CDATA[Quarantine]]></Name>
+			<AdditionalClassCode><![CDATA[DateTimeFormatter csvTimeStampFormatter = DateTimeFormatter.ofPattern("MM_dd_HHmm");  
+String csvName;
+FileWriter csvWriter;
+File csvForRun;
+int currentIteratationOfParameter = 0;
+
+
+String scenarioDescription = "Allowing mask use within the facility.";
+String scenarioName = "PPE Scenario";]]></AdditionalClassCode>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Import><![CDATA[import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
+
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;]]></Import>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<BeforeEachExperimentRunCode><![CDATA[csvName = csvTimeStampFormatter.format(LocalDateTime.now()) + "_" + scenarioName + "_" + currentIteratationOfParameter +".csv";
+
+try{
+	csvForRun = new File(csvName);
+	csvForRun.createNewFile();
+
+	csvWriter = new FileWriter(csvName);
+	
+	//Writing Headers
+	csvWriter.write("covidRelatedDeaths");
+	csvWriter.write(", totalExposures");
+	csvWriter.write(", facilityPopulationExposures");
+	csvWriter.write(", avgHappiness");
+	csvWriter.write(", residentInfections");
+	csvWriter.write(", facilityPopulationInfections");
+	csvWriter.write(", residentExposures");
+	csvWriter.write("\n");	
+	
+}catch(IOException e){
+	traceln("csvWrite Error in row headers for: \n" + scenarioDescription);
+	e.printStackTrace();
+}]]></BeforeEachExperimentRunCode>
+			<AfterSimulationRunCode><![CDATA[try{
+	//Entering Data	
+	csvWriter.write(String.valueOf(root.covidRelatedDeaths));
+	csvWriter.write("," + String.valueOf(root.totalExposures));
+	csvWriter.write("," + String.valueOf(root.facilityPopulationExposures));
+	csvWriter.write("," + String.valueOf(root.avgHappiness));
+	csvWriter.write("," + String.valueOf(root.residentInfections));
+	csvWriter.write("," + String.valueOf(root.facilityPopulationInfections));
+	csvWriter.write("," + String.valueOf(root.residentExposures));
+	
+	//End of row	
+	csvWriter.write("\n");
+}catch(IOException e){
+	traceln("csvWrite Error in attempting to: \n" + scenarioDescription);
+}]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
 			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
 
 
-			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<AfterIterationCode><![CDATA[currentIteratationOfParameter += 1;
+try{
+	csvWriter.close();
+}catch(IOException e){
+	traceln("csvWrite Error in closing file for: \n" + scenarioDescription); //Maybe iteration number would be better
+	e.printStackTrace();
+}
+
+traceln("Completed the run for file " + csvName);
+csvName = csvTimeStampFormatter.format(LocalDateTime.now()) + "_" + scenarioName + "_" + currentIteratationOfParameter +".csv";
+
+
+try{
+	csvForRun = new File(csvName);
+	csvForRun.createNewFile();
+	
+	csvWriter = new FileWriter(csvName);
+	
+	csvWriter.write("covidRelatedDeaths");
+	csvWriter.write(", totalExposures");
+	csvWriter.write(", facilityPopulationExposures");
+	csvWriter.write(", avgHappiness");
+	csvWriter.write(", residentInfections");
+	csvWriter.write(", facilityPopulationInfections");
+	csvWriter.write(", residentExposures");
+			
+}catch(IOException e){
+	traceln("csvWrite Error in creating file for: \n" + scenarioDescription);
+	e.printStackTrace();
+}]]></AfterIterationCode>
+			<AllowParallelEvaluations>false</AllowParallelEvaluations>
 			<UseFreeformParameters>false</UseFreeformParameters>
 			<NumberOfRuns>10</NumberOfRuns>
 			<FreeformParamValue>	
@@ -58376,6 +58470,9 @@ try{
 			<RangeVariationParamValue>	
 				<Id>1617058834173</Id>
 				<Type>FIXED</Type>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Expression>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1617572922506</Id>
@@ -58416,6 +58513,9 @@ try{
 			<RangeVariationParamValue>	
 				<Id>1617729915572</Id>
 				<Type>FIXED</Type>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Expression>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1617748084784</Id>
@@ -58554,7 +58654,7 @@ try{
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<StopOption><![CDATA[Never]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1616112000000]]></FinalDate>	
@@ -58567,9 +58667,9 @@ try{
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 			</PresentationProperties>
 			<ReplicationsProperties>
-				<UseReplication>false</UseReplication>
+				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>10</ReplicationPerIteration>
+				<ReplicationPerIteration>5</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -58941,6 +59041,9 @@ try{
 			<RangeVariationParamValue>	
 				<Id>1617729915572</Id>
 				<Type>FIXED</Type>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[false]]></Code>
+				</Expression>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1617748084784</Id>
@@ -59695,7 +59798,7 @@ try{
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<StopOption><![CDATA[Never]]></StopOption>
 				<InitialDate><![CDATA[1613692800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1616112000000]]></FinalDate>	
@@ -59710,7 +59813,7 @@ try{
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<ReplicationPerIteration>5</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -59737,7 +59840,7 @@ engine.setStopTime( 100.0 );
 **/
 
 // Create new root object:
-AntigentTesting root = new AntigentTesting();
+BaseLineScenario root = new BaseLineScenario();
 
 // Parameters are already determined
 
